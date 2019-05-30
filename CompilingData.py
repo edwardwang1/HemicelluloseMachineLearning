@@ -20,7 +20,6 @@ masterDF = pd.DataFrame(columns=COLUMN_NAMES)
 
 for file in os.listdir(directory):
     filename = os.fsdecode(file)
-    print(filename)
     absPath = directory_in_str + filename
     if filename.endswith(".xlsx"): 
         wb = load_workbook(filename = absPath, data_only = True) 
@@ -52,7 +51,6 @@ masterDF.reset_index()
 masterDF.to_csv("data.csv", index=False)
 
 for i in masterDF.index:
-    print(masterDF.at[i, 'Source'])
     if masterDF.at[i, 'Ramp'] is None or pd.isnull(masterDF.at[i, 'Ramp']):
         masterDF.at[i, 'Ramp'] = (masterDF.at[i, 'Temp'] - 25) / masterDF.at[i, 'HeatT']
     if masterDF.at[i, 'HeatT'] is None or pd.isnull(masterDF.at[i, 'HeatT']):
