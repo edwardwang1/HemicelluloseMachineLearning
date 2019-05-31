@@ -10,4 +10,4 @@ module load scipy-stack
 module load cuda cudnn 
 source $HOME/hemicellulose_project/bin/activate
 
-python ../SimpleML.py
+python ./SimpleML.py
