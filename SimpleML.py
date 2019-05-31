@@ -8,8 +8,9 @@ from keras.models import Sequential
 from keras.layers import Dense, Dropout
 from keras.optimizers import SGD
 from sklearn.preprocessing import StandardScaler
+import time
 
-
+start = time.time()
 
 data = pd.read_csv("dataThesis.csv")
 
@@ -75,7 +76,6 @@ for a in alphas:
 
 best_alpha = alphas[np.argmin(errors)]
 print("Ridge Regression best alpha is: ", best_alpha)
-print("Ridge Regression Lowest Error In Validation _MSE_ ", np.min(errors))
 
 best_model = Ridge(alpha=best_alpha)
 best_model.fit(X_train_valid, y_train_valid)
@@ -212,3 +212,7 @@ print('ANN Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred))
 print('ANN Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test, y_pred)))
 
 print("Ending Neural Network Regression ------------------")
+
+end = time.time()
+duration = end - start
+print("Execution Time is:", duration /60, "min")

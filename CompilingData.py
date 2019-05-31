@@ -5,6 +5,9 @@ import pandas as pd
 import numpy as np
 import math
 import string
+import time
+
+start = time.time()
 
 directory_in_str = "\\\\?\\C:\\Users\\Edward\\Desktop\\Projects\\HemicelluloseMachineLearning\\RawData\\"
 
@@ -119,6 +122,9 @@ for i in masterDF.index:
 
 masterDF.to_csv("data.csv", index=False)
 
+end = time.time()
+duration = end - start
+print("Execution Time is:", duration /60, "min")
 
 
 
