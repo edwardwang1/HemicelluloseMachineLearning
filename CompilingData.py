@@ -89,7 +89,8 @@ unique_papers = masterDF['Source'].unique()
 paper_dict = dict(enumerate(unique_papers))
 #swapping key and values
 paper_dict = dict((v,k) for k,v in paper_dict.items())
-alphabet = string.ascii_uppercase
+#alphabet = string.ascii_uppercase
+alphabet = list(range(1, 1001))
 
 masterDF['ID'] = masterDF['Source']
 for i in masterDF.index:
