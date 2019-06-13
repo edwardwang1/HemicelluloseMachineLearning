@@ -1,0 +1,286 @@
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) openmpi/2.1.1
+
+Using TensorFlow backend.
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-06-13 14:52:55.513181: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: Tesla P100-PCIE-12GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:03:00.0
+totalMemory: 11.91GiB freeMemory: 11.66GiB
+2019-06-13 14:52:55.656603: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 1 with properties: 
+name: Tesla P100-PCIE-12GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:04:00.0
+totalMemory: 11.91GiB freeMemory: 11.66GiB
+2019-06-13 14:52:55.795976: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 2 with properties: 
+name: Tesla P100-PCIE-12GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:83:00.0
+totalMemory: 11.91GiB freeMemory: 11.66GiB
+2019-06-13 14:52:55.797510: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2
+2019-06-13 14:53:00.600548: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-13 14:53:00.600699: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 
+2019-06-13 14:53:00.600742: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N 
+2019-06-13 14:53:00.600776: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N 
+2019-06-13 14:53:00.600807: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N 
+2019-06-13 14:53:00.603043: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11270 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-12GB, pci bus id: 0000:03:00.0, compute capability: 6.0)
+2019-06-13 14:53:00.603682: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11270 MB memory) -> physical GPU (device: 1, name: Tesla P100-PCIE-12GB, pci bus id: 0000:04:00.0, compute capability: 6.0)
+2019-06-13 14:53:00.603933: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11270 MB memory) -> physical GPU (device: 2, name: Tesla P100-PCIE-12GB, pci bus id: 0000:83:00.0, compute capability: 6.0)
+2019-06-13 14:53:00.604648: I tensorflow/core/common_runtime/process_util.cc:71] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+2019-06-13 14:53:01.299373: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+16
+
+20/20 [==============================] - 0s 5ms/step
+55
+
+20/20 [==============================] - 0s 5ms/step
+62
+
+36/36 [==============================] - 0s 3ms/step
+35
+
+14/14 [==============================] - 0s 9ms/step
+60
+
+16/16 [==============================] - 0s 8ms/step
+40
+
+12/12 [==============================] - 0s 12ms/step
+51
+
+31/31 [==============================] - 0s 5ms/step
+41
+
+67/67 [==============================] - 0s 2ms/step
+54
+
+12/12 [==============================] - 0s 15ms/step
+26
+
+15/15 [==============================] - 0s 13ms/step
+18
+
+12/12 [==============================] - 0s 17ms/step
+50
+
+30/30 [==============================] - 0s 7ms/step
+32
+
+10/10 [==============================] - 0s 25ms/step
+49
+
+10/10 [==============================] - 0s 24ms/step
+59
+
+16/16 [==============================] - 0s 16ms/step
+38
+
+12/12 [==============================] - 0s 22ms/step
+19
+
+10/10 [==============================] - 0s 28ms/step
+37
+
+21/21 [==============================] - 0s 14ms/step
+27
+
+29/29 [==============================] - 0s 11ms/step
+61
+
+12/12 [==============================] - 0s 26ms/step
+36
+
+20/20 [==============================] - 0s 16ms/step
+24
+
+128/400 [========>.....................] - ETA: 0s
+400/400 [==============================] - 0s 882us/step
+21
+
+40/40 [==============================] - 0s 9ms/step
+33
+
+76/76 [==============================] - 0s 5ms/step
+29
+
+11/11 [==============================] - 0s 35ms/step
+45
+
+17/17 [==============================] - 0s 23ms/step
+9
+
+20/20 [==============================] - 0s 21ms/step
+6
+
+13/13 [==============================] - 0s 32ms/step
+66
+
+14/14 [==============================] - 0s 31ms/step
+48
+
+24/24 [==============================] - 0s 19ms/step
+10
+
+20/20 [==============================] - 0s 24ms/step
+43
+
+18/18 [==============================] - 0s 27ms/step
+28
+
+12/12 [==============================] - 0s 41ms/step
+52
+
+65/65 [==============================] - 1s 8ms/step
+13
+
+11/11 [==============================] - 1s 47ms/step
+42
+
+47/47 [==============================] - 1s 11ms/step
+20
+
+29/29 [==============================] - 1s 19ms/step
+1
+
+11/11 [==============================] - 1s 51ms/step
+47
+
+13/13 [==============================] - 1s 45ms/step
+53
+
+85/85 [==============================] - 1s 7ms/step
+44
+
+17/17 [==============================] - 1s 36ms/step
+11
+
+36/36 [==============================] - 1s 18ms/step
+63
+
+45/45 [==============================] - 1s 14ms/step
+12
+
+32/32 [==============================] - 1s 21ms/step
+8
+
+43/43 [==============================] - 1s 16ms/step
+57
+
+22/22 [==============================] - 1s 31ms/step
+7
+
+19/19 [==============================] - 1s 37ms/step
+30
+
+26/26 [==============================] - 1s 28ms/step
+34
+
+19/19 [==============================] - 1s 39ms/step
+    ID         NN
+1    1  15.940109
+6    6  41.561602
+7    7  14.112768
+8    8  26.426405
+9    9  35.172512
+10  10  13.110992
+11  11  15.955277
+12  12   5.237398
+13  13  37.557020
+16  16  47.597393
+18  18  10.151021
+19  19  45.897639
+20  20  52.001214
+21  21  34.770522
+24  24  38.115263
+26  26  15.755445
+27  27  34.912485
+28  28   8.390221
+29  29  13.751949
+30  30  25.475092
+32  32  23.754497
+33  33  34.303204
+34  34  54.735624
+35  35  15.912298
+36  36  39.549943
+37  37   7.550859
+38  38  23.696225
+40  40  50.838980
+41  41   9.534849
+42  42  14.610066
+43  43  49.506156
+44  44  29.647319
+45  45  35.527265
+47  47  15.276401
+48  48  27.010757
+49  49  10.253027
+50  50  24.831372
+51  51  39.934407
+52  52  21.867239
+53  53  20.161811
+54  54  46.286231
+55  55   7.250832
+57  57   6.331626
+59  59  14.112392
+60  60  15.882258
+61  61   8.211647
+62  62  23.864582
+63  63  15.459184
+66  66  12.402750
+    ID         NN
+1    1  15.940109
+6    6  41.561602
+7    7  14.112768
+8    8  26.426405
+9    9  35.172512
+10  10  13.110992
+11  11  15.955277
+12  12   5.237398
+13  13  37.557020
+16  16  47.597393
+18  18  10.151021
+19  19  45.897639
+20  20  52.001214
+21  21  34.770522
+24  24  38.115263
+26  26  15.755445
+27  27  34.912485
+28  28   8.390221
+29  29  13.751949
+30  30  25.475092
+32  32  23.754497
+33  33  34.303204
+34  34  54.735624
+35  35  15.912298
+36  36  39.549943
+37  37   7.550859
+38  38  23.696225
+40  40  50.838980
+41  41   9.534849
+42  42  14.610066
+43  43  49.506156
+44  44  29.647319
+45  45  35.527265
+47  47  15.276401
+48  48  27.010757
+49  49  10.253027
+50  50  24.831372
+51  51  39.934407
+52  52  21.867239
+53  53  20.161811
+54  54  46.286231
+55  55   7.250832
+57  57   6.331626
+59  59  14.112392
+60  60  15.882258
+61  61   8.211647
+62  62  23.864582
+63  63  15.459184
+66  66  12.402750
+Execution Time is: 82.72378679911296 min
