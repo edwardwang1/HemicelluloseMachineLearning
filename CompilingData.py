@@ -1,10 +1,7 @@
-from openpyxl import Workbook
 from openpyxl import load_workbook
 import os
 import pandas as pd
 import numpy as np
-import math
-import string
 import time
 
 start = time.time()
@@ -37,9 +34,7 @@ for file in os.listdir(directory):
         continue
     else:
         continue
-        
-        
-#masterDF = masterDF.astype(float)
+
 masterDF.reset_index()
 
 #Deleting empty rows
@@ -47,37 +42,51 @@ rowsToDelete = []
 for i in masterDF.index:
     if masterDF.at[i, 'X'] is None or pd.isnull(masterDF.at[i, 'X']) or masterDF.at[i, 'F_X'] is None or pd.isnull(masterDF.at[i, 'F_X']):
         rowsToDelete.append(i)
-
 masterDF = masterDF.drop(rowsToDelete, axis=0)
 masterDF.reset_index()
 
 masterDF.to_csv("data.csv", index=False)
 
+indicesToRemove = []
+
 for i in masterDF.index:
     if masterDF.at[i, 'Ramp'] is None or pd.isnull(masterDF.at[i, 'Ramp']):
-        masterDF.at[i, 'Ramp'] = (masterDF.at[i, 'Temp'] - 25) / masterDF.at[i, 'HeatT']
+        try:
+            masterDF.at[i, 'Ramp'] = (masterDF.at[i, 'Temp'] - 25) / masterDF.at[i, 'HeatT']
+        except ZeroDivisionError:
+            indicesToRemove.append(i)
     if masterDF.at[i, 'HeatT'] is None or pd.isnull(masterDF.at[i, 'HeatT']):
-        masterDF.at[i, 'HeatT'] = (masterDF.at[i, 'Temp'] - 25) / masterDF.at[i, 'Ramp']
-    #print(type(masterDF.at[i, 'TotalT']))
-    #print((masterDF.at[i, 'Temp']))
+        try:
+            masterDF.at[i, 'HeatT'] = (masterDF.at[i, 'Temp'] - 25) / masterDF.at[i, 'Ramp']
+        except ZeroDivisionError:
+            indicesToRemove.append(i)
     if masterDF.at[i, 'TotalT'] is None or pd.isnull(masterDF.at[i, 'TotalT']):
-        masterDF.at[i, 'TotalT'] =  masterDF.at[i, 'HeatT'] +  masterDF.at[i, 'IsoT']
+        try:
+            masterDF.at[i, 'TotalT'] =  masterDF.at[i, 'HeatT'] +  masterDF.at[i, 'IsoT']
+        except ZeroDivisionError:
+            indicesToRemove.append(i)
     if masterDF.at[i, 'IsoT'] is None or pd.isnull(masterDF.at[i, 'IsoT']):
-        masterDF.at[i, 'IsoT'] =  masterDF.at[i, 'TotalT'] -  masterDF.at[i, 'HeatT']
+        try:
+            masterDF.at[i, 'IsoT'] = masterDF.at[i, 'TotalT'] -  masterDF.at[i, 'HeatT']
+        except ZeroDivisionError:
+            indicesToRemove.append(i)
     if masterDF.at[i, 'TotalT'] == 0:
-        masterDF.at[i, 'IsoT'] =  0
-        masterDF.at[i, 'HeatT'] =  0
-        
+        masterDF.at[i, 'IsoT'] = 0
+        masterDF.at[i, 'HeatT'] = 0
+
+
+masterDF = masterDF.drop(indicesToRemove, axis=0)
+masterDF.reset_index()
+
 masterDF['TotalT'].fillna(masterDF.at[i, 'HeatT'] +  masterDF.at[i, 'IsoT'])
 
-#Filling in Moisture Content
-if masterDF.at[i, 'Moisture'] is None or pd.isnull(masterDF.at[i, 'Moisture']):
-    if masterDF.at[i, 'Size'] > 5:
-        masterDF.at[i, 'Moisture'] = 20
-    else:
-        masterDF.at[i, 'Moisture'] = 10
-        
-    
+# #Filling in Moisture Content
+# for i in masterDF.index:
+#     if masterDF.at[i, 'Moisture'] is None or pd.isnull(masterDF.at[i, 'Moisture']):
+#         if masterDF.at[i, 'Size'] > 5:
+#             masterDF.at[i, 'Moisture'] = 20
+#         else:
+#             masterDF.at[i, 'Moisture'] = 10
 
 masterDF['X'].fillna(0, inplace=True)
 
@@ -116,16 +125,19 @@ masterDF['logRo'] = masterDF['Ro']
 
 for i in masterDF.index:
     if masterDF.at[i, 'logRo'] != 0:
-        masterDF.at[i, 'logRo'] = np.log( masterDF.at[i, 'logRo'])
+        masterDF.at[i, 'logRo'] = np.log(masterDF.at[i, 'logRo'])
     if masterDF.at[i, 'logP'] != 0:
         masterDF.at[i, 'logP'] = np.log( masterDF.at[i, 'logP'])
 
+XLabels = ['TotalT', 'Temp', 'LSR', 'CA', 'Size', 'IsoT', 'HeatT', 'Ramp', 'F_X', 'Ro', 'logRo', 'P', 'Yield']
+X = masterDF[XLabels]
 
-masterDF.to_csv("data.csv", index=False)
+rowsToDelete, cols = np.where(pd.isnull(X))
+X = X.drop(rowsToDelete, axis=0)
+X.reset_index()
+
+X.to_csv("data.csv", index=False)
 
 end = time.time()
 duration = end - start
 print("Execution Time is:", duration /60, "min")
-
-
-
