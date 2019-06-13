@@ -1,0 +1,109 @@
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) openmpi/2.1.1
+
+Using TensorFlow backend.
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-05-31 14:00:47.554766: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: Tesla P100-PCIE-12GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:03:00.0
+totalMemory: 11.91GiB freeMemory: 11.66GiB
+2019-05-31 14:00:47.669388: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 1 with properties: 
+name: Tesla P100-PCIE-12GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:04:00.0
+totalMemory: 11.91GiB freeMemory: 11.66GiB
+2019-05-31 14:00:47.788833: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 2 with properties: 
+name: Tesla P100-PCIE-12GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:82:00.0
+totalMemory: 11.91GiB freeMemory: 11.66GiB
+2019-05-31 14:00:47.790392: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2
+2019-05-31 14:00:51.909520: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-05-31 14:00:51.909675: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 
+2019-05-31 14:00:51.909719: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N 
+2019-05-31 14:00:51.909753: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N 
+2019-05-31 14:00:51.909785: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N 
+2019-05-31 14:00:51.912034: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11270 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-12GB, pci bus id: 0000:03:00.0, compute capability: 6.0)
+2019-05-31 14:00:51.912675: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11270 MB memory) -> physical GPU (device: 1, name: Tesla P100-PCIE-12GB, pci bus id: 0000:04:00.0, compute capability: 6.0)
+2019-05-31 14:00:51.912920: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11270 MB memory) -> physical GPU (device: 2, name: Tesla P100-PCIE-12GB, pci bus id: 0000:82:00.0, compute capability: 6.0)
+2019-05-31 14:00:51.913592: I tensorflow/core/common_runtime/process_util.cc:71] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+2019-05-31 14:00:52.528451: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+H
+Lowest Error In Validation _MSE_  155.83576425572755
+Best Learning Rate is:  0.01
+Best Batch Size is:  128
+Best Dropout Rate is:  0.1
+
+12/12 [==============================] - 1s 69ms/step
+G
+Lowest Error In Validation _MSE_  171.9146601065663
+Best Learning Rate is:  0.01
+Best Batch Size is:  128
+Best Dropout Rate is:  0.0
+
+15/15 [==============================] - 2s 121ms/step
+O
+Lowest Error In Validation _MSE_  157.19770005500973
+Best Learning Rate is:  0.01
+Best Batch Size is:  128
+Best Dropout Rate is:  0.1
+
+22/22 [==============================] - 3s 130ms/step
+L
+Lowest Error In Validation _MSE_  139.1284833668598
+Best Learning Rate is:  0.02
+Best Batch Size is:  128
+Best Dropout Rate is:  0.1
+
+10/10 [==============================] - 4s 390ms/step
+A
+Lowest Error In Validation _MSE_  155.12177698016808
+Best Learning Rate is:  0.01
+Best Batch Size is:  128
+Best Dropout Rate is:  0.1
+
+32/32 [==============================] - 5s 162ms/step
+E
+Lowest Error In Validation _MSE_  122.60767665805761
+Best Learning Rate is:  0.005
+Best Batch Size is:  128
+Best Dropout Rate is:  0.1
+
+128/400 [========>.....................] - ETA: 13s
+400/400 [==============================] - 6s 16ms/step
+M
+Lowest Error In Validation _MSE_  135.21803393047344
+Best Learning Rate is:  0.01
+Best Batch Size is:  128
+Best Dropout Rate is:  0.1
+
+65/65 [==============================] - 8s 121ms/step
+I
+Lowest Error In Validation _MSE_  158.49718771881118
+Best Learning Rate is:  0.01
+Best Batch Size is:  128
+Best Dropout Rate is:  0.0
+
+21/21 [==============================] - 9s 447ms/step
+N
+Lowest Error In Validation _MSE_  137.01510874527952
+Best Learning Rate is:  0.002
+Best Batch Size is:  128
+Best Dropout Rate is:  0.0
+
+85/85 [==============================] - 11s 128ms/step
+K
+Lowest Error In Validation _MSE_  149.21447427425133
+Best Learning Rate is:  0.02
+Best Batch Size is:  128
+Best Dropout Rate is:  0.1
+
+24/24 [==============================] - 13s 525ms/step
+slurmstepd: error: *** JOB 21885323 ON cdr29 CANCELLED AT 2019-06-01T14:00:15 DUE TO TIME LIMIT ***
