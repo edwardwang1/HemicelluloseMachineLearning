@@ -129,7 +129,7 @@ for i in masterDF.index:
     if masterDF.at[i, 'logP'] != 0:
         masterDF.at[i, 'logP'] = np.log( masterDF.at[i, 'logP'])
 
-XLabels = ['TotalT', 'Temp', 'LSR', 'CA', 'Size', 'IsoT', 'HeatT', 'Ramp', 'F_X', 'Ro', 'logRo', 'P', 'Yield']
+XLabels = ['TotalT', 'Temp', 'LSR', 'CA', 'Size', 'IsoT', 'HeatT', 'Ramp', 'F_X', 'Ro', 'logRo', 'P', 'Yield', 'ID']
 X = masterDF[XLabels]
 
 rowsToDelete, cols = np.where(pd.isnull(X))

@@ -10,11 +10,11 @@ import time
 
 start = time.time()
 
-data = pd.read_csv("dataThesis.csv")
+data = pd.read_csv("data.csv")
 data = data.sample(frac=1).reset_index(drop=True)
 pd.options.mode.chained_assignment = None
 
-XLabels = ['TotalT', 'Temp', 'LSR', 'CA', 'Size', 'Moisture', 'IsoT', 'HeatT', 'Ramp', 'F_X', 'Ro', 'logRo', 'P']
+XLabels = ['TotalT', 'Temp', 'LSR', 'CA', 'Size',  'IsoT', 'HeatT', 'Ramp', 'F_X', 'Ro', 'logRo', 'P']
 X = data[XLabels]
 # Scaling X
 sc = StandardScaler()
@@ -82,71 +82,75 @@ for paper in papers:
     train_weights = train_Frame['Sample_Weight']
     train_valid_weights = train_valid_Frame['Sample_Weight']
 
-    ##NN
-    learningRates = [0.002, 0.005, 0.01, 0.02]
-    batchSizes = [128]
-    dropoutRates = [0.00, 0.1]
-    errors = []
-    for lr_ in learningRates:
-        for bs in batchSizes:
-            for dr in dropoutRates:
-                sumErrors = 0
-                for c in combos:
-                    train_Frame = train_valid_Frame[~train_valid_Frame['ID'].isin(c)]
-                    valid_Frame = train_valid_Frame[train_valid_Frame['ID'].isin(c)]
-
-                    ##Calculating Sample Weight again just for train frame, because it's different
-                    bins = train_Frame['Yield'].value_counts(bins=numBins)
-                    for i in train_Frame.index:
-                        for j in bins.index:
-                            if int(train_Frame.at[i, 'Yield']) in j:
-                                train_Frame.at[i, 'Sample_Weight'] = 100 / bins[j].item()
-
-                    y_train, y_valid, y_test, y_train_valid = train_Frame['Yield'], valid_Frame['Yield'], test_Frame[
-                        'Yield'], train_valid_Frame['Yield']
-                    X_train, X_valid, X_test, X_train_valid = train_Frame[XLabels], valid_Frame[XLabels], test_Frame[
-                        XLabels], train_valid_Frame[XLabels]
-
-                    train_weights = train_Frame['Sample_Weight']
-
-                    model = Sequential()
-                    model.add(Dense(units=12, activation='sigmoid', input_dim=13))
-                    model.add(Dropout(dr))
-                    model.add(Dense(units=12, activation='sigmoid'))
-                    model.add(Dense(units=6, activation='sigmoid'))
-                    model.add(Dense(units=6, activation='sigmoid'))
-                    model.add(Dense(units=1, activation='softplus'))
-
-                    sgd = SGD(lr=lr_)
-                    model.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
-
-                    model.fit(X_train, y_train, sample_weight=np.asarray(train_weights), epochs=numEpoch, batch_size=bs,
-                              verbose=0)
-
-                    #                     loss_and_metrics = model.evaluate(X_valid, y_valid,batch_size=bs)
-
-                    #                     print(X_valid)
-                    y_pred = model.predict(X_valid, batch_size=bs)
-                    y_pred = y_pred.flatten()
-                    error = metrics.mean_absolute_error(y_valid, y_pred)
-                    sumErrors = sumErrors + error
-                errors.append(sumErrors)
-    index_of_lowest_error = np.argmin(errors)
-
-    print("Lowest Error In Validation _MSE_ ", np.min(errors))
-
-    best_lr = learningRates[int(index_of_lowest_error / (len(batchSizes) * len(dropoutRates)))]  # Good
-    best_bs = batchSizes[
-        int((index_of_lowest_error % (len(batchSizes) * len(dropoutRates))) / len(dropoutRates))]  # Good
-    best_dr = dropoutRates[index_of_lowest_error % len(dropoutRates)]  # Good
-    print("Best Learning Rate is: ", best_lr)
-    print("Best Batch Size is: ", best_bs)
-    print("Best Dropout Rate is: ", best_dr)
+    # ##NN
+    # learningRates = [0.002, 0.005, 0.01, 0.02]
+    # batchSizes = [128]
+    # dropoutRates = [0.00, 0.1]
+    # errors = []
+    # for lr_ in learningRates:
+    #     for bs in batchSizes:
+    #         for dr in dropoutRates:
+    #             sumErrors = 0
+    #             for c in combos:
+    #                 train_Frame = train_valid_Frame[~train_valid_Frame['ID'].isin(c)]
+    #                 valid_Frame = train_valid_Frame[train_valid_Frame['ID'].isin(c)]
+    #
+    #                 ##Calculating Sample Weight again just for train frame, because it's different
+    #                 bins = train_Frame['Yield'].value_counts(bins=numBins)
+    #                 for i in train_Frame.index:
+    #                     for j in bins.index:
+    #                         if int(train_Frame.at[i, 'Yield']) in j:
+    #                             train_Frame.at[i, 'Sample_Weight'] = 100 / bins[j].item()
+    #
+    #                 y_train, y_valid, y_test, y_train_valid = train_Frame['Yield'], valid_Frame['Yield'], test_Frame[
+    #                     'Yield'], train_valid_Frame['Yield']
+    #                 X_train, X_valid, X_test, X_train_valid = train_Frame[XLabels], valid_Frame[XLabels], test_Frame[
+    #                     XLabels], train_valid_Frame[XLabels]
+    #
+    #                 train_weights = train_Frame['Sample_Weight']
+    #
+    #                 model = Sequential()
+    #                 model.add(Dense(units=12, activation='sigmoid', input_dim=12))
+    #                 model.add(Dropout(dr))
+    #                 model.add(Dense(units=12, activation='sigmoid'))
+    #                 model.add(Dense(units=6, activation='sigmoid'))
+    #                 model.add(Dense(units=6, activation='sigmoid'))
+    #                 model.add(Dense(units=1, activation='softplus'))
+    #
+    #                 sgd = SGD(lr=lr_)
+    #                 model.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
+    #
+    #                 model.fit(X_train, y_train, sample_weight=np.asarray(train_weights), epochs=numEpoch, batch_size=bs,
+    #                           verbose=0)
+    #
+    #                 #                     loss_and_metrics = model.evaluate(X_valid, y_valid,batch_size=bs)
+    #
+    #                 #                     print(X_valid)
+    #                 y_pred = model.predict(X_valid, batch_size=bs)
+    #                 y_pred = y_pred.flatten()
+    #                 error = metrics.mean_absolute_error(y_valid, y_pred)
+    #                 sumErrors = sumErrors + error
+    #             errors.append(sumErrors)
+    # index_of_lowest_error = np.argmin(errors)
+    #
+    # print("Lowest Error In Validation _MSE_ ", np.min(errors))
+    #
+    # best_lr = learningRates[int(index_of_lowest_error / (len(batchSizes) * len(dropoutRates)))]  # Good
+    # best_bs = batchSizes[
+    #     int((index_of_lowest_error % (len(batchSizes) * len(dropoutRates))) / len(dropoutRates))]  # Good
+    # best_dr = dropoutRates[index_of_lowest_error % len(dropoutRates)]  # Good
+    # print("Best Learning Rate is: ", best_lr)
+    # print("Best Batch Size is: ", best_bs)
+    # print("Best Dropout Rate is: ", best_dr)
 
     # Using best values
+    best_lr = 0.002
+    best_bs = 128
+    best_dr = 0.01
+
 
     model = Sequential()
-    model.add(Dense(units=12, activation='sigmoid', input_dim=13))
+    model.add(Dense(units=12, activation='sigmoid', input_dim=12))
     model.add(Dropout(best_dr))
     model.add(Dense(units=12, activation='sigmoid'))
     model.add(Dense(units=6, activation='sigmoid'))
@@ -180,7 +184,7 @@ error_Frame.index = error_Frame['ID'].values
 error_Frame = error_Frame.sort_index()
 
 
-error_Frame.to_csv("CrossValidNN.csv")
+error_Frame.to_csv("CrossValidNNNewData.csv")
 print(error_Frame)
 
 end = time.time()

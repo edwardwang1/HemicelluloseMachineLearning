@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler
 import time
 from keras.models import load_model
 
-performTuning = True
+performTuning = False
 
 start = time.time()
 data = pd.read_csv("data.csv")
@@ -76,9 +76,9 @@ if performTuning:
     print("ANN Best Batch Size is: ", best_bs)
     print("ANN Best Dropout Rate is: ", best_dr)
 else:
-    best_lr = 0.01
+    best_lr = 0.002
     best_bs = 128
-    best_dr = 0.1
+    best_dr = 0.01
 
 model = Sequential()
 model.add(Dense(units=12, activation='sigmoid', input_dim=12))
@@ -101,7 +101,7 @@ model.fit(X_train_valid, y_train_valid, epochs=3000, batch_size=best_bs, verbose
 y_pred = model.predict(X_test, batch_size=best_bs)
 y_pred = y_pred.flatten()
 
-model.save('NNModel.h5')
+#model.save('NNModel.h5')
 
 output = pd.DataFrame({'pred':y_pred, 'test': y_test})
 output.to_csv("NNModelOutput.csv")
