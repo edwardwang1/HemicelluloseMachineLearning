@@ -6,13 +6,14 @@ import time
 
 start = time.time()
 
-directory_in_str = "\\\\?\\C:\\Users\\Edward\\Desktop\\Projects\\HemicelluloseMachineLearning\\RawData\\"
+dir_path = os.path.dirname(os.path.realpath(__file__))
+directory_in_str = dir_path + "\\" + "RawData\\"
 
 #print(directory_in_str)
 directory = os.fsencode(directory_in_str)
 
 COLUMN_NAMES=['TotalT','Temp','LSR','CA','Size','Mass','Moisture', 'IsoT', 'HeatT', 'Ramp', 'F_A', 'F_Gal', 'F_Glu',
-            'F_X', 'F_M', 'F_R', 'A', 'Gal', 'Glu','X', 'M', 'R', 'Furf', 'HMF', 'Source']
+            'F_X', 'F_M', 'F_R', 'A', 'Gal', 'Glu','X', 'M', 'R', 'Furf', 'HMF', 'Monomer', 'Source']
 
 masterDF = pd.DataFrame(columns=COLUMN_NAMES)
 #print(len(masterDF.columns))
@@ -25,6 +26,7 @@ for file in os.listdir(directory):
         wb = load_workbook(filename = absPath, data_only = True) 
         ws = wb["Data"]
         ws.delete_rows(1,2)
+        print(filename)
         df = pd.DataFrame(ws.values, columns=COLUMN_NAMES[:-1])
         df['Source'] = filename
         #print("1", df.at[1, 'Temp'])
@@ -76,6 +78,7 @@ for i in masterDF.index:
 
 
 masterDF = masterDF.drop(indicesToRemove, axis=0)
+print(indicesToRemove)
 masterDF.reset_index()
 
 masterDF['TotalT'].fillna(masterDF.at[i, 'HeatT'] +  masterDF.at[i, 'IsoT'])
