@@ -40,6 +40,7 @@ y_train, y_valid, y_test, y_train_valid = train_Frame['Yield'], valid_Frame['Yie
 
 X_train, X_valid, X_test, X_train_valid = X[:numTrain, :], X[numTrain:-numTest, :], X[-numTest:, :], X[:-numTest, :]
 
+
 # Simple Linear Regression
 ###
 print("Staring Linear Regression ------------------")
@@ -52,6 +53,10 @@ y_pred = regr.predict(X_test)
 
 predAndActual = pd.DataFrame({'Pred': y_pred, 'Test': y_test})
 #predAndActual.to_csv("OverallSimpleLinear.csv")
+
+linearError = pd.Series(y_test - y_pred, name='Lin Err').abs()
+test_Frame = pd.concat([test_Frame, linearError], axis=1)
+test_Frame.to_csv('TestDataWithErrors.csv')
 
 print('Linear regression Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred))
 print('Linear regression Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred))
@@ -83,6 +88,10 @@ y_pred = best_model.predict(X_test)
 
 predAndActual = pd.DataFrame({'Pred': y_pred, 'Test': y_test})
 #predAndActual.to_csv("OverallRidge.csv")
+
+ridgeError = pd.Series(y_test - y_pred, name='Rid Err').abs()
+test_Frame = pd.concat([test_Frame, ridgeError], axis=1)
+test_Frame.to_csv('TestDataWithErrors.csv')
 
 # Evaluation
 print('Ridge Regression Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred))
@@ -136,6 +145,10 @@ y_pred = best_model.predict(X_test)
 predAndActual = pd.DataFrame({'Pred': y_pred, 'Test': y_test})
 #predAndActual.to_csv("OverallSVR.csv")
 
+svrError = pd.Series(y_test - y_pred, name='SVR Err').abs()
+test_Frame = pd.concat([test_Frame, svrError], axis=1)
+test_Frame.to_csv('TestDataWithErrors.csv')
+
 print('SVR Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred))
 print('SVR Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred))
 print('SVR Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test, y_pred)))
@@ -157,7 +170,7 @@ for lr_ in learningRates:
     for bs in batchSizes:
         for dr in dropoutRates:
             model = Sequential()
-            model.add(Dense(units=12, activation='sigmoid', input_dim=13))
+            model.add(Dense(units=12, activation='sigmoid', input_dim=12))
             model.add(Dropout(dr))
             model.add(Dense(units=12, activation='sigmoid'))
             model.add(Dense(units=6, activation='sigmoid'))
@@ -206,6 +219,10 @@ model.fit(X_train_valid, y_train_valid, epochs=3000, batch_size=best_bs, verbose
 
 y_pred = model.predict(X_test, batch_size=best_bs)
 y_pred = y_pred.flatten()
+
+nnError = pd.Series(y_test - y_pred, name='NN Err').abs()
+test_Frame = pd.concat([test_Frame, nnError], axis=1)
+test_Frame.to_csv('TestDataWithErrors.csv')
 
 print('ANN Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred))
 print('ANN Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred))
