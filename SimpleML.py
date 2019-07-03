@@ -12,13 +12,13 @@ import time
 
 start = time.time()
 
-data = pd.read_csv("dataThesis.csv")
+data = pd.read_csv("data.csv")
 
 
 # Prepping Data
 
 data = data.sample(frac=1).reset_index(drop=True)
-XLabels = ['TotalT', 'Temp', 'LSR', 'CA', 'Size', 'Moisture', 'IsoT', 'HeatT', 'Ramp', 'F_X', 'Ro', 'logRo', 'P']
+XLabels = ['TotalT', 'Temp', 'LSR', 'CA', 'Size', 'IsoT', 'HeatT', 'Ramp', 'F_X', 'Ro', 'logRo', 'P']
 X = data[XLabels]
 
 # Scaling X
