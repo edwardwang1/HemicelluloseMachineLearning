@@ -203,7 +203,7 @@ print("ANN Best Dropout Rate is: ", best_dr)
 # Using best values
 
 model = Sequential()
-model.add(Dense(units=12, activation='sigmoid', input_dim=13))
+model.add(Dense(units=12, activation='sigmoid', input_dim=12))
 model.add(Dropout(best_dr))
 model.add(Dense(units=12, activation='sigmoid'))
 model.add(Dense(units=6, activation='sigmoid'))
