@@ -6,7 +6,8 @@ from keras.layers import Dense, Dropout
 from keras.optimizers import SGD
 from sklearn.preprocessing import StandardScaler
 import time
-from keras.models import load_model
+import matplotlib.pyplot as plt
+
 
 performTuning = False
 
@@ -76,8 +77,8 @@ if performTuning:
     print("ANN Best Batch Size is: ", best_bs)
     print("ANN Best Dropout Rate is: ", best_dr)
 else:
-    best_lr = 0.002
-    best_bs = 128
+    best_lr = 0.01
+    best_bs = 256
     best_dr = 0.01
 
 model = Sequential()
@@ -91,7 +92,7 @@ model.add(Dense(units=1, activation='softplus'))
 sgd = SGD(lr=best_lr)
 model.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
 
-model.fit(X_train_valid, y_train_valid, epochs=3000, batch_size=best_bs, verbose=0)
+history = model.fit(X_train_valid, y_train_valid, epochs=3000, batch_size=best_bs, verbose=0)
 
 # loss_and_metrics = model.evaluate(X_test, y_test,batch_size=best_bs)
 
@@ -101,10 +102,25 @@ model.fit(X_train_valid, y_train_valid, epochs=3000, batch_size=best_bs, verbose
 y_pred = model.predict(X_test, batch_size=best_bs)
 y_pred = y_pred.flatten()
 
-#model.save('NNModel.h5')
-
 output = pd.DataFrame({'pred':y_pred, 'test': y_test})
 output.to_csv("NNModelOutput.csv")
+
+
+####
+y_pred2 = model.predict(X_train_valid, batch_size=best_bs)
+y_pred2 = y_pred2.flatten()
+
+output2 = pd.DataFrame({'pred':y_pred2, 'train': y_train_valid})
+output2.to_csv("NNModelOutputTraining.csv")
+
+nnError = pd.Series(y_test - y_pred, name='NN Err').abs()
+test_Frame = pd.concat([test_Frame, nnError], axis=1)
+test_Frame.to_csv('NNTestDataWithErrors.csv')
+
+
+#model.save('NNModel.h5')
+
+
 
 end = time.time()
 duration = end - start
@@ -117,3 +133,22 @@ print('ANN Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test,
 print("Ending Neural Network Regression ------------------")
 
 
+# list all data in history
+print(history.history.keys())
+# summarize history for loss
+plt.plot(history.history['loss'])
+#plt.plot(history.history['val_loss'])
+plt.title('model loss')
+plt.ylabel('loss')
+plt.xlabel('epoch')
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+# summarize history for accuracy
+plt.plot(history.history['acc'])
+print(history.history['acc'])
+#plt.plot(history.history['val_acc'])
+plt.title('model accuracy')
+plt.ylabel('accuracy')
+plt.xlabel('epoch')
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()

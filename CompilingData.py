@@ -12,7 +12,7 @@ directory_in_str = dir_path + "\\" + "RawData\\"
 #print(directory_in_str)
 directory = os.fsencode(directory_in_str)
 
-COLUMN_NAMES=['TotalT','Temp','LSR','CA','Size','Mass','Moisture', 'IsoT', 'HeatT', 'Ramp', 'F_A', 'F_Gal', 'F_Glu',
+COLUMN_NAMES=['TotalT','Temp','LSR','Acid_Type', 'CA','Size','Mass','Moisture', 'IsoT', 'HeatT', 'Ramp', 'F_A', 'F_Gal', 'F_Glu',
             'F_X', 'F_M', 'F_R', 'A', 'Gal', 'Glu','X', 'M', 'R', 'Furf', 'HMF', 'Monomer', 'Source']
 
 masterDF = pd.DataFrame(columns=COLUMN_NAMES)
@@ -26,6 +26,7 @@ for file in os.listdir(directory):
         wb = load_workbook(filename = absPath, data_only = True) 
         ws = wb["Data"]
         ws.delete_rows(1,2)
+
         print(filename)
         df = pd.DataFrame(ws.values, columns=COLUMN_NAMES[:-1])
         df['Source'] = filename
@@ -57,21 +58,30 @@ for i in masterDF.index:
             masterDF.at[i, 'Ramp'] = (masterDF.at[i, 'Temp'] - 25) / masterDF.at[i, 'HeatT']
         except ZeroDivisionError:
             indicesToRemove.append(i)
+        except TypeError:
+            indicesToRemove.append(i)
     if masterDF.at[i, 'HeatT'] is None or pd.isnull(masterDF.at[i, 'HeatT']):
         try:
             masterDF.at[i, 'HeatT'] = (masterDF.at[i, 'Temp'] - 25) / masterDF.at[i, 'Ramp']
         except ZeroDivisionError:
+            indicesToRemove.append(i)
+        except TypeError:
             indicesToRemove.append(i)
     if masterDF.at[i, 'TotalT'] is None or pd.isnull(masterDF.at[i, 'TotalT']):
         try:
             masterDF.at[i, 'TotalT'] =  masterDF.at[i, 'HeatT'] +  masterDF.at[i, 'IsoT']
         except ZeroDivisionError:
             indicesToRemove.append(i)
+        except TypeError:
+            indicesToRemove.append(i)
     if masterDF.at[i, 'IsoT'] is None or pd.isnull(masterDF.at[i, 'IsoT']):
         try:
             masterDF.at[i, 'IsoT'] = masterDF.at[i, 'TotalT'] -  masterDF.at[i, 'HeatT']
         except ZeroDivisionError:
             indicesToRemove.append(i)
+        except TypeError:
+            indicesToRemove.append(i)
+
     if masterDF.at[i, 'TotalT'] == 0:
         masterDF.at[i, 'IsoT'] = 0
         masterDF.at[i, 'HeatT'] = 0
@@ -132,7 +142,7 @@ for i in masterDF.index:
     if masterDF.at[i, 'logP'] != 0:
         masterDF.at[i, 'logP'] = np.log( masterDF.at[i, 'logP'])
 
-XLabels = ['TotalT', 'Temp', 'LSR', 'CA', 'Size', 'IsoT', 'HeatT', 'Ramp', 'F_X', 'Ro', 'logRo', 'P', 'Yield', 'ID', 'Source']
+XLabels = ['TotalT', 'Temp', 'LSR', 'Acid_Type', 'CA', 'Size', 'IsoT', 'HeatT', 'Ramp', 'F_X', 'Ro', 'logRo', 'P', 'Yield', 'ID', 'Source']
 X = masterDF[XLabels]
 
 rowsToDelete, cols = np.where(pd.isnull(X))
