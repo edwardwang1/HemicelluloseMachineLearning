@@ -1,7 +1,4 @@
 
-import tensorflow as tf
-tf.logging.set_verbosity(tf.logging.ERROR)
-
 import pandas as pd
 import numpy as np
 from sklearn import linear_model
@@ -18,7 +15,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import OneHotEncoder
 import pdb
 import math
-import dataprep_2 as dp
+import dataprep_1 as dp
 import wooddeleter as wd
 import pydot
 import seaborn as sns
@@ -27,10 +24,7 @@ from sklearn.decomposition import PCA
 
 start = time.time()
 
-data_start = pd.read_csv("/Users/RileyBallachay/Documents/Third Year/data1.csv")
-
-# data = wd.deleter(data)
-
+data_start = pd.read_csv("2048data.csv")
 
 # Prepping Data
 data_start = data_start.sample(frac=1).reset_index(drop=True)
