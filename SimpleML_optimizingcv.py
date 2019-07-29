@@ -107,5 +107,5 @@ print("%.2f%% (+/- %.2f%%)" % (np.mean(cvscores), np.std(cvscores)))
 print("%.2f%% (+/- %.2f%%)" % (np.mean(trainingscores), np.std(trainingscores)))
 
 end = time.time()
-
-time = (start-end)/60
+duration = end - start
+print("Execution Time is:", duration /60, "min")
