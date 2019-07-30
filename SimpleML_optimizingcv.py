@@ -79,7 +79,7 @@ print('96,48')
 validate(X,Y,model5)
 
 end5 = time.time()
-duration = end4 - end5
+duration = start - end5
 print("Execution Time is:", -duration /60, "min")
 
 model6 = Sequential()
