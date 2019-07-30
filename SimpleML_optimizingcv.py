@@ -72,10 +72,12 @@ trainingscores =[]
 model5 = Sequential()
 model5.add(Dense(units=960, activation='sigmoid', input_dim=39))
 model5.add(Dense(units=960, activation='sigmoid'))
+model5.add(Dense(units=960, activation='sigmoid'))
+model5.add(Dense(units=960, activation='sigmoid'))
 model5.add(Dense(units=1, activation='linear'))
 sgd = SGD(lr=best_lr)
 model5.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
-print('960,960')
+print('960,960,960,960')
 validate(X,Y,model5)
 
 end5 = time.time()
