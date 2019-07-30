@@ -23,7 +23,7 @@ from keras.regularizers import l1
 
 start = time.time()
 
-data_start = pd.read_csv("/Users/RileyBallachay/Documents/Third Year/data1.csv")
+data_start = pd.read_csv("2048data.csv")
 
 # data = wd.deleter(data)
 
