@@ -96,7 +96,7 @@ validate(X,Y,model2)
 
 end2 = time.time()
 duration = end1 - end2
-print("Execution Time is:", duration /60, "min")
+print("Execution Time is:", -duration /60, "min")
 
 model3 = Sequential()
 model3.add(Dense(units=96, activation='sigmoid', input_dim=39))
@@ -110,7 +110,7 @@ validate(X,Y,model3)
 
 end3 = time.time()
 duration = end2 - end3
-print("Execution Time is:", duration /60, "min")
+print("Execution Time is:", -duration /60, "min")
 
 model4 = Sequential()
 model4.add(Dense(units=96, activation='sigmoid', input_dim=39))
@@ -123,4 +123,30 @@ validate(X,Y,model4)
 
 end4 = time.time()
 duration = end3 - end4
-print("Execution Time is:", duration /60, "min")
+print("Execution Time is:", -duration /60, "min")
+
+model5 = Sequential()
+model5.add(Dense(units=96, activation='sigmoid', input_dim=39))
+model5.add(Dense(units=48, activation='sigmoid'))
+model5.add(Dense(units=1, activation='linear'))
+sgd = SGD(lr=best_lr)
+model5.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
+print('96,48')
+validate(X,Y,model5)
+
+end5 = time.time()
+duration = end4 - end5
+print("Execution Time is:", -duration /60, "min")
+
+model6 = Sequential()
+model6.add(Dense(units=48, activation='sigmoid', input_dim=39))
+model6.add(Dense(units=24, activation='sigmoid'))
+model6.add(Dense(units=1, activation='linear'))
+sgd = SGD(lr=best_lr)
+model6.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
+print('48,24')
+validate(X,Y,model6)
+
+end6 = time.time()
+duration = end5 - end6
+print("Execution Time is:", -duration /60, "min")
