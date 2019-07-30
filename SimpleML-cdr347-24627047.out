@@ -1,0 +1,120 @@
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) openmpi/2.1.1
+
+Using TensorFlow backend.
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python2.7/site-packages/pandas/core/frame.py:3697: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  errors=errors)
+/scratch/rbhayes/HemicelluloseMachineLearning/dataprep_1.py:109: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X['Acetyl'] = X['Wood'].map(acetyl_dictionary)
+/scratch/rbhayes/HemicelluloseMachineLearning/dataprep_1.py:116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X['Ramp'] = X['Ramp'].replace(np.inf,np.nan)
+WARNING:tensorflow:From /home/rbhayes/hemicellulose_project/lib/python2.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/rbhayes/hemicellulose_project/lib/python2.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-07-30 09:15:11.562742: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: Tesla P100-PCIE-12GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:03:00.0
+totalMemory: 11.91GiB freeMemory: 11.66GiB
+2019-07-30 09:15:11.563871: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-07-30 09:15:15.224509: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-30 09:15:15.228067: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-07-30 09:15:15.235901: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-07-30 09:15:15.258789: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11270 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-12GB, pci bus id: 0000:03:00.0, compute capability: 6.0)
+2019-07-30 09:15:15.340449: I tensorflow/core/common_runtime/process_util.cc:71] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+2019-07-30 09:15:17.471584: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+
+Cannot load prescaled data from Prepared_Data.csv
+
+
+Proceeding with data scaling
+
+('The acid types in the data include:', Index([u'acetic', u'formic', u'malic', u'none', u'oxalic', u'phosphoric',
+       u'sulfuric'],
+      dtype='object'))
+('The acid types in the data include:', Index([u'acacia', u'aspen', u'basswood', u'beech', u'birch', u'carob',
+       u'eucalyptus', u'maple', u'meranti', u'mixed', u'oak', u'olive',
+       u'paperbark', u'paulownia', u'pine', u'poplar', u'salix', u'vine',
+       u'willow'],
+      dtype='object'))
+('ANN Best Learning Rate is: ', 0.01)
+('ANN Best Batch Size is: ', 256)
+('ANN Best Dropout Rate is: ', 0)
+For 39 components
+3.58% (+/- 1.34%)
+1.59% (+/- 0.47%)
+('Execution Time is:', 7.369805634021759, 'min')
+
+Successfully loaded prepared data, skipping data prep
+
+('ANN Best Learning Rate is: ', 0.01)
+('ANN Best Batch Size is: ', 256)
+('ANN Best Dropout Rate is: ', 0)
+For 39 components
+3.61% (+/- 1.42%)
+1.32% (+/- 0.49%)
+('Execution Time is:', 14.564326635996501, 'min')
+
+Successfully loaded prepared data, skipping data prep
+
+('ANN Best Learning Rate is: ', 0.01)
+('ANN Best Batch Size is: ', 256)
+('ANN Best Dropout Rate is: ', 0)
+For 34 components
+4.07% (+/- 1.52%)
+1.89% (+/- 0.62%)
+('Execution Time is:', 21.777637501557667, 'min')
+
+Successfully loaded prepared data, skipping data prep
+
+('ANN Best Learning Rate is: ', 0.01)
+('ANN Best Batch Size is: ', 256)
+('ANN Best Dropout Rate is: ', 0)
+For 29 components
+3.83% (+/- 1.52%)
+1.53% (+/- 0.58%)
+('Execution Time is:', 29.02145186662674, 'min')
+
+Successfully loaded prepared data, skipping data prep
+
+('ANN Best Learning Rate is: ', 0.01)
+('ANN Best Batch Size is: ', 256)
+('ANN Best Dropout Rate is: ', 0)
+For 24 components
+3.71% (+/- 1.31%)
+1.50% (+/- 0.33%)
+('Execution Time is:', 36.30933715105057, 'min')
+
+Successfully loaded prepared data, skipping data prep
+
+('ANN Best Learning Rate is: ', 0.01)
+('ANN Best Batch Size is: ', 256)
+('ANN Best Dropout Rate is: ', 0)
+For 19 components
+3.61% (+/- 1.28%)
+1.55% (+/- 0.46%)
+('Execution Time is:', 43.610473167896274, 'min')
+
+Successfully loaded prepared data, skipping data prep
+
+('ANN Best Learning Rate is: ', 0.01)
+('ANN Best Batch Size is: ', 256)
+('ANN Best Dropout Rate is: ', 0)
+For 14 components
+3.75% (+/- 1.56%)
+1.53% (+/- 0.37%)
+('Execution Time is:', 50.9037145336469, 'min')
