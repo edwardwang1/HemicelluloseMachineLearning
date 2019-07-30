@@ -70,53 +70,14 @@ cvscores = []
 trainingscores =[]
 
 model5 = Sequential()
-model5.add(Dense(units=96, activation='sigmoid', input_dim=39))
-model5.add(Dense(units=48, activation='sigmoid'))
+model5.add(Dense(units=960, activation='sigmoid', input_dim=39))
+model5.add(Dense(units=960, activation='sigmoid'))
 model5.add(Dense(units=1, activation='linear'))
 sgd = SGD(lr=best_lr)
 model5.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
-print('96,48')
+print('960,960')
 validate(X,Y,model5)
 
 end5 = time.time()
 duration = start - end5
-print("Execution Time is:", -duration /60, "min")
-
-model6 = Sequential()
-model6.add(Dense(units=48, activation='sigmoid', input_dim=39))
-model6.add(Dense(units=24, activation='sigmoid'))
-model6.add(Dense(units=1, activation='linear'))
-sgd = SGD(lr=best_lr)
-model6.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
-print('48,24')
-validate(X,Y,model6)
-
-end6 = time.time()
-duration = end5 - end6
-print("Execution Time is:", -duration /60, "min")
-
-model7 = Sequential()
-model7.add(Dense(units=96, activation='sigmoid', input_dim=39))
-model7.add(Dense(units=12, activation='sigmoid'))
-model7.add(Dense(units=1, activation='linear'))
-sgd = SGD(lr=best_lr)
-model7.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
-print('96,12')
-validate(X,Y,model7)
-
-end7 = time.time()
-duration = end6 - end7
-print("Execution Time is:", -duration /60, "min")
-
-model8 = Sequential()
-model8.add(Dense(units=24, activation='sigmoid', input_dim=39))
-model8.add(Dense(units=6, activation='sigmoid'))
-model8.add(Dense(units=1, activation='linear'))
-sgd = SGD(lr=best_lr)
-model8.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
-print('24,6')
-validate(X,Y,model8)
-
-end8 = time.time()
-duration = end7 - end8
 print("Execution Time is:", -duration /60, "min")
