@@ -40,7 +40,6 @@ X_raw = data_start[XLabels]
 
 X,Y,data,XLabels=dp.prep(X_raw,True)
 
-
 best_lr = 0.01
 best_bs = 256
 best_dr = 0
@@ -59,9 +58,13 @@ def validate(X,Y,modelname):
         y_train = modelname.predict(X[train], batch_size=1000)
         y_train = y_train.flatten()
         y_pred = y_pred.flatten()
-        training_error = metrics.mean_absolute_error(Y[train], y_train)
-        error = metrics.mean_absolute_error(Y[test], y_pred)
-        trainingscores.append(training_error)
+        try:
+            training_error = metrics.mean_absolute_error(Y[train], y_train)
+            error = metrics.mean_absolute_error(Y[test], y_pred)
+            trainingscores.append(training_error)
+        except:
+            print("Input contains null values. Skipping Config.")
+            continue
         cvscores.append(error)
         split=split+1
     print("Validation Score: %.2f%% (+/- %.2f%%)" % (np.mean(cvscores), np.std(cvscores)))
@@ -75,7 +78,8 @@ for activation in activators:
     for activator in outputactivator:
         model = Sequential()
         model.add(Dense(units=96, activation=activation, input_dim=39))
-        model.add(Dense(units=96, activation=activation))
+        model.add(Dense(units=48, activation=activation))
+        model.add(Dense(units=48, activation=activation))
         model.add(Dense(units=1, activation=activator))
         sgd = SGD(lr=best_lr)
         model.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
@@ -86,4 +90,5 @@ for activation in activators:
         duration = end1 - start
         print("Execution Time of Neural Net is:", duration /60, "min")
         start = end1
+
 
