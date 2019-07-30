@@ -37,7 +37,7 @@ X = data_start[XLabels]
 XLabels = ['TotalT', 'Temp', 'LSR', 'CA', 'Size', 'IsoT', 'HeatT', 'Ramp', 'F_X', 'Ro', 'logRo', 'P','Acid','Acetyl','Wood','Yield']
 X_raw = data_start[XLabels]
 
-components = [0,39,34,29,24,19,14]
+components = [14,9,4,1]
 
 for component in components:
     X,Y,data,XLabels=dp.prep(X_raw,True)
