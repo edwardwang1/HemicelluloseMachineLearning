@@ -69,62 +69,6 @@ kfold = KFold(n_splits=7, shuffle=True, random_state=1)
 cvscores = []
 trainingscores =[]
 
-model1 = Sequential()
-model1.add(Dense(units=48, activation='sigmoid', input_dim=39))
-model1.add(Dense(units=48, activation='sigmoid'))
-model1.add(Dense(units=24, activation='sigmoid'))
-model1.add(Dense(units=24, activation='sigmoid'))
-model1.add(Dense(units=1, activation='linear'))
-sgd = SGD(lr=best_lr)
-model1.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
-print('48,48,24,24')
-validate(X,Y,model1)
-
-end1 = time.time()
-duration = end1 - start
-print("Execution Time is:", duration /60, "min")
-
-model2 = Sequential()
-model2.add(Dense(units=48, activation='sigmoid', input_dim=39))
-model2.add(Dense(units=24, activation='sigmoid'))
-model2.add(Dense(units=24, activation='sigmoid'))
-model2.add(Dense(units=1, activation='linear'))
-sgd = SGD(lr=best_lr)
-model2.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
-print('48,24,24')
-validate(X,Y,model2)
-
-end2 = time.time()
-duration = end1 - end2
-print("Execution Time is:", -duration /60, "min")
-
-model3 = Sequential()
-model3.add(Dense(units=96, activation='sigmoid', input_dim=39))
-model3.add(Dense(units=48, activation='sigmoid'))
-model3.add(Dense(units=24, activation='sigmoid'))
-model3.add(Dense(units=1, activation='linear'))
-sgd = SGD(lr=best_lr)
-model3.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
-print('96,48,24')
-validate(X,Y,model3)
-
-end3 = time.time()
-duration = end2 - end3
-print("Execution Time is:", -duration /60, "min")
-
-model4 = Sequential()
-model4.add(Dense(units=96, activation='sigmoid', input_dim=39))
-model4.add(Dense(units=96, activation='sigmoid'))
-model4.add(Dense(units=1, activation='linear'))
-sgd = SGD(lr=best_lr)
-model4.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
-print('96,96')
-validate(X,Y,model4)
-
-end4 = time.time()
-duration = end3 - end4
-print("Execution Time is:", -duration /60, "min")
-
 model5 = Sequential()
 model5.add(Dense(units=96, activation='sigmoid', input_dim=39))
 model5.add(Dense(units=48, activation='sigmoid'))
@@ -149,4 +93,30 @@ validate(X,Y,model6)
 
 end6 = time.time()
 duration = end5 - end6
+print("Execution Time is:", -duration /60, "min")
+
+model7 = Sequential()
+model7.add(Dense(units=96, activation='sigmoid', input_dim=39))
+model7.add(Dense(units=12, activation='sigmoid'))
+model7.add(Dense(units=1, activation='linear'))
+sgd = SGD(lr=best_lr)
+model7.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
+print('96,12')
+validate(X,Y,model7)
+
+end7 = time.time()
+duration = end6 - end7
+print("Execution Time is:", -duration /60, "min")
+
+model8 = Sequential()
+model8.add(Dense(units=24, activation='sigmoid', input_dim=39))
+model8.add(Dense(units=6, activation='sigmoid'))
+model8.add(Dense(units=1, activation='linear'))
+sgd = SGD(lr=best_lr)
+model8.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
+print('24,6')
+validate(X,Y,model8)
+
+end8 = time.time()
+duration = end7 - end8
 print("Execution Time is:", -duration /60, "min")
