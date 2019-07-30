@@ -75,8 +75,7 @@ for activation in activators:
     for activator in outputactivator:
         model = Sequential()
         model.add(Dense(units=96, activation=activation, input_dim=39))
-        model.add(Dense(units=48, activation=activation))
-        model.add(Dense(units=48, activation=activation))
+        model.add(Dense(units=96, activation=activation))
         model.add(Dense(units=1, activation=activator))
         sgd = SGD(lr=best_lr)
         model.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
