@@ -37,68 +37,23 @@ X = data_start[XLabels]
 XLabels = ['TotalT', 'Temp', 'LSR', 'CA', 'Size', 'IsoT', 'HeatT', 'Ramp', 'F_X', 'Ro', 'logRo', 'P','Acid','Acetyl','Wood','Yield']
 X_raw = data_start[XLabels]
 
-components = [14,9,4,1]
 
-for component in components:
-    X,Y,data,XLabels=dp.prep(X_raw,True)
-    pca = PCA(n_components=component)
-    
-    if component ==0:
-        component = 39
-    else:
-        pca.fit(X)  
-        X = pca.transform(X)
-        
-    numData = len(data.index)
-    numTrain = int(numData * 0.7)
-    numTest = int(numData * .15)
-    # print(numTest, numTrain)
-    
-    train_Frame, valid_Frame, test_Frame, train_valid_Frame = data.iloc[:numTrain, :], data.iloc[numTrain:-numTest,
-                                                                                       :], data.iloc[-numTest:,
-                                                                                           :], data.iloc[:-numTest:, :]
-    
-    y_train, y_valid, y_test, y_train_valid = train_Frame['Yield'], valid_Frame['Yield'], test_Frame['Yield'], \
-                                              train_valid_Frame['Yield']
-    
-    X_train, X_valid, X_test, X_train_valid = X[:numTrain, :], X[numTrain:-numTest, :], X[-numTest:, :], X[:-numTest, :]
-    
-    
-    learningRates = [0.002, 0.005, 0.01, 0.02]
-    batchSizes = [64, 128, 256, 512, 1024]
-    dropoutRates = [0.00, 0.001, 0.01, 0.1]
-    errors = []
-    
-    index_of_lowest_error = 30
-    best_lr = 0.01
-    best_bs = 256
-    best_dr = 0
-    print("ANN Best Learning Rate is: ", best_lr)
-    print("ANN Best Batch Size is: ", best_bs)
-    print("ANN Best Dropout Rate is: ", best_dr)
-    
-    
-    kfold = KFold(n_splits=10, shuffle=True, random_state=47)
-    cvscores = []
-    trainingscores =[]
+X,Y,data,XLabels=dp.prep(X_raw,True)
+
+best_lr = 0.01
+best_bs = 256
+best_dr = 0
+print("ANN Best Learning Rate is: ", best_lr)
+print("ANN Best Batch Size is: ", best_bs)
+print("ANN Best Dropout Rate is: ", best_dr)
+
+def validate(X,Y,modelname):
     split=0
-    NNarchitecture=np.zeros((6,6))
-    
-    model = Sequential()
-    model.add(Dense(units=48, activation='sigmoid', input_dim=component))
-    model.add(Dense(units=48, activation='sigmoid'))
-    model.add(Dense(units=24, activation='sigmoid'))
-    model.add(Dense(units=24, activation='sigmoid'))
-    model.add(Dense(units=1, activation='linear'))
-    	# Compile model
-    sgd = SGD(lr=best_lr)
-    model.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
-        
     for train, test in kfold.split(X,Y):
-    	# Fit the model
-        model.fit(X[train], Y[train], epochs=3000, batch_size=best_bs, verbose=0)
-        y_pred = model.predict(X[test], batch_size=1000)
-        y_train = model.predict(X[train], batch_size=1000)
+        # Fit the model
+        modelname.fit(X[train], Y[train], epochs=3000, batch_size=best_bs, verbose=0)
+        y_pred = modelname.predict(X[test], batch_size=1000)
+        y_train = modelname.predict(X[train], batch_size=1000)
         y_train = y_train.flatten()
         y_pred = y_pred.flatten()
         training_error = metrics.mean_absolute_error(Y[train], y_train)
@@ -106,10 +61,66 @@ for component in components:
         trainingscores.append(training_error)
         cvscores.append(error)
         split=split+1
-    print('For %d components' % component)
     print("%.2f%% (+/- %.2f%%)" % (np.mean(cvscores), np.std(cvscores)))
     print("%.2f%% (+/- %.2f%%)" % (np.mean(trainingscores), np.std(trainingscores)))
-    
-    end = time.time()
-    duration = end - start
-    print("Execution Time is:", duration /60, "min")
+    return
+
+kfold = KFold(n_splits=7, shuffle=True, random_state=1)
+cvscores = []
+trainingscores =[]
+
+model1 = Sequential()
+model1.add(Dense(units=48, activation='sigmoid', input_dim=39))
+model1.add(Dense(units=48, activation='sigmoid'))
+model1.add(Dense(units=24, activation='sigmoid'))
+model1.add(Dense(units=24, activation='sigmoid'))
+model1.add(Dense(units=1, activation='linear'))
+sgd = SGD(lr=best_lr)
+model1.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
+print('48,48,24,24')
+validate(X,Y,model1)
+
+end1 = time.time()
+duration = end1 - start
+print("Execution Time is:", duration /60, "min")
+
+model2 = Sequential()
+model2.add(Dense(units=48, activation='sigmoid', input_dim=39))
+model2.add(Dense(units=24, activation='sigmoid'))
+model2.add(Dense(units=24, activation='sigmoid'))
+model2.add(Dense(units=1, activation='linear'))
+sgd = SGD(lr=best_lr)
+model2.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
+print('48,24,24')
+validate(X,Y,model2)
+
+end2 = time.time()
+duration = end1 - end2
+print("Execution Time is:", duration /60, "min")
+
+model3 = Sequential()
+model3.add(Dense(units=96, activation='sigmoid', input_dim=39))
+model3.add(Dense(units=48, activation='sigmoid'))
+model3.add(Dense(units=24, activation='sigmoid'))
+model3.add(Dense(units=1, activation='linear'))
+sgd = SGD(lr=best_lr)
+model3.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
+print('96,48,24')
+validate(X,Y,model3)
+
+end3 = time.time()
+duration = end2 - end3
+print("Execution Time is:", duration /60, "min")
+
+model4 = Sequential()
+model4.add(Dense(units=96, activation='sigmoid', input_dim=39))
+model4.add(Dense(units=96, activation='sigmoid'))
+model4.add(Dense(units=1, activation='linear'))
+sgd = SGD(lr=best_lr)
+model4.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
+print('96,96')
+validate(X,Y,model4)
+
+end4 = time.time()
+duration = end3 - end4
+print("Execution Time is:", duration /60, "min")
