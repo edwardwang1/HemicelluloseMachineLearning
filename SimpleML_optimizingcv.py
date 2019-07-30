@@ -40,17 +40,20 @@ X_raw = data_start[XLabels]
 
 X,Y,data,XLabels=dp.prep(X_raw,True)
 
+
 best_lr = 0.01
 best_bs = 256
 best_dr = 0
-print("ANN Best Learning Rate is: ", best_lr)
-print("ANN Best Batch Size is: ", best_bs)
-print("ANN Best Dropout Rate is: ", best_dr)
+
+kfold = KFold(n_splits=7, shuffle=True, random_state=1)
+cvscores = []
+trainingscores =[]
+
 
 def validate(X,Y,modelname):
     split=0
     for train, test in kfold.split(X,Y):
-        # Fit the model
+    	# Fit the model
         modelname.fit(X[train], Y[train], epochs=3000, batch_size=best_bs, verbose=0)
         y_pred = modelname.predict(X[test], batch_size=1000)
         y_train = modelname.predict(X[train], batch_size=1000)
@@ -61,25 +64,27 @@ def validate(X,Y,modelname):
         trainingscores.append(training_error)
         cvscores.append(error)
         split=split+1
-    print("%.2f%% (+/- %.2f%%)" % (np.mean(cvscores), np.std(cvscores)))
-    print("%.2f%% (+/- %.2f%%)" % (np.mean(trainingscores), np.std(trainingscores)))
+    print("Validation Score: %.2f%% (+/- %.2f%%)" % (np.mean(cvscores), np.std(cvscores)))
+    print("Training Score: %.2f%% (+/- %.2f%%)" % (np.mean(trainingscores), np.std(trainingscores)))
     return
 
-kfold = KFold(n_splits=7, shuffle=True, random_state=1)
-cvscores = []
-trainingscores =[]
+activators = ['softmax', 'softplus', 'softsign', 'relu', 'tanh', 'sigmoid', 'hard_sigmoid', 'linear']
+outputactivator = ['softplus', 'linear','relu']
 
-model5 = Sequential()
-model5.add(Dense(units=960, activation='sigmoid', input_dim=39))
-model5.add(Dense(units=960, activation='sigmoid'))
-model5.add(Dense(units=960, activation='sigmoid'))
-model5.add(Dense(units=960, activation='sigmoid'))
-model5.add(Dense(units=1, activation='linear'))
-sgd = SGD(lr=best_lr)
-model5.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
-print('960,960,960,960')
-validate(X,Y,model5)
+for activation in activators:
+    for activator in outputactivator:
+        model = Sequential()
+        model.add(Dense(units=96, activation=activation, input_dim=39))
+        model.add(Dense(units=48, activation=activation))
+        model.add(Dense(units=48, activation=activation))
+        model.add(Dense(units=1, activation=activator))
+        sgd = SGD(lr=best_lr)
+        model.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
+        print('Activation function is:', activation)
+        print('Output activation function is:',activator)
+        validate(X,Y,model)
+        end1 = time.time()
+        duration = end1 - start
+        print("Execution Time of Neural Net is:", duration /60, "min")
+        start = end1
 
-end5 = time.time()
-duration = start - end5
-print("Execution Time is:", -duration /60, "min")
