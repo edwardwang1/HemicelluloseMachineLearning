@@ -20,6 +20,7 @@ import dataprep_1 as dp
 from sklearn.model_selection import KFold
 from sklearn.decomposition import PCA
 from keras.regularizers import l1
+from keras.regularizers import l1_l2
 
 start = time.time()
 
