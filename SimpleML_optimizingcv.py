@@ -53,7 +53,7 @@ def validate(X,Y,modelname):
     split=0
     for train, test in kfold.split(X,Y):
     	# Fit the model
-        modelname.fit(X[train], Y[train], epochs=3000, batch_size=best_bs, verbose=0)
+        modelname.fit(X[train], Y[train], epochs=5000, batch_size=best_bs, verbose=0)
         y_pred = modelname.predict(X[test], batch_size=1000)
         y_train = modelname.predict(X[train], batch_size=1000)
         y_train = y_train.flatten()
@@ -71,8 +71,8 @@ def validate(X,Y,modelname):
     print("Training Score: %.2f%% (+/- %.2f%%)" % (np.mean(trainingscores), np.std(trainingscores)))
     return
 
-ridges = [l1(0.),l1(0.0001),l1(0.001),l1(0.01),l1(0.1)]
-dropouts = [0,0.0001,0.001,0.01,0.1]
+ridges = [l1_l2(l1=0.,l2=0.),l1_l2(l1=0.0001,l2=0.0001),l1_l2(l1=0.001,l2=0.001)]
+dropouts = [0,0.0001,0.001]
 
 for regularization in ridges:
     for dropout in dropouts:
@@ -85,12 +85,11 @@ for regularization in ridges:
         sgd = SGD(lr=best_lr)
         model.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
         print('Regularization Function Is: L1,', regularization.l1)
+        print('Regularization Function Is: L2,', regularization.l2)
         print('Dropout is:',dropout)
         validate(X,Y,model)
         end1 = time.time()
         duration = end1 - start
         print("Execution Time of Neural Net is:", duration /60, "min")
         start = end1
-
-
 
