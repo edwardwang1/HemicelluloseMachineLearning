@@ -44,12 +44,10 @@ best_lr = 0.01
 best_bs = 256
 best_dr = 0
 
-kfold = KFold(n_splits=7, shuffle=True, random_state=1)
-cvscores = []
-trainingscores =[]
-
-
 def validate(X,Y,modelname):
+    kfold = KFold(n_splits=7, shuffle=True, random_state=1)
+    cvscores = []
+    trainingscores =[]
     split=0
     for train, test in kfold.split(X,Y):
     	# Fit the model
@@ -90,5 +88,4 @@ for activation in activators:
         duration = end1 - start
         print("Execution Time of Neural Net is:", duration /60, "min")
         start = end1
-
 
