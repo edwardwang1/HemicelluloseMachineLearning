@@ -44,6 +44,8 @@ best_lr = 0.01
 best_bs = 256
 best_dr = 0
 
+
+
 def validate(X,Y,modelname):
     kfold = KFold(n_splits=7, shuffle=True, random_state=1)
     cvscores = []
@@ -69,23 +71,26 @@ def validate(X,Y,modelname):
     print("Training Score: %.2f%% (+/- %.2f%%)" % (np.mean(trainingscores), np.std(trainingscores)))
     return
 
-activators = ['softmax', 'softplus', 'softsign', 'relu', 'tanh', 'sigmoid', 'hard_sigmoid', 'linear']
-outputactivator = ['softplus', 'linear','relu']
+ridges = [l1(0.),l1(0.0001),l1(0.001),l1(0.01),l1(0.1)]
+dropouts = [0,0.0001,0.001,0.01,0.1]
 
-for activation in activators:
-    for activator in outputactivator:
+for regularization in ridges:
+    for dropout in dropouts:
         model = Sequential()
-        model.add(Dense(units=96, activation=activation, input_dim=39))
-        model.add(Dense(units=48, activation=activation))
-        model.add(Dense(units=48, activation=activation))
-        model.add(Dense(units=1, activation=activator))
+        model.add(Dense(units=96, activation='softsign', input_dim=39, activity_regularizer=regularization))
+        model.add(Dropout(dropout))
+        model.add(Dense(units=48, activation='softsign', activity_regularizer=regularization))
+        model.add(Dense(units=48, activation='softsign', activity_regularizer=regularization))
+        model.add(Dense(units=1, activation='linear'))
         sgd = SGD(lr=best_lr)
         model.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
-        print('Activation function is:', activation)
-        print('Output activation function is:',activator)
+        print('Regularization Function Is: L1,', regularization.l1)
+        print('Dropout is:',dropout)
         validate(X,Y,model)
         end1 = time.time()
         duration = end1 - start
         print("Execution Time of Neural Net is:", duration /60, "min")
         start = end1
+
+
 
