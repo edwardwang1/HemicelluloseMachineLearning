@@ -47,14 +47,14 @@ best_dr = 0
 dropout=0.001
 
 
-def validate(X,Y,modelname):
+def validate(X,Y,modelname,batches):
     kfold = KFold(n_splits=7, shuffle=True, random_state=1)
     cvscores = []
     trainingscores =[]
     split=0
     for train, test in kfold.split(X,Y):
     	# Fit the model
-        modelname.fit(X[train], Y[train], epochs=3000, batch_size=best_bs, verbose=0)
+        modelname.fit(X[train], Y[train], epochs=3000, batch_size=batches, verbose=0)
         y_pred = modelname.predict(X[test], batch_size=1000)
         y_train = modelname.predict(X[train], batch_size=1000)
         y_train = y_train.flatten()
@@ -72,10 +72,10 @@ def validate(X,Y,modelname):
     print("Training Score: %.2f%% (+/- %.2f%%)" % (np.mean(trainingscores), np.std(trainingscores)))
     return
 
-initializers = ['lecun_uniform','glorot_uniform','lecun_uniform','glorot_uniform','lecun_uniform','glorot_uniform',]
+batch_sizes = [1,2,4,8,16,32,64,128,256,512,1024,2048]
 
 
-for initializer in initializers:
+for batches in batch_sizes:
     try:
         model = Sequential()
         model.add(Dense(units=96, activation='softsign', input_dim=39, kernel_initializer=initializer))
@@ -88,10 +88,11 @@ for initializer in initializers:
         continue
     sgd = SGD(lr=best_lr)
     model.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
-    print('Initializer is:',initializer)
-    validate(X,Y,model)
+    print('Batch Size is:',batches)
+    validate(X,Y,model,batches)
     end1 = time.time()
     duration = end1 - start
     print("Execution Time of Neural Net is:", duration /60, "min")
     start = end1
+
 
