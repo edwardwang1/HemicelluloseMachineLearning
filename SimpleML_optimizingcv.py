@@ -72,7 +72,7 @@ def validate(X,Y,modelname):
     print("Training Score: %.2f%% (+/- %.2f%%)" % (np.mean(trainingscores), np.std(trainingscores)))
     return
 
-initializers = ['random_uniform','lecun_uniform','glorot_normal','glorot_uniform','he_normal','lecun_normal','he_uniform']
+initializers = ['lecun_uniform','glorot_uniform','lecun_uniform','glorot_uniform','lecun_uniform','glorot_uniform',]
 
 
 for initializer in initializers:
