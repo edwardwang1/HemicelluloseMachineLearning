@@ -44,7 +44,7 @@ X,Y,data,XLabels=dp.prep(X_raw,True)
 best_lr = 0.01
 best_bs = 256
 best_dr = 0
-
+dropout=0.001
 
 
 def validate(X,Y,modelname):
@@ -54,7 +54,7 @@ def validate(X,Y,modelname):
     split=0
     for train, test in kfold.split(X,Y):
     	# Fit the model
-        modelname.fit(X[train], Y[train], epochs=5000, batch_size=best_bs, verbose=0)
+        modelname.fit(X[train], Y[train], epochs=3000, batch_size=best_bs, verbose=0)
         y_pred = modelname.predict(X[test], batch_size=1000)
         y_train = modelname.predict(X[train], batch_size=1000)
         y_train = y_train.flatten()
@@ -72,25 +72,30 @@ def validate(X,Y,modelname):
     print("Training Score: %.2f%% (+/- %.2f%%)" % (np.mean(trainingscores), np.std(trainingscores)))
     return
 
-ridges = [l1_l2(l1=0.,l2=0.),l1_l2(l1=0.0001,l2=0.0001),l1_l2(l1=0.001,l2=0.001)]
-dropouts = [0,0.0001,0.001]
+initializers = ['random_uniform','lecun_uniform','glorot_normal','glorot_uniform','he_normal','lecun_normal','he_uniform']
 
-for regularization in ridges:
-    for dropout in dropouts:
+
+for initializer in initializers:
+    try:
         model = Sequential()
-        model.add(Dense(units=96, activation='softsign', input_dim=39, activity_regularizer=regularization))
+        model.add(Dense(units=96, activation='softsign', input_dim=39, kernel_initializer=initializer))
         model.add(Dropout(dropout))
-        model.add(Dense(units=48, activation='softsign', activity_regularizer=regularization))
-        model.add(Dense(units=48, activation='softsign', activity_regularizer=regularization))
+        model.add(Dense(units=48, activation='softsign', kernel_initializer=initializer))
+        model.add(Dense(units=48, activation='softsign', kernel_initializer=initializer))
         model.add(Dense(units=1, activation='linear'))
-        sgd = SGD(lr=best_lr)
-        model.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
-        print('Regularization Function Is: L1,', regularization.l1)
-        print('Regularization Function Is: L2,', regularization.l2)
-        print('Dropout is:',dropout)
+    except:
+        print("That isn't a valid initializer, stupid")
+        continue
+    sgd = SGD(lr=best_lr)
+    model.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
+    print('Initializer is:',initializer)
+    try:
         validate(X,Y,model)
-        end1 = time.time()
-        duration = end1 - start
-        print("Execution Time of Neural Net is:", duration /60, "min")
-        start = end1
+    except:
+        print("Something went wrong while training the model, moving to next hyperparameter")
+        continue
+    end1 = time.time()
+    duration = end1 - start
+    print("Execution Time of Neural Net is:", duration /60, "min")
+    start = end1
 
