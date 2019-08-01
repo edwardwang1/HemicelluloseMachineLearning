@@ -89,11 +89,7 @@ for initializer in initializers:
     sgd = SGD(lr=best_lr)
     model.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
     print('Initializer is:',initializer)
-    try:
-        validate(X,Y,model)
-    except:
-        print("Something went wrong while training the model, moving to next hyperparameter")
-        continue
+    validate(X,Y,model)
     end1 = time.time()
     duration = end1 - start
     print("Execution Time of Neural Net is:", duration /60, "min")
