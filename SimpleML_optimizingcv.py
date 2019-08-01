@@ -45,17 +45,16 @@ best_lr = 0.01
 best_bs = 256
 best_dr = 0
 dropout=0.001
-initializer = 'lecun_uniform'
 
 
-def validate(X,Y,modelname,batches):
+def validate(X,Y,modelname,epoch):
     kfold = KFold(n_splits=7, shuffle=True, random_state=1)
     cvscores = []
     trainingscores =[]
     split=0
     for train, test in kfold.split(X,Y):
     	# Fit the model
-        modelname.fit(X[train], Y[train], epochs=3000, batch_size=batches, verbose=0)
+        modelname.fit(X[train], Y[train], epochs=epoch, batch_size=best_bs, verbose=0)
         y_pred = modelname.predict(X[test], batch_size=1000)
         y_train = modelname.predict(X[train], batch_size=1000)
         y_train = y_train.flatten()
@@ -73,10 +72,10 @@ def validate(X,Y,modelname,batches):
     print("Training Score: %.2f%% (+/- %.2f%%)" % (np.mean(trainingscores), np.std(trainingscores)))
     return
 
-batch_sizes = [1,2,4,8,16,32,64,128,256,512,1024,2048]
+epochs = [1,10,50,100,500,1000,2500,5000,10000]
 
 
-for batches in batch_sizes:
+for epoch in epochs:
     try:
         model = Sequential()
         model.add(Dense(units=96, activation='softsign', input_dim=39, kernel_initializer=initializer))
@@ -89,11 +88,13 @@ for batches in batch_sizes:
         continue
     sgd = SGD(lr=best_lr)
     model.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
-    print('Batch Size is:',batches)
-    validate(X,Y,model,batches)
+    print('Number of Epochs:',epoch)
+    validate(X,Y,model,epoch)
     end1 = time.time()
     duration = end1 - start
-    print("Execution Time of Neural Net is:", duration /60, "min")
+    print("Execution Time of Neural Net is:", duration /60, "min\n")
     start = end1
+
+
 
 
