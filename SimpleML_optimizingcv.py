@@ -48,15 +48,15 @@ dropout=0.001
 initializer='lecun_uniform'
 
 def validate(X,Y,modelname,epoch):
-    kfold = KFold(n_splits=7, shuffle=True, random_state=1)
+    kfold = KFold(n_splits=4, shuffle=True, random_state=1)
     cvscores = []
     trainingscores =[]
     split=0
     for train, test in kfold.split(X,Y):
     	# Fit the model
         modelname.fit(X[train], Y[train], epochs=epoch, batch_size=best_bs, verbose=0)
-        y_pred = modelname.predict(X[test], batch_size=1000)
-        y_train = modelname.predict(X[train], batch_size=1000)
+        y_pred = modelname.predict(X[test])
+        y_train = modelname.predict(X[train])
         y_train = y_train.flatten()
         y_pred = y_pred.flatten()
         try:
