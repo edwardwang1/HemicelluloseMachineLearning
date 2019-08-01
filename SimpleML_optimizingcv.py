@@ -45,7 +45,7 @@ best_lr = 0.01
 best_bs = 256
 best_dr = 0
 dropout=0.001
-
+initializer='lecun_uniform'
 
 def validate(X,Y,modelname,epoch):
     kfold = KFold(n_splits=7, shuffle=True, random_state=1)
