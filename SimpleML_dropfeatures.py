@@ -56,7 +56,7 @@ X_raw = data_start[XLabels]
 # The data preparation function
 for drop_this in XLabels:
     
-    print("Dropped %s from the data" % drop_this)
+    print("\n Dropped %s from the data" % drop_this)
     
     X,Y,data,XLabels=dp.prep(X_raw,True)
     
@@ -69,7 +69,7 @@ for drop_this in XLabels:
     best_dr = 0
     dropout=0.001
     initializer='lecun_uniform'
-    epoch = 100
+    epoch = 3000
     
      
     
@@ -88,5 +88,5 @@ for drop_this in XLabels:
     validate(X,Y,model,epoch)
     end1 = time.time()
     duration = end1 - start
-    print("Execution Time of Neural Net is:", duration /60, "min\n")
+    print("Execution Time of Neural Net is:", duration /60, "min","\n")
     start = end1
