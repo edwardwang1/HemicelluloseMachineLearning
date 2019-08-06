@@ -29,7 +29,7 @@ from keras.regularizers import l1_l2
 start = time.time()
   
 def validate(X,Y,modelname,epoch):
-        kfold = KFold(n_splits=4, shuffle=True)
+        kfold = KFold(n_splits=5, shuffle=True)
         cvscores = []
         trainingscores =[]
         split=0
