@@ -7,6 +7,9 @@ from sklearn.svm import SVR
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
 from keras.optimizers import SGD
+from keras.optimizers import RMSprop
+from keras.optimizers import Adagrad
+from keras.optimizers import Adam
 from sklearn.preprocessing import StandardScaler
 import time
 import matplotlib.pyplot as plt
@@ -14,11 +17,14 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import OneHotEncoder
 import pdb
 import math
-import dataprep_1 as dp
+import dataprep_2 as dp
+import pydot
+import seaborn as sns
 from sklearn.model_selection import KFold
 from sklearn.decomposition import PCA
 from keras.regularizers import l1
 from keras.regularizers import l1_l2
+
 
 start = time.time()
   
@@ -49,20 +55,21 @@ def validate(X,Y,modelname,epoch):
     
     
 # Prepping Data
-# data_start = data_start.sample(frac=.85).reset_index(drop=True)
 data_start = pd.read_csv("2048data.csv")
+data_start = data_start.sample(frac=.85).reset_index(drop=True)
 XLabels = ['TotalT', 'Temp', 'LSR', 'CA', 'Size', 'IsoT', 'HeatT', 'Ramp', 'F_X', 'Ro', 'logRo', 'P','Acid','Acetyl','Wood','Yield']
 X_raw = data_start[XLabels]
 # The data preparation function
-for drop_this in XLabels:
-    
-    print("\n Dropped %s from the data" % drop_this)
-    
+
+sgd = SGD(lr=0.01)
+rms = RMSprop(lr=0.01)
+adagrad = Adagrad(lr=0.01)
+adam = Adam(lr=0.01)
+optimizers = [sgd,rms,adagrad,adam]
+
+for optimizer in optimizers:
     X,Y,data,XLabels=dp.prep(X_raw,True)
     
-    index=XLabels.index(drop_this)
-    
-    X=np.delete(X,index,axis=1)
     
     best_lr = 0.01
     best_bs = 256
@@ -71,11 +78,9 @@ for drop_this in XLabels:
     initializer='lecun_uniform'
     epoch = 3000
     
-     
-    
     try:
         model = Sequential()
-        model.add(Dense(units=96, activation='softsign', input_dim=38, kernel_initializer=initializer))
+        model.add(Dense(units=96, activation='softsign', input_dim=39, kernel_initializer=initializer))
         model.add(Dropout(dropout))
         model.add(Dense(units=96, activation='softsign', kernel_initializer=initializer))
         model.add(Dense(units=48, activation='softsign', kernel_initializer=initializer))
@@ -83,10 +88,11 @@ for drop_this in XLabels:
         model.add(Dense(units=1, activation='linear'))
     except:
         print("That isn't a valid initializer, stupid")
-    sgd = SGD(lr=best_lr)
-    model.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
+    model.compile(loss='mean_squared_error', optimizer=optimizer, metrics=['accuracy'])
+    print("Optimization function:", optimizer)
     validate(X,Y,model,epoch)
     end1 = time.time()
     duration = end1 - start
-    print("Execution Time of Neural Net is:", duration /60, "min","\n")
+    print("Execution Time of Neural Net is:", duration /60, "min\n")
     start = end1
+
