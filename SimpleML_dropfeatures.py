@@ -25,20 +25,19 @@ from keras.regularizers import l1_l2
 
 start = time.time()
 
-def validate(X,Y,epoch,hidden,output):
+def validate(X,Y,epoch,l1l2,dropout):
         kfold = KFold(n_splits=5, shuffle=True)
         cvscores = []
         trainingscores =[]
         split=0
         for train, test in kfold.split(X,Y):
-        
             model=Sequential()
-            model.add(Dense(units=96, activation=hidden, input_dim=39, kernel_initializer=initializer))
+            model.add(Dense(units=96, activation='sigmoid', input_dim=39, kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=l1l2,l2=l1l2)))
             model.add(Dropout(dropout))
-            model.add(Dense(units=96, activation=hidden, kernel_initializer=initializer))
-            model.add(Dense(units=48, activation=hidden, kernel_initializer=initializer)) 
-            model.add(Dense(units=48, activation=hidden, kernel_initializer=initializer)) 
-            model.add(Dense(units=1, activation=output))
+            model.add(Dense(units=96, activation='sigmoid', kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=l1l2,l2=l1l2)))
+            model.add(Dense(units=48, activation='sigmoid', kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=l1l2,l2=l1l2))) 
+            model.add(Dense(units=48, activation='sigmoid', kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=l1l2,l2=l1l2))) 
+            model.add(Dense(units=1, activation='linear'))
             model.compile(loss='mean_squared_error', optimizer=optimizer, metrics=['accuracy'])
 
             model.fit(X[train], Y[train], epochs=epoch,validation_data=(X[test],Y[test]), batch_size=best_bs, verbose=0)
@@ -55,8 +54,8 @@ def validate(X,Y,epoch,hidden,output):
                 print("Input contains null values. Skipping Config.")
                 continue
             split=split+1
-        print("Hidden Activation Function:" + hidden)
-        print("Output Activation Function:" + output)
+        print("L1_L2 Coefficient:", l1l2)
+        print("Dropout Rate:", dropout)
         print("Validation Score: %.2f%% (+/- %.2f%%)" % (np.mean(cvscores), np.std(cvscores)))
         print("Training Score: %.2f%% (+/- %.2f%%)" % (np.mean(trainingscores), np.std(trainingscores)))
         return 
@@ -74,18 +73,17 @@ adagrad = Adagrad(lr=0.01)
 adam = Adam(lr=0.01)
 optimizer = RMSprop(lr=0.01)
 op = 0
-hiddens = ['hard_sigmoid','sigmoid','softsign','tanh']
-outputs = ['linear','relu','softplus']
+l1l2s = [0.0001,0.001,0.01,0.1]
+dropouts = [0.0001,0.001,0.01,0.1]
 
-for hidden in hiddens:
-    for output in outputs:
+for dropout in dropouts:
+    for l1l2 in l1l2s:
         X,Y,data,XLabels=dp.prep(X_raw,True)   
         best_lr = 0.01
         best_bs = 256
-        dropout=0.001
         initializer='lecun_uniform'
         epoch = 2500
-        validate(X,Y,epoch,hidden,output)
+        validate(X,Y,epoch,l1l2,dropout)
         end1 = time.time()
         duration = end1 - start
         print("Execution Time of Neural Net is:", duration /60, "min\n")
