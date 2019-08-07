@@ -18,7 +18,6 @@ from sklearn.preprocessing import OneHotEncoder
 import pdb
 import math
 import dataprep_1 as dp
-import pydot
 import seaborn as sns
 from sklearn.model_selection import KFold
 from sklearn.decomposition import PCA
