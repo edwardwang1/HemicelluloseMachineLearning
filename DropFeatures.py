@@ -22,7 +22,7 @@ from keras.regularizers import l1_l2
 
 start = time.time()
   
-def validate(X,Y,modelname,epoch):
+def validate(X,Y,epoch):
         kfold = KFold(n_splits=5, shuffle=True)
         cvscores = []
         trainingscores =[]
@@ -81,7 +81,7 @@ for drop_this in XLabels:
     initializer='lecun_uniform'
     epoch = 3000
    
-    validate(X,Y,model,epoch)
+    validate(X,Y,epoch)
     end1 = time.time()
     duration = end1 - start
     print("Execution Time of Neural Net is:", duration /60, "min\n")
