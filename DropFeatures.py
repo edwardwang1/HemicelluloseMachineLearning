@@ -39,7 +39,7 @@ def validate(X,Y,epoch):
             model.add(Dense(units=1, activation='linear'))
             
         	# Fit the model
-            modelname.fit(X[train], Y[train], epochs=epoch, batch_size=best_bs, verbose=0)
+            model.fit(X[train], Y[train], epochs=epoch, batch_size=best_bs, verbose=0)
             y_pred = modelname.predict(X[test])
             y_train = modelname.predict(X[train] )
             y_train = y_train.flatten()
