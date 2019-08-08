@@ -23,8 +23,8 @@ from keras.regularizers import l1_l2
 
 start = time.time()
   
-def validate(X,Y,epoch):
-        kfold = KFold(n_splits=5, shuffle=True)
+def validate(X,Y,drop_this):
+        kfold = KFold(n_splits=25, shuffle=True)
         cvscores = []
         trainingscores =[]
         split=0
@@ -33,10 +33,16 @@ def validate(X,Y,epoch):
         best_dr = 0
         dropout=0.1
         initializer='lecun_uniform'
-        epoch = 3000
+        epoch = 2000
+        
+        if drop_this == 'NO'
+          dimension = 39
+        else:
+          dimension=38
+        
         for train, test in kfold.split(X,Y):
             model = Sequential()
-            model.add(Dense(units=96, activation='softsign', input_dim=39, kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=0.001,l2=0.001)))
+            model.add(Dense(units=96, activation='softsign', input_dim=dimension, kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=0.001,l2=0.001)))
             model.add(Dropout(dropout))
             model.add(Dense(units=96, activation='softsign', kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=0.001,l2=0.001)))
             model.add(Dense(units=48, activation='softsign', kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=0.001,l2=0.001)))
@@ -67,7 +73,7 @@ def validate(X,Y,epoch):
 # Prepping Data
 # data_start = data_start.sample(frac=.85).reset_index(drop=True)
 data_start = pd.read_csv("2048data.csv")
-XLabels = ['TotalT', 'Temp', 'LSR', 'CA', 'Size', 'IsoT', 'HeatT', 'Ramp', 'F_X', 'Ro', 'logRo', 'P','Acetyl','Acid','Wood','Yield']
+XLabels = ['NO','TotalT', 'Temp', 'LSR', 'CA', 'Size', 'IsoT', 'HeatT', 'Ramp', 'F_X', 'Ro', 'logRo', 'P','Acetyl','Acid','Wood','Yield']
 X_raw = data_start[XLabels]
 # The data preparation function
 for drop_this in XLabels:
@@ -78,8 +84,10 @@ for drop_this in XLabels:
     
     index=XLabels.index(drop_this)
     
-    epoch=3000
-    validate(X,Y,epoch)
+    X=np.delete(X,index,axis=1)
+    
+    epoch=2000
+    validate(X,Y,drop_this)
     end1 = time.time()
     duration = end1 - start
     print("Execution Time of Neural Net is:", duration /60, "min\n")
