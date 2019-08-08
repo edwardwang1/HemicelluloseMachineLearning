@@ -82,9 +82,11 @@ for drop_this in XLabels:
     
     X,Y,data,XLabels=dp.prep(X_raw,True)
     
-    index=XLabels.index(drop_this)
-    
-    X=np.delete(X,index,axis=1)
+    if drop_this == 'NO':
+      pass
+    else:
+      index=XLabels.index(drop_this)
+      X=np.delete(X,index,axis=1)
     
     epoch=2000
     validate(X,Y,drop_this)
