@@ -29,11 +29,11 @@ def validate(X,Y,modelname,epoch):
         split=0
         for train, test in kfold.split(X,Y):
             model = Sequential()
-            model.add(Dense(units=96, activation='softsign', input_dim=38, kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=0.001,l2=0.001))
+            model.add(Dense(units=96, activation='softsign', input_dim=38, kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=0.001,l2=0.001)))
             model.add(Dropout(dropout))
-            model.add(Dense(units=96, activation='softsign', kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=0.001,l2=0.001))
-            model.add(Dense(units=48, activation='softsign', kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=0.001,l2=0.001))
-            model.add(Dense(units=48, activation='softsign', kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=0.001,l2=0.001))
+            model.add(Dense(units=96, activation='softsign', kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=0.001,l2=0.001)))
+            model.add(Dense(units=48, activation='softsign', kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=0.001,l2=0.001)))
+            model.add(Dense(units=48, activation='softsign', kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=0.001,l2=0.001)))
             sgd = SGD(lr=best_lr)
             model.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
             model.add(Dense(units=1, activation='linear'))
