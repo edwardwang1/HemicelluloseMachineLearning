@@ -35,7 +35,7 @@ def validate(X,Y,drop_this):
         initializer='lecun_uniform'
         epoch = 2000
         
-        if drop_this == 'NO'
+        if drop_this == 'NO':
           dimension = 39
         else:
           dimension=38
