@@ -7,6 +7,7 @@ from sklearn.svm import SVR
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
 from keras.optimizers import SGD
+from keras.optimizers import Adam
 from sklearn.preprocessing import StandardScaler
 import time
 import matplotlib.pyplot as plt
@@ -40,10 +41,8 @@ def validate(X,Y,epoch):
             model.add(Dense(units=96, activation='softsign', kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=0.001,l2=0.001)))
             model.add(Dense(units=48, activation='softsign', kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=0.001,l2=0.001)))
             model.add(Dense(units=48, activation='softsign', kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=0.001,l2=0.001)))
-            sgd = SGD(lr=best_lr)
+            sgd = Adam(lr=best_lr)
             model.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
-            model.add(Dense(units=1, activation='linear'))
-            
         	# Fit the model
             model.fit(X[train], Y[train], epochs=epoch, batch_size=best_bs, verbose=0)
             y_pred = model.predict(X[test])
