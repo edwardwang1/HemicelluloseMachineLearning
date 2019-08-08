@@ -41,6 +41,7 @@ def validate(X,Y,epoch):
             model.add(Dense(units=96, activation='softsign', kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=0.001,l2=0.001)))
             model.add(Dense(units=48, activation='softsign', kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=0.001,l2=0.001)))
             model.add(Dense(units=48, activation='softsign', kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=0.001,l2=0.001)))
+            model.add(Dense(units=1, activation='linear'))
             sgd = RMSprop(lr=best_lr)
             model.compile(loss='mean_squared_error', optimizer=sgd, metrics=['accuracy'])
         	# Fit the model
