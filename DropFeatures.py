@@ -36,7 +36,7 @@ def validate(X,Y,epoch):
         epoch = 3000
         for train, test in kfold.split(X,Y):
             model = Sequential()
-            model.add(Dense(units=96, activation='softsign', input_dim=38, kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=0.001,l2=0.001)))
+            model.add(Dense(units=96, activation='softsign', input_dim=39, kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=0.001,l2=0.001)))
             model.add(Dropout(dropout))
             model.add(Dense(units=96, activation='softsign', kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=0.001,l2=0.001)))
             model.add(Dense(units=48, activation='softsign', kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=0.001,l2=0.001)))
@@ -78,7 +78,6 @@ for drop_this in XLabels:
     
     index=XLabels.index(drop_this)
     
-    X=np.delete(X,index,axis=1)
     epoch=3000
     validate(X,Y,epoch)
     end1 = time.time()
