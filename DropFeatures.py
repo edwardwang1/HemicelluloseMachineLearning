@@ -74,7 +74,8 @@ def validate(X,Y,drop_this):
 # data_start = data_start.sample(frac=.85).reset_index(drop=True)
 data_start = pd.read_csv("2048data.csv")
 XLabels = ['NO','TotalT', 'Temp', 'LSR', 'CA', 'Size', 'IsoT', 'HeatT', 'Ramp', 'F_X', 'Ro', 'logRo', 'P','Acetyl','Acid','Wood','Yield']
-X_raw = data_start[XLabels]
+Xlabs = ['TotalT', 'Temp', 'LSR', 'CA', 'Size', 'IsoT', 'HeatT', 'Ramp', 'F_X', 'Ro', 'logRo', 'P','Acetyl','Acid','Wood','Yield']
+X_raw = data_start[Xlabs]
 # The data preparation function
 for drop_this in XLabels:
     
