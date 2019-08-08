@@ -27,6 +27,12 @@ def validate(X,Y,epoch):
         cvscores = []
         trainingscores =[]
         split=0
+        best_lr = 0.01
+        best_bs = 256
+        best_dr = 0
+        dropout=0.1
+        initializer='lecun_uniform'
+        epoch = 3000
         for train, test in kfold.split(X,Y):
             model = Sequential()
             model.add(Dense(units=96, activation='softsign', input_dim=38, kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=0.001,l2=0.001)))
@@ -40,8 +46,8 @@ def validate(X,Y,epoch):
             
         	# Fit the model
             model.fit(X[train], Y[train], epochs=epoch, batch_size=best_bs, verbose=0)
-            y_pred = modelname.predict(X[test])
-            y_train = modelname.predict(X[train] )
+            y_pred = model.predict(X[test])
+            y_train = model.predict(X[train])
             y_train = y_train.flatten()
             y_pred = y_pred.flatten()
             try:
@@ -73,13 +79,6 @@ for drop_this in XLabels:
     index=XLabels.index(drop_this)
     
     X=np.delete(X,index,axis=1)
-    
-    best_lr = 0.01
-    best_bs = 256
-    best_dr = 0
-    dropout=0.1
-    initializer='lecun_uniform'
-    epoch = 3000
    
     validate(X,Y,epoch)
     end1 = time.time()
