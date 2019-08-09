@@ -86,7 +86,7 @@ for drop_this in XLabels_no:
         index=XLabels.index(drop_this)
         X=np.delete(X,index,axis=1)
    
-    epoch=1
+    epoch=3000
     validate(X,Y,epoch)
     end1 = time.time()
     duration = end1 - start
