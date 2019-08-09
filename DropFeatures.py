@@ -24,7 +24,7 @@ from keras.regularizers import l1_l2
 start = time.time()
   
 def validate(X,Y,drop_this):
-        kfold = KFold(n_splits=25, shuffle=True)
+        kfold = KFold(n_splits=15, shuffle=True)
         cvscores = []
         trainingscores =[]
         split=0
