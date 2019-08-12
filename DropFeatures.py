@@ -86,7 +86,8 @@ for drop_this in XLabels_no:
         index=XLabels.index(drop_this)
         X=np.delete(X,index,axis=1)
    
-    epoch=3000
+    epoch=1
+    print('Remaining features: ', XLabels_notog)
     validate(X,Y,epoch)
     end1 = time.time()
     duration = end1 - start
