@@ -73,6 +73,7 @@ X_raw = data_start[XLabels]
 XLabels_no = XLabels + ['NO']
 for drop_this in XLabels_no:
     X_raw=data_start[XLabels]
+    '''
     print("Dropped %s from the data" % drop_this)
     
     haha_boolean=False
@@ -82,7 +83,7 @@ for drop_this in XLabels_no:
     if (drop_this != 'Acid') and (drop_this != 'Wood') and (drop_this != 'NO'):
         index=XLabels.index(drop_this)
         X=np.delete(X,index,axis=1)
-   
+   '''
     epoch=3000
     print('Remaining features: ', XLabels_notog)
     validate(X,Y,epoch)
