@@ -75,10 +75,7 @@ for drop_this in XLabels_no:
     X_raw=data_start[XLabels]
     print("Dropped %s from the data" % drop_this)
     
-    if (drop_this != 'Acid') and (drop_this != 'Wood'):
-        haha_boolean = True
-    else:
-        haha_boolean = False
+    haha_boolean=False
     
     X,Y,data,XLabels_notog=dp.prep(X_raw,haha_boolean,drop_this)
     
