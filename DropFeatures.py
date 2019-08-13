@@ -73,12 +73,12 @@ X_raw = data_start[XLabels]
 XLabels_no = XLabels + ['NO']
 for drop_this in XLabels_no:
     X_raw=data_start[XLabels]
+    
+     X,Y,data,XLabels_notog=dp.prep(X_raw,haha_boolean,drop_this)
     '''
     print("Dropped %s from the data" % drop_this)
     
     haha_boolean=False
-    
-    X,Y,data,XLabels_notog=dp.prep(X_raw,haha_boolean,drop_this)
     
     if (drop_this != 'Acid') and (drop_this != 'Wood') and (drop_this != 'NO'):
         index=XLabels.index(drop_this)
