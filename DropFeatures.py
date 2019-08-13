@@ -74,7 +74,7 @@ XLabels_no = XLabels + ['NO']
 for drop_this in XLabels_no:
     X_raw=data_start[XLabels]
     
-    X,Y,data,XLabels_notog=dp.prep(X_raw,haha_boolean,drop_this)
+    X,Y,data,XLabels_notog=dp.prep(X_raw,True,drop_this)
     '''
     print("Dropped %s from the data" % drop_this)
     
