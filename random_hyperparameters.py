@@ -1,7 +1,4 @@
 
-import tensorflow as tf
-tf.logging.set_verbosity(tf.logging.ERROR)
-
 import pandas as pd
 import numpy as np
 from sklearn import linear_model
@@ -35,7 +32,7 @@ data_start = data_start.sample(frac=1).reset_index(drop=True)
 length=int(data_start.shape[0]*.85)
 XLabels = ['TotalT', 'Temp', 'LSR', 'CA', 'Size', 'IsoT', 'HeatT', 'Ramp', 'F_X', 'Ro', 'logRo', 'P','Acid','Acetyl','Wood','Yield']
 X_raw = data_start[XLabels]
-X_full,Y_full,data,XLabels=dp.prep(X_raw,False)  
+X_full,Y_full,data,XLabels=dp.prep(X_raw,True)  
 X=X_full[0:length,:]
 Y=Y_full[0:length]
 X_test=X_full[length:,:]
@@ -68,7 +65,7 @@ for iteration in range(1,iterations):
         model.add(Dense(units=1, activation='linear'))
         model.compile(loss='mean_squared_error', optimizer=optimizer, metrics=['accuracy'])
 
-        model.fit(X[train], Y[train], epochs=epoch,validation_data=(X[test],Y[test]), batch_size=batch_size, verbose=0)
+        model.fit(X[train], Y[train], epochs=epoch, validation_data=(X[test],Y[test]), batch_size=batch_size, verbose=0)
         y_pred = model.predict(X[test])
         y_train = model.predict(X[train])
         y_train = y_train.flatten()
@@ -84,7 +81,12 @@ for iteration in range(1,iterations):
             continue
         
     print("Validation Score: %.2f%% (+/- %.2f%%)" % (np.mean(cvscores), np.std(cvscores)))
-    print("Training Score: %.2f%% (+/- %.2f%%)" % (np.mean(trainingscores), np.std(trainingscores)))
+    print("Training Score: %.2f%% (+/- %.2f%%)\n" % (np.mean(trainingscores), np.std(trainingscores)))
+    print("Batch size:", batch_size)
+    print("Learning rate:", learning_rate)
+    print("Number of epochs:",epoch)
+    print("l1/l2 regularization",l1l2)
+    print("Dropout:", dropout,"\n")
     
     if np.mean(cvscores)<lowest_error:
         
@@ -128,6 +130,9 @@ try:
 except:
     print("Input contains null values")
     
+
+
+
 print("The best hyperparameters for %s iterations" % iterations)
 print("Best batch size:", best_bs)
 print("Best learning rate:", best_lr)
