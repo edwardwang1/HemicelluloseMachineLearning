@@ -47,7 +47,7 @@ for iteration in range(1,iterations):
     learning_rate = random.uniform(0.001,0.05)
     optimizer = RMSprop(lr=learning_rate)
     batch_size = random.randrange(200,1000)
-    dropout = random.uniform(0.001,0.1)
+    dropout = random.uniform(0.001,0.01)
     initializer='lecun_uniform'
     epoch = random.randrange(1500,3500)
     l1l2 = random.uniform(0.0001,0.003)
