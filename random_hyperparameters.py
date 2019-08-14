@@ -46,7 +46,7 @@ for iteration in range(1,iterations):
     # Random Hyperparameter Assignment 
     learning_rate = random.uniform(0.001,0.05)
     optimizer = RMSprop(lr=learning_rate)
-    batch_size = random.randrange(200,1000)
+    batch_size = random.randrange(20,1000)
     dropout = random.uniform(0.001,0.01)
     initializer='lecun_uniform'
     epoch = random.randrange(1500,3500)
