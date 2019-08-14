@@ -21,7 +21,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import OneHotEncoder
 import pdb
 import math
-import dataprep_2 as dp
+import dataprep_1 as dp
 from sklearn.model_selection import KFold
 from keras.regularizers import l1_l2
 import random
@@ -30,12 +30,12 @@ start = time.time()
 hard_start = time.time()
     
 # Prepping Data and splitting into training and test sets
-data_start = pd.read_csv("/Users/RileyBallachay/Documents/Third Year/data1.csv")
+data_start = pd.read_csv("2048data.csv")
 data_start = data_start.sample(frac=1).reset_index(drop=True)
 length=int(data_start.shape[0]*.85)
 XLabels = ['TotalT', 'Temp', 'LSR', 'CA', 'Size', 'IsoT', 'HeatT', 'Ramp', 'F_X', 'Ro', 'logRo', 'P','Acid','Acetyl','Wood','Yield']
 X_raw = data_start[XLabels]
-X_full,Y_full,data,XLabels=dp.prep(X_raw,True)  
+X_full,Y_full,data,XLabels=dp.prep(X_raw,False)  
 X=X_full[0:length,:]
 Y=Y_full[0:length]
 X_test=X_full[length:,:]
@@ -44,16 +44,16 @@ Y_test=Y_full[length:]
 lowest_error = 1000
 iterations = 25
 
-for iteration in iterations: 
+for iteration in range(1,iterations): 
     
     # Random Hyperparameter Assignment 
-    learning_rate = random.randrange(0.01,0.1)
-    optimizer = RMSprop(learning_rate=learning_rate)
+    learning_rate = random.uniform(0.01,0.1)
+    optimizer = RMSprop(lr=learning_rate)
     batch_size = random.randrange(200,1000)
-    dropout = random.randrange(0.001,0.1)
+    dropout = random.uniform(0.001,0.1)
     initializer='lecun_uniform'
     epoch = random.randrange(1500,3500)
-    l1l2 = random.randrange(0.0001,0.003)
+    l1l2 = random.uniform(0.0001,0.003)
     kfold = KFold(n_splits=5, shuffle=True)
     cvscores = []
     trainingscores =[]
@@ -128,9 +128,6 @@ try:
 except:
     print("Input contains null values")
     
-
-
-
 print("The best hyperparameters for %s iterations" % iterations)
 print("Best batch size:", best_bs)
 print("Best learning rate:", best_lr)
@@ -145,4 +142,3 @@ print("\n***************************************************************\n")
 
 print("Test Score: %.2f%% " % (error))
 print("Total execution time:", (time.time()-hard_start)/60,"min\n")
-
