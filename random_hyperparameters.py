@@ -39,7 +39,7 @@ X_test=X_full[length:,:]
 Y_test=Y_full[length:]
 
 lowest_error = 1000
-iterations = 25
+iterations = 75
 
 for iteration in range(1,iterations): 
     
