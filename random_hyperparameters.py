@@ -111,7 +111,7 @@ print("\n")
 print("\n")
 
 
-optimizer = RMSprop(learning_rate=best_lr)
+optimizer = RMSprop(lr=best_lr)
 model=Sequential()
 model.add(Dense(units=96, activation='sigmoid', input_dim=39, kernel_initializer=initializer,kernel_regularizer=l1_l2(l1=best_l1l2,l2=best_l1l2)))
 model.add(Dropout(best_dropout))
