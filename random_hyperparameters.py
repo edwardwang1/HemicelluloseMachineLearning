@@ -46,10 +46,10 @@ for iteration in range(1,iterations):
     # Random Hyperparameter Assignment 
     learning_rate = random.uniform(0.001,0.05)
     optimizer = RMSprop(lr=learning_rate)
-    batch_size = random.randrange(20,1000)
+    batch_size = random.randrange(20,500)
     dropout = random.uniform(0.001,0.01)
     initializer='lecun_uniform'
-    epoch = random.randrange(1500,3500)
+    epoch = random.randrange(1500,3000)
     l1l2 = random.uniform(0.0001,0.003)
     kfold = KFold(n_splits=5, shuffle=True)
     cvscores = []
