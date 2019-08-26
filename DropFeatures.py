@@ -67,7 +67,7 @@ def validate(X,Y,epoch):
 # Prepping Data
 # data_start = data_start.sample(frac=.85).reset_index(drop=True)
 data_start = pd.read_csv("2048data.csv")
-XLabels = ['Acid','Wood','TotalT']
+XLabels = ['Acid','Wood','TotalT', 'Temp', 'LSR', 'CA', 'Size', 'IsoT', 'HeatT', 'Ramp', 'F_X', 'Ro', 'logRo', 'P']
 X_raw = data_start[XLabels]
 # The data preparation function
 XLabels_no = XLabels + ['NO']
@@ -75,15 +75,27 @@ for drop_this in XLabels_no:
     X_raw=data_start[XLabels]
     
     X,Y,data,XLabels_notog=dp.prep(X_raw,True,drop_this)
+   
     '''
     print("Dropped %s from the data" % drop_this)
     
     haha_boolean=False
+    '''
     
     if (drop_this != 'Acid') and (drop_this != 'Wood') and (drop_this != 'NO'):
         index=XLabels.index(drop_this)
         X=np.delete(X,index,axis=1)
-   '''
+        if drop_this == (TotalT or Temp or IsoT or HeatT or Ramp):
+          index=XLabels.index('Ro')
+          X=np.delete(X,index,axis=1)
+          index=XLabels.index('logRo')
+          X=np.delete(X,index,axis=1)
+          index=XLabels.index('P')
+          X=np.delete(X,index,axis=1)
+        if drop_this == 'CA':
+          index=XLabels.index('CA')
+          X=np.delete(X,index,axis=1)
+           
     epoch=3000
     print('Remaining features: ', XLabels_notog)
     validate(X,Y,epoch)
