@@ -10,4 +10,4 @@ module load scipy-stack
 module load cuda cudnn 
 source $HOME/hemicellulose_project/bin/activate
 
-python ./random_hyperparameters.py
+python ./DropFeatures.py
