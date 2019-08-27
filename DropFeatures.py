@@ -67,7 +67,7 @@ def validate(X,Y,epoch):
 # Prepping Data
 # data_start = data_start.sample(frac=.85).reset_index(drop=True)
 data_start = pd.read_csv("2048data.csv")
-XLabels = ['Acid','Wood','TotalT', 'Temp', 'LSR', 'CA', 'Size', 'IsoT', 'HeatT', 'Ramp', 'F_X', 'Ro', 'logRo', 'P']
+XLabels = ['TotalT','IsoT', 'HeatT']
 X_raw = data_start[XLabels]
 # The data preparation function
 XLabels_no = XLabels + ['NO']
@@ -92,6 +92,14 @@ for drop_this in XLabels_no:
           X=np.delete(X,index,axis=1)
         if drop_this == 'CA':
           index=XLabels.index('CA')
+          X=np.delete(X,index,axis=1)
+        if drop_this == 'TotalT':
+          index=XLabels.index('IsoT')
+          X=np.delete(X,index,axis=1)
+          index=XLabels.index('HeatT')
+          X=np.delete(X,index,axis=1)
+        if drop_this == ('IsoT' or 'HeatT'):
+          index=XLabels.index('TotalT')
           X=np.delete(X,index,axis=1)
            
     epoch=3000
