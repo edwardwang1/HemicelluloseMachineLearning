@@ -85,7 +85,7 @@ for drop_this in XLabels_no:
     if (drop_this != 'Acid') and (drop_this != 'Wood') and (drop_this != 'NO'):
         index=XLabels.index(drop_this)
         X=np.delete(X,index,axis=1)
-        if drop_this == (TotalT or Temp or IsoT or HeatT or Ramp):
+        if drop_this == ('TotalT' or 'Temp' or 'IsoT' or 'HeatT' or 'Ramp'):
           index=XLabels.index('Ro')
           X=np.delete(X,index,axis=1)
           index=XLabels.index('logRo')
