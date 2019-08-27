@@ -76,11 +76,9 @@ for drop_this in XLabels_no:
     
     X,Y,data,XLabels_notog=dp.prep(X_raw,True,drop_this)
    
-    '''
     print("Dropped %s from the data" % drop_this)
     
     haha_boolean=False
-    '''
     
     if (drop_this != 'Acid') and (drop_this != 'Wood') and (drop_this != 'NO'):
         index=XLabels.index(drop_this)
