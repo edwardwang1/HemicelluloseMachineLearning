@@ -52,7 +52,6 @@ def validate(X,Y,fraction):
         X_test = np.array(X[test])
         y_pred = model.predict(X_test)
         y_train = model.predict(X_train)
-        pdb.set_trace()
         y_train = y_train.flatten()
         y_pred = y_pred.flatten()
         training_error = metrics.mean_absolute_error(Y[train], y_train)
