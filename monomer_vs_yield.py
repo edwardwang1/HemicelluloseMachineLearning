@@ -63,8 +63,7 @@ def validate(X,Y):
     
 # Prepping Data
 # data_start = data_start.sample(frac=.85).reset_index(drop=True)
-data_monomer = pd.read_csv("FinalFiles/PreparedMonomer.csv")
-data_all = pd.read_csv("FinalFiles/PreparedDataAll.csv")
+data_all = pd.read_csv("2048data.csv")
 XLabels = ['Acid','Wood','TotalT', 'Temp', 'LSR', 'CA', 'Size', 'IsoT', 'HeatT', 'Ramp', 'F_X', 'Ro', 'logRo', 'P','Acetyl','Yield']
 # The data preparation function
 
@@ -73,7 +72,10 @@ for data_set in data:
     for i in range(1,6):
         
         if data_set == "data_monomer":
-            X_raw = data_monomer[XLabels].sample(frac=1)
+            X_raw = data_all[XLabels]
+            X_raw = X_raw.drop('Yield',axis=1)
+            X_raw['Yield']= data_all['Monomer']
+            X_raw = X_raw.sample(frac=1)
         if data_set == "data_all":
             X_raw = data_all[XLabels].sample(frac=1)
         
