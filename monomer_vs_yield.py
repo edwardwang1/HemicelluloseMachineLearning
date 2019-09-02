@@ -68,10 +68,15 @@ data_all = pd.read_csv("FinalFiles/PreparedDataAll.csv")
 XLabels = ['Acid','Wood','TotalT', 'Temp', 'LSR', 'CA', 'Size', 'IsoT', 'HeatT', 'Ramp', 'F_X', 'Ro', 'logRo', 'P','Acetyl','Yield']
 # The data preparation function
 
-data=[data_monomer,data_all]
+data=["data_monomer","data_all"]
 for data_set in data:
     for i in range(1,6):
-        X_raw = data_set[XLabels].sample(frac=1)
+        
+        if data_set == "data_monomer":
+            X_raw = data_monomer[XLabels].sample(frac=1)
+        if data_set == "data_all":
+            X_raw = data_all[XLabels].sample(frac=1)
+        
         X,Y,data,XLabels_notog=dp.prep(X_raw,False,False)
         print('Dataset', data_set)
         print('Iteration number', i)
