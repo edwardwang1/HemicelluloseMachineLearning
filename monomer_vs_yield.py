@@ -1,3 +1,10 @@
+"""
+Created on Tue Sep  3 16:42:11 2019
+
+@author: RileyBallachay
+"""
+
+
 import pandas as pd
 import numpy as np
 from sklearn import linear_model
@@ -32,7 +39,7 @@ def validate(X,Y):
     best_lr = 0.005
     best_bs = 64
     dropout=0.001
-    epoch=3000
+    epoch=1
     for train, test in kfold.split(X,Y):
         model = Sequential()
         model.add(Dense(units=96, activation='sigmoid', input_dim=dimension))
@@ -50,6 +57,7 @@ def validate(X,Y):
         X_test = np.array(X[test])
         y_pred = model.predict(X_test)
         y_train = model.predict(X_train)
+        pdb.set_trace()
         y_train = y_train.flatten()
         y_pred = y_pred.flatten()
         training_error = metrics.mean_absolute_error(Y[train], y_train)
@@ -61,25 +69,24 @@ def validate(X,Y):
     return
 
     
-# Prepping Data
-# data_start = data_start.sample(frac=.85).reset_index(drop=True)
-data_all = pd.read_csv("2048data.csv")
-XLabels = ['Acid','Wood','TotalT', 'Temp', 'LSR', 'CA', 'Size', 'IsoT', 'HeatT', 'Ramp', 'F_X', 'Ro', 'logRo', 'P','Acetyl','Yield']
-# The data preparation function
 
 data=["data_monomer","data_all"]
 for data_set in data:
     for i in range(1,6):
         
-        if data_set == "data_monomer":
-            X_raw = data_all[XLabels]
-            X_raw = X_raw.drop('Yield',axis=1)
-            X_raw['Yield']= data_all['Monomer']
-            X_raw = X_raw.sample(frac=1)
         if data_set == "data_all":
-            X_raw = data_all[XLabels].sample(frac=1)
+            X = pd.read_csv('FinalFiles/PreparedDataAll.csv')
+            Y = np.array(X['Yield'])
+            X.drop('Yield',axis=1,inplace=True)
+            X=np.array(X)
+            X = np.delete(X,0,1)
+        if data_set == "data_monomer":
+            X = pd.read_csv('FinalFiles/PreparedMonomer.csv')
+            Y = np.array(X['Yield'])
+            X.drop('Yield',axis=1,inplace=True)
+            X=np.array(X)
+            X = np.delete(X,0,1)        
         
-        X,Y,data,XLabels_notog=dp.prep(X_raw,False,False)
         print('Dataset', data_set)
         print('Iteration number', i)
         length = X.shape[0]
