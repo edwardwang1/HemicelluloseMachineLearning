@@ -1,0 +1,94 @@
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) openmpi/2.1.1
+
+Using TensorFlow backend.
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-09-05 11:48:45.670215: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: Tesla P100-PCIE-12GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:04:00.0
+totalMemory: 11.91GiB freeMemory: 11.66GiB
+2019-09-05 11:48:45.670394: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-09-05 11:48:49.132922: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-09-05 11:48:49.133025: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-09-05 11:48:49.133076: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-09-05 11:48:49.133289: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11270 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-12GB, pci bus id: 0000:04:00.0, compute capability: 6.0)
+2019-09-05 11:48:49.136536: I tensorflow/core/common_runtime/process_util.cc:71] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+2019-09-05 11:48:49.910511: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+['TotalT']
+Execution Time is 2.391503604253133 min
+
+['Temp']
+Execution Time is 4.77450567483902 min
+
+['LSR']
+Execution Time is 7.204590475559234 min
+
+['CA']
+Execution Time is 9.569289271036784 min
+
+['Size']
+Execution Time is 11.950928517182668 min
+
+['IsoT']
+Execution Time is 14.346764397621154 min
+
+['Ramp']
+Execution Time is 16.758078277111053 min
+
+['F_X']
+Execution Time is 19.195375514030456 min
+
+['Ro', 'logRo']
+Execution Time is 21.640216557184853 min
+
+['P', 'logP']
+Execution Time is 24.09219172398249 min
+
+['H', 'logH']
+Execution Time is 26.547759564717612 min
+
+['Acetyl']
+Execution Time is 29.03036292394002 min
+
+['acacia', 'aspen', 'basswood', 'beech', 'birch', 'carob', 'eucalyptus', 'maple', 'meranti', 'mixed', 'oak', 'olive', 'paperbark', 'paulownia', 'pine', 'poplar', 'salix', 'vine', 'willow']
+Execution Time is 31.514187574386597 min
+
+['acetic', 'fenton', 'formic', 'malic', 'none', 'oxalic', 'phosphoric', 'sulfuric']
+Execution Time is 34.0806463599205 min
+
+['Ro', 'logRo', 'P', 'logP', 'H', 'logH']
+Execution Time is 36.61131984790166 min
+
+['TotalT']
+Execution Time is 39.161940371990205 min
+
+['Temp']
+Execution Time is 41.73951955238978 min
+
+['LSR']
+Execution Time is 44.30527635018031 min
+
+['CA']
+Execution Time is 46.8830765247345 min
+
+['Size']
+Execution Time is 49.4702828168869 min
+
+['IsoT']
+Execution Time is 52.02607341607412 min
+
+['Ramp']
+Execution Time is 54.70206718444824 min
+
+['F_X']
+Execution Time is 57.278742881615955 min
+
