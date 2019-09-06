@@ -32,7 +32,7 @@ def validate(X,Y):
     best_lr = 0.005
     best_bs = 64
     dropout=0.001
-    epoch=10
+    epoch=3000
     for train, test in kfold.split(X,Y):
         model = Sequential()
         model.add(Dense(units=96, activation='sigmoid', input_dim=dimension))
