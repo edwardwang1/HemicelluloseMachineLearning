@@ -60,42 +60,7 @@ def validate(X,Y):
     print("Training Score: %.2f%% (+/- %.2f%%)" % (np.mean(trainingscores), np.std(trainingscores)))
     return np.mean(cvscores), np.std(cvscores), np.mean(trainingscores), np.std(trainingscores)
         
-
-def validate2(X,Y):
-    dimension=X.shape[1]
-    print(dimension)
-    cvscores = []
-    trainingscores =[]
-    best_lr = 0.005
-    best_bs = 64
-    dropout=0.001
-    epoch=3000
-
-    X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
-
-    model = Sequential()
-    model.add(Dense(units=96, activation='sigmoid', input_dim=dimension))
-    model.add(Dropout(dropout))
-    model.add(Dense(units=96, activation='sigmoid'))
-    model.add(Dense(units=48, activation='sigmoid'))        
-    model.add(Dense(units=48, activation='sigmoid'))        
-    sgd = SGD(lr=best_lr)
-    model.add(Dense(units=1, activation='linear'))
-    model.compile(optimizer=sgd,loss='mean_squared_error')
-    # Fit the model
-    model.fit(X_train, Y_train,batch_size=best_bs,epochs=epoch,verbose=False)
-    y_pred = model.predict(X_test)
-    y_train_pred = model.predict(X_train)
-    y_train_pred = y_train_pred.flatten()
-    y_pred = y_pred.flatten()
-    training_error = metrics.mean_absolute_error(Y_train, y_train_pred)
-    error = metrics.mean_absolute_error(Y_test, y_pred)
-    #print("Validation Score: %.2f%% (+/- %.2f%%)" % (np.mean(cvscores), np.std(cvscores)))
-    #print("Training Score: %.2f%% (+/- %.2f%%)" % (np.mean(trainingscores), np.std(trainingscores)))
-    return error, 0, training_error, 0
-
-
-    
+  
 # Prepping Data
 # data_start = data_start.sample(frac=.85).reset_index(drop=True)
 df = pd.read_csv("PreparedDataAll.csv")
@@ -122,14 +87,17 @@ scaler = StandardScaler()
 scaled = scaler.fit_transform(X_scale)
 X_scale[labels_to_scale] = scaled
 
-X = pd.concat([X_scale, df[df.columns[df.columns.isin(acids)]],df[df.columns[df.columns.isin(woods)]]], ignore_index=True,axis=1)
+finalCols = labels_to_scale + acids + woods
+
+X_all = pd.concat([X_scale, df[df.columns[df.columns.isin(acids)]],df[df.columns[df.columns.isin(woods)]]], ignore_index=True,axis=1)
+X_all.columns = finalCols
 
 for labels in labels_to_drop_all:
     print(labels)
-    X = X[X.columns[~X.columns.isin(labels)]]
+    X = X_all[X_all.columns[~X_all.columns.isin(labels)]]
     #z = df.columns.isin(labels)
     #assert len(labels) == z.tolist().count(True)
-    
+    print(X.columns)    
     testMeanE, testStdE, trainMeanE, trainStdE = validate(X, Y)
     row = [[labels, testMeanE, testStdE, trainMeanE, trainStdE]]
     print(row)
@@ -143,7 +111,7 @@ for labels in labels_to_drop_all:
 error_Frame.to_csv("DropingFeaturesSolubleXylose.csv")
 
 
-no_factors_frame = X[X.columns[~X.columns.isin(factors)]]
+no_factors_frame = X[X.columns[~X.columns.isin(factors)]].copy()
 
 error_Frame2 = pd.DataFrame(columns = cols)
 
@@ -153,7 +121,7 @@ for labels in labels_to_drop_front:
 
     #z = df.columns.isin(labels)
     #assert len(labels) == z.tolist().count(True)
-    
+    print(X_new.columns)
     testMeanE, testStdE, trainMeanE, trainStdE = validate(X_new, Y)
     row = [[labels, testMeanE, testStdE, trainMeanE, trainStdE]]
     print(row)
