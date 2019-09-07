@@ -27,8 +27,8 @@ def validate(X_raw, Y_raw, frac, cols):
     cols = cols + ['Yield']
     comb.columns = cols
     data = comb.sample(frac=frac)
-    Y = comb['Yield']
-    X = comb.drop(columns=['Yield'])    
+    Y = data['Yield']
+    X = data.drop(columns=['Yield'])
     dimension = X.shape[1]
     print('Starting Execution of CV')
     kfold = KFold(n_splits=5)
