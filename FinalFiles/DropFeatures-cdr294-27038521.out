@@ -1,0 +1,225 @@
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) openmpi/2.1.1
+
+Using TensorFlow backend.
+./DropFeatures.py:123: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_scale[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-09-06 12:48:49.304362: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: Tesla P100-PCIE-12GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:04:00.0
+totalMemory: 11.91GiB freeMemory: 11.66GiB
+2019-09-06 12:48:49.304469: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-09-06 12:48:53.649455: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-09-06 12:48:53.694735: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-09-06 12:48:53.698043: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-09-06 12:48:54.078886: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11270 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-12GB, pci bus id: 0000:04:00.0, compute capability: 6.0)
+2019-09-06 12:48:54.211523: I tensorflow/core/common_runtime/process_util.cc:71] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+2019-09-06 12:48:57.182614: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+['TotalT']
+40
+Starting Execution of CV
+Validation Score: 5.94% (+/- 0.68%)
+Training Score: 1.41% (+/- 0.08%)
+[[['TotalT'], 5.935578513754164, 0.6821054077056005, 1.411436415427341, 0.08282627043363743]]
+Execution Time is 11.729954787095387 min
+
+['Temp']
+40
+Starting Execution of CV
+Validation Score: 5.75% (+/- 0.61%)
+Training Score: 1.35% (+/- 0.12%)
+[[['Temp'], 5.750551974316075, 0.6136343175337821, 1.34526992679633, 0.12404824290452107]]
+Execution Time is 23.60687334537506 min
+
+['LSR']
+40
+Starting Execution of CV
+Validation Score: 5.86% (+/- 0.55%)
+Training Score: 1.36% (+/- 0.11%)
+[[['LSR'], 5.864131019445487, 0.5528806654065405, 1.3623756375849179, 0.11410194802496229]]
+Execution Time is 35.830790146191916 min
+
+['CA']
+40
+Starting Execution of CV
+Validation Score: 5.75% (+/- 0.56%)
+Training Score: 1.39% (+/- 0.05%)
+[[['CA'], 5.75050657619627, 0.5594954926321638, 1.3948965481409654, 0.054105487020771365]]
+Execution Time is 48.523258785406746 min
+
+['Size']
+40
+Starting Execution of CV
+Validation Score: 5.77% (+/- 0.49%)
+Training Score: 1.51% (+/- 0.19%)
+[[['Size'], 5.772360849694809, 0.49485901364914603, 1.5071113421913522, 0.19364075035031605]]
+Execution Time is 61.425759243965146 min
+
+['IsoT']
+40
+Starting Execution of CV
+Validation Score: 6.00% (+/- 0.63%)
+Training Score: 1.36% (+/- 0.09%)
+[[['IsoT'], 6.000405648723741, 0.6277194441206322, 1.3646705140409758, 0.08859046686505363]]
+Execution Time is 74.66121044953664 min
+
+['Ramp']
+40
+Starting Execution of CV
+Validation Score: 5.97% (+/- 0.45%)
+Training Score: 1.46% (+/- 0.28%)
+[[['Ramp'], 5.968502127805538, 0.45349752092776247, 1.464892301118764, 0.2827981818991012]]
+Execution Time is 89.99701759020488 min
+
+['F_X']
+40
+Starting Execution of CV
+Validation Score: 5.80% (+/- 0.57%)
+Training Score: 1.41% (+/- 0.10%)
+[[['F_X'], 5.802600806883258, 0.5707872141404972, 1.4093626196162876, 0.10067927382195017]]
+Execution Time is 104.02891794840495 min
+
+['Ro', 'logRo']
+40
+Starting Execution of CV
+Validation Score: 5.87% (+/- 0.56%)
+Training Score: 1.32% (+/- 0.12%)
+[[['Ro', 'logRo'], 5.871194741519288, 0.5608580118036215, 1.3188307343452912, 0.121380620923432]]
+Execution Time is 118.46197572549184 min
+
+['P', 'logP']
+40
+Starting Execution of CV
+Validation Score: 6.08% (+/- 0.67%)
+Training Score: 1.52% (+/- 0.36%)
+[[['P', 'logP'], 6.082550653560409, 0.6661634722926557, 1.523051184394243, 0.3615154157057059]]
+Execution Time is 133.1839377005895 min
+
+['H', 'logH']
+40
+Starting Execution of CV
+Validation Score: 5.84% (+/- 0.59%)
+Training Score: 1.36% (+/- 0.05%)
+[[['H', 'logH'], 5.836319900938788, 0.5905774411281617, 1.3605308811388537, 0.05027770772285252]]
+Execution Time is 172.71778722604117 min
+
+['Acetyl']
+40
+Starting Execution of CV
+Validation Score: 5.66% (+/- 0.43%)
+Training Score: 1.22% (+/- 0.05%)
+[[['Acetyl'], 5.662945972301231, 0.4326117006019773, 1.2204129775293724, 0.045908116226925755]]
+Execution Time is 198.0666166583697 min
+
+['acacia', 'aspen', 'basswood', 'beech', 'birch', 'carob', 'eucalyptus', 'maple', 'meranti', 'mixed', 'oak', 'olive', 'paulownia', 'pine', 'poplar', 'salix', 'vine', 'willow']
+40
+Starting Execution of CV
+Validation Score: 5.90% (+/- 0.66%)
+Training Score: 1.44% (+/- 0.15%)
+[[['acacia', 'aspen', 'basswood', 'beech', 'birch', 'carob', 'eucalyptus', 'maple', 'meranti', 'mixed', 'oak', 'olive', 'paulownia', 'pine', 'poplar', 'salix', 'vine', 'willow'], 5.902755167993408, 0.6596380705430965, 1.441662647339626, 0.15217102761452583]]
+Execution Time is 226.63602432807286 min
+
+['acetic', 'fenton', 'formic', 'malic', 'none', 'oxalic', 'phosphoric', 'sulfuric']
+40
+Starting Execution of CV
+Validation Score: 5.80% (+/- 0.57%)
+Training Score: 1.36% (+/- 0.11%)
+[[['acetic', 'fenton', 'formic', 'malic', 'none', 'oxalic', 'phosphoric', 'sulfuric'], 5.799807090047464, 0.5708936229640127, 1.3592474668450685, 0.1061443407975126]]
+Execution Time is 257.66459747950233 min
+
+['Ro', 'logRo', 'P', 'logP', 'H', 'logH']
+40
+Starting Execution of CV
+Validation Score: 5.80% (+/- 0.52%)
+Training Score: 1.39% (+/- 0.16%)
+[[['Ro', 'logRo', 'P', 'logP', 'H', 'logH'], 5.801978525611494, 0.5206820341398224, 1.385384347279373, 0.15731339645887166]]
+Execution Time is 283.48272211551665 min
+
+['TotalT']
+40
+Starting Execution of CV
+Validation Score: 5.95% (+/- 0.52%)
+Training Score: 1.36% (+/- 0.12%)
+[[['TotalT'], 5.953902061581239, 0.521572848992904, 1.3573922901888853, 0.12260939611381114]]
+Execution Time is 301.3028315345446 min
+
+['Temp']
+40
+Starting Execution of CV
+Validation Score: 5.80% (+/- 0.60%)
+Training Score: 1.43% (+/- 0.32%)
+[[['Temp'], 5.796462737213063, 0.6039071946588365, 1.430580118498567, 0.32473102303087453]]
+Execution Time is 319.2388188123703 min
+
+['LSR']
+40
+Starting Execution of CV
+Validation Score: 5.98% (+/- 0.57%)
+Training Score: 1.48% (+/- 0.28%)
+[[['LSR'], 5.983436661037517, 0.5720249283754296, 1.4784893891027135, 0.27884796414474977]]
+Execution Time is 337.8097884496053 min
+
+['CA']
+40
+Starting Execution of CV
+Validation Score: 5.78% (+/- 0.65%)
+Training Score: 1.32% (+/- 0.10%)
+[[['CA'], 5.784630543701998, 0.652962439471676, 1.3159187697054258, 0.100798959528783]]
+Execution Time is 357.0576001048088 min
+
+['Size']
+40
+Starting Execution of CV
+Validation Score: 5.82% (+/- 0.55%)
+Training Score: 1.32% (+/- 0.09%)
+[[['Size'], 5.820142421400284, 0.5491340877372836, 1.318078003316235, 0.09294083892542283]]
+Execution Time is 376.5349155108134 min
+
+['IsoT']
+40
+Starting Execution of CV
+Validation Score: 5.69% (+/- 0.37%)
+Training Score: 1.30% (+/- 0.09%)
+[[['IsoT'], 5.688018235291909, 0.3741150193859213, 1.2992960816959862, 0.0922499068136086]]
+Execution Time is 396.1209700703621 min
+
+['Ramp']
+40
+Starting Execution of CV
+Validation Score: 6.01% (+/- 0.48%)
+Training Score: 1.42% (+/- 0.28%)
+[[['Ramp'], 6.0143164650794265, 0.47850931427493965, 1.4222476990597301, 0.27835318142113685]]
+Execution Time is 417.2668144742648 min
+
+['F_X']
+40
+Starting Execution of CV
+Validation Score: 5.91% (+/- 0.63%)
+Training Score: 1.37% (+/- 0.09%)
+[[['F_X'], 5.912054990409171, 0.6341694043824768, 1.3655931992387451, 0.08620510312208303]]
+Execution Time is 439.34199005762736 min
+
