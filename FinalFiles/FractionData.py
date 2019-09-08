@@ -69,7 +69,7 @@ def validate(X_raw, Y_raw, frac, cols):
   
 # Prepping Data
 # data_start = data_start.sample(frac=.85).reset_index(drop=True)
-df = pd.read_csv("PreparedDataAll.csv")
+df = pd.read_csv("PreparedDataMonomer.csv")
 
 
 woods = ['acacia', 'aspen', 'basswood', 'beech', 'birch', 'carob', 'eucalyptus', 'maple', 'meranti', 'mixed', 'oak', 'olive', 'paulownia', 'pine', 'poplar', 'salix', 'vine', 'willow' ]
@@ -112,7 +112,7 @@ for fraction in fractions:
     print("Execution Time is", duration /60, "min\n")
 
 
-error_Frame.to_csv("EffectOfDataSize.csv")
+error_Frame.to_csv("EffectOfDataSizeMonomer.csv")
 
 
     
