@@ -1,0 +1,76 @@
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) openmpi/2.1.1
+
+Using TensorFlow backend.
+./FractionData.py:94: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_scale[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-09-07 15:19:33.311351: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: Tesla P100-PCIE-12GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:82:00.0
+totalMemory: 11.91GiB freeMemory: 11.66GiB
+2019-09-07 15:19:33.311451: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-09-07 15:19:36.839146: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-09-07 15:19:36.841606: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-09-07 15:19:36.843007: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-09-07 15:19:36.865663: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11270 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-12GB, pci bus id: 0000:82:00.0, compute capability: 6.0)
+2019-09-07 15:19:36.913507: I tensorflow/core/common_runtime/process_util.cc:71] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+2019-09-07 15:19:39.232929: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+0.1
+Starting Execution of CV
+Validation Score: 16.60% (+/- 2.18%)
+Training Score: 1.10% (+/- 0.67%)
+[[0.1, 16.596983823253943, 2.1839762569138514, 1.098678826281793, 0.6712013908735852]]
+Execution Time is 5.013678761323293 min
+
+0.25
+Starting Execution of CV
+Validation Score: 9.91% (+/- 1.20%)
+Training Score: 1.43% (+/- 0.68%)
+[[0.25, 9.90861151004579, 1.1990902308675284, 1.4274589336843944, 0.6826292092158303]]
+Execution Time is 16.869463205337524 min
+
+0.5
+Starting Execution of CV
+Validation Score: 7.58% (+/- 0.74%)
+Training Score: 1.23% (+/- 0.20%)
+[[0.5, 7.583369024017054, 0.7410794038325331, 1.2259793772052825, 0.20370003528780029]]
+Execution Time is 39.853270852565764 min
+
+0.75
+Starting Execution of CV
+Validation Score: 6.76% (+/- 0.42%)
+Training Score: 1.38% (+/- 0.23%)
+[[0.75, 6.756006328690181, 0.42207751781532127, 1.3814807099524746, 0.22503697206300477]]
+Execution Time is 75.7799042781194 min
+
+1.0
+Starting Execution of CV
+Validation Score: 5.75% (+/- 0.52%)
+Training Score: 1.34% (+/- 0.12%)
+[[1.0, 5.7537781664837775, 0.523278922099694, 1.3402701484346207, 0.11917303221613146]]
+Execution Time is 125.40040734211604 min
+
