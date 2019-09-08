@@ -1,0 +1,57 @@
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) openmpi/2.1.1
+
+Using TensorFlow backend.
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-07-03 16:45:03.723790: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: Tesla P100-PCIE-12GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:04:00.0
+totalMemory: 11.91GiB freeMemory: 11.66GiB
+2019-07-03 16:45:03.725420: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-07-03 16:45:07.913288: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-03 16:45:07.913400: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-07-03 16:45:07.913925: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-07-03 16:45:07.919671: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11270 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-12GB, pci bus id: 0000:04:00.0, compute capability: 6.0)
+2019-07-03 16:45:07.984709: I tensorflow/core/common_runtime/process_util.cc:71] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+2019-07-03 16:45:09.362958: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Staring Linear Regression ------------------
+Linear regression Mean Absolute Error: 21.437532074725777
+Linear regression Mean Squared Error: 655.3133049726976
+Linear regression Root Mean Squared Error: 25.599087971501984
+Ending Linear Regression ------------------
+Staring Ridge Regression ------------------
+Ridge Regression best alpha is:  0
+Ridge Regression Mean Absolute Error: 21.43753207472577
+Ridge Regression Mean Squared Error: 655.3133049726973
+Ridge Regression Root Mean Squared Error: 25.59908797150198
+Ridge Regression Coefficients:  [ 22.85357228  -8.8748876    3.83024795   7.30193483   3.60942434
+ -18.8708645  -10.31981203  -2.60132789  -3.95489416   8.01676275
+   4.34441039 -12.11402337]
+Ending Ridge Regression ------------------
+Starting Support Vector Regression ------------------
+SVR Best kernel is:  rbf
+SVR Best Epsilon is:  0.1
+SVR Best C is:  20
+SVR Best Gamma is:  auto
+SVR Mean Absolute Error: 12.063914627865755
+SVR Mean Squared Error: 299.8579355960317
+SVR Root Mean Squared Error: 17.316406543969556
+Ending Support Vector Regression ------------------
+Starting Neural Network------------------
+ANN Best Learning Rate is:  0.01
+ANN Best Batch Size is:  256
+ANN Best Dropout Rate is:  0.0
+ANN Mean Absolute Error: 8.392325888293966
+ANN Mean Squared Error: 181.16448972702162
+ANN Root Mean Squared Error: 13.459735871369157
+Ending Neural Network Regression ------------------
+Execution Time is: 84.35306615432104 min

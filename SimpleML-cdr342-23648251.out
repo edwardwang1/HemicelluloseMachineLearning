@@ -1,0 +1,59 @@
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) openmpi/2.1.1
+
+Using TensorFlow backend.
+/home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/sklearn/linear_model/ridge.py:125: LinAlgWarning: Ill-conditioned matrix (rcond=1.73192e-17): result may not be accurate.
+  overwrite_a=True).T
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-07-03 10:27:33.277103: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: Tesla P100-PCIE-12GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:03:00.0
+totalMemory: 11.91GiB freeMemory: 11.66GiB
+2019-07-03 10:27:33.277219: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-07-03 10:27:37.305334: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-03 10:27:37.305459: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-07-03 10:27:37.305508: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-07-03 10:27:37.335439: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11270 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-12GB, pci bus id: 0000:03:00.0, compute capability: 6.0)
+2019-07-03 10:27:37.439683: I tensorflow/core/common_runtime/process_util.cc:71] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+2019-07-03 10:27:39.998330: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Staring Linear Regression ------------------
+Linear regression Mean Absolute Error: 429.2567843717189
+Linear regression Mean Squared Error: 20369393.772459593
+Linear regression Root Mean Squared Error: 4513.246478141826
+Ending Linear Regression ------------------
+Staring Ridge Regression ------------------
+Ridge Regression best alpha is:  5
+Ridge Regression Mean Absolute Error: 429.2543451156721
+Ridge Regression Mean Squared Error: 20374402.914480973
+Ridge Regression Root Mean Squared Error: 4513.801381815661
+Ridge Regression Coefficients:  [ -1.73205576 -21.16341745   3.76640885   2.99076982   9.31578171
+  -1.17648739  -3.32190656  -3.23972805  -3.75270116  -4.38596835
+   7.25937315   6.2371753 ]
+Ending Ridge Regression ------------------
+Starting Support Vector Regression ------------------
+SVR Best kernel is:  rbf
+SVR Best Epsilon is:  0.1
+SVR Best C is:  20
+SVR Best Gamma is:  scale
+SVR Mean Absolute Error: 422.5538018719088
+SVR Mean Squared Error: 20342185.879267994
+SVR Root Mean Squared Error: 4510.231244544784
+Ending Support Vector Regression ------------------
+Starting Neural Network------------------
+ANN Best Learning Rate is:  0.005
+ANN Best Batch Size is:  64
+ANN Best Dropout Rate is:  0.01
+ANN Mean Absolute Error: 418.981659859454
+ANN Mean Squared Error: 20341042.864656746
+ANN Root Mean Squared Error: 4510.1045292384015
+Ending Neural Network Regression ------------------
+Execution Time is: 46.69261783361435 min
