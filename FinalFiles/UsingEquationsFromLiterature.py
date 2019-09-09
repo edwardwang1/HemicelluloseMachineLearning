@@ -4,17 +4,6 @@
 # In[4]:
 
 
-import os
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import math
-from scipy.integrate import odeint
-from sklearn import metrics
-from random import shuffle
-from sklearn.model_selection import train_test_split
-
-
 #Kinetic Characterization of Biomass
 # Dilute Sulfuric Acid Hydrolysis:
 # Mixtures of Hardwoods, Softwood,
@@ -169,17 +158,6 @@ results.to_csv("LitResults.csv")
 #All
 
 #Monomer
-from sklearn import metrics
-from openpyxl import Workbook
-from openpyxl import load_workbook
-import os
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import math
-from scipy.integrate import odeint
-from scipy import optimize
-
 acid_names = ['acetic', 'fenton', 'formic', 'malic', 'none', 'oxalic', 'phosphoric', 'sulfuric']
 acid_protons = [1, _, 1, 1, 1, 1, 2, 2]
 acid_mw = [60.852, _,  46.025, 134.09, 0, 90.034, 97.994, 98.079]
