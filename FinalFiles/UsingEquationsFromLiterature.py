@@ -122,7 +122,7 @@ for i in range(5):
     train_frame, test_frame, = data.iloc[:numTrain, :], data.iloc[numTrain:, :]
 
     initalGuessParams = [4.67e16, 142.58, 1.75, 6.51e16, 155.36, 1]
-    output = optimize.fmin(get_error, initalGuessParams, maxiter=100, full_output=1)
+    output = optimize.fmin(get_error, initalGuessParams, maxiter=1000, full_output=1)
     minimum = output[0]
     
     bestA1, bestE1, bestm1, bestA2, bestE2, bestm2 = minimum
@@ -254,7 +254,7 @@ for i in range(5):
     train_frame, test_frame, = data.iloc[:numTrain, :], data.iloc[numTrain:, :]
 
     initalGuessParams = [4.67e16, 142.58, 1.75, 6.51e16, 155.36, 1]
-    output = optimize.fmin(get_error, initalGuessParams, maxiter=100, full_output=1)
+    output = optimize.fmin(get_error, initalGuessParams, maxiter=1000, full_output=1)
     minimum = output[0]
     
     bestA1, bestE1, bestm1, bestA2, bestE2, bestm2 = minimum
