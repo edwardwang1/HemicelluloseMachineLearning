@@ -16,8 +16,6 @@
 #All
 
 from sklearn import metrics
-from openpyxl import Workbook
-from openpyxl import load_workbook
 import os
 import pandas as pd
 import numpy as np
