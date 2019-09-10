@@ -20,6 +20,8 @@ from sklearn.decomposition import PCA
 from keras.regularizers import l1
 from keras.regularizers import l1_l2
 
+##Changeed for Monomer
+
 start = time.time()
 
 def validate(X_test, Y_test, X_train, Y_train):
@@ -62,8 +64,8 @@ def validate(X_test, Y_test, X_train, Y_train):
 df = pd.read_csv("PreparedDataMonomerWithSource.csv")
 
 
-woods = ['acacia', 'aspen', 'basswood', 'beech', 'birch', 'carob', 'eucalyptus', 'maple', 'meranti', 'mixed', 'oak', 'olive', 'paulownia', 'pine', 'poplar', 'salix', 'vine', 'willow' ]
-acids = ['acetic', 'fenton', 'formic', 'malic', 'none', 'oxalic', 'phosphoric', 'sulfuric']
+woods = ['acacia', 'aspen', 'beech', 'birch', 'eucalyptus', 'maple', 'mixed', 'oak', 'paulownia', 'poplar', 'salix', 'vine']
+acids = ['acetic', 'fenton', 'formic', 'none', 'oxalic', 'sulfuric']
 factors = ['Ro', 'logRo', 'P', 'logP', 'H', 'logH']
 labels_to_drop_front = [['TotalT'],['Temp'], ['LSR'], ['CA'], ['Size'], ['IsoT'], ['Ramp'], ['F_X'],]
 labels_to_drop_back = [['Ro', 'logRo'],  ['P', 'logP'], ['H', 'logH'],['Acetyl'], woods, acids, factors  ]
