@@ -1,0 +1,1889 @@
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) openmpi/2.1.1
+
+Using TensorFlow backend.
+./Mismatch.py:112: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_test[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_train[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /home/edwardw1/hemicellulose_project/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-09-09 20:59:37.120924: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: Tesla P100-PCIE-12GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:04:00.0
+totalMemory: 11.91GiB freeMemory: 11.66GiB
+2019-09-09 20:59:37.121025: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-09-09 20:59:40.081316: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-09-09 20:59:40.081414: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-09-09 20:59:40.081455: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-09-09 20:59:40.085280: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11270 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-12GB, pci bus id: 0000:04:00.0, compute capability: 6.0)
+2019-09-09 20:59:40.127575: I tensorflow/core/common_runtime/process_util.cc:71] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+2019-09-09 20:59:42.710130: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+./Mismatch.py:112: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_test[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_train[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:112: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_test[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_train[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:112: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_test[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_train[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:112: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_test[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_train[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:112: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_test[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_train[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:112: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_test[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_train[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:112: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_test[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_train[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:112: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_test[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_train[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:112: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_test[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_train[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:112: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_test[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_train[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:112: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_test[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_train[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:112: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_test[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_train[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:112: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_test[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_train[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:112: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_test[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_train[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:112: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_test[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_train[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:112: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_test[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_train[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:112: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_test[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_train[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:112: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_test[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_train[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:112: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_test[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_train[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:112: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_test[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+./Mismatch.py:116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  X_train[labels_to_scale] = scaled
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3144: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self.loc._setitem_with_indexer((slice(None), indexer), value)
+/cvmfs/soft.computecanada.ca/easybuild/software/2017/Core/scipy-stack/2019a/lib/python3.6/site-packages/pandas/core/frame.py:3116: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_array(key, value)
+21 num papers
+76 76
+1909 1909
+76 76 76
+1909 1909 1909
+40
+Starting Execution of CV
+Validation Score: 39.19% (+/- 1.15%)
+Training Score: 1.29% (+/- 0.09%)
+[[      Unnamed: 0      TotalT    Temp    ...      vine  willow      Yield
+0              0   78.201175  448.15    ...       0.0     0.0  89.851789
+1              1   68.882134  448.15    ...       0.0     0.0  48.180604
+19            19   93.335694  448.15    ...       0.0     0.0  51.218818
+23            23   62.990823  448.15    ...       0.0     0.0   5.991199
+57            57   51.343651  448.15    ...       0.0     0.0   2.363582
+66            66   59.835660  448.15    ...       0.0     0.0   2.246781
+73            73   65.944703  448.15    ...       0.0     0.0  19.179149
+76            76   73.364023  448.15    ...       0.0     0.0  82.885225
+126          126  102.459618  448.15    ...       0.0     0.0  30.764471
+144          144   99.422117  448.15    ...       0.0     0.0  23.837424
+162          162   68.617998  448.15    ...       0.0     0.0  34.962031
+163          163   68.646613  448.15    ...       0.0     0.0  39.936624
+165          165   58.491501  448.15    ...       0.0     0.0   2.125262
+183          183  106.776799  448.15    ...       0.0     0.0  15.138073
+187          187   51.651586  448.15    ...       0.0     0.0   1.401285
+226          226  110.477239  448.15    ...       0.0     0.0  15.382236
+294          294   83.413999  448.15    ...       0.0     0.0  66.381186
+309          309   50.756241  448.15    ...       0.0     0.0   1.220812
+320          320   72.832861  448.15    ...       0.0     0.0  65.033022
+337          337   47.672540  448.15    ...       0.0     0.0   0.000000
+392          392   86.321586  448.15    ...       0.0     0.0  70.074629
+415          415   62.474303  448.15    ...       0.0     0.0  13.917261
+428          428  105.631260  448.15    ...       0.0     0.0  14.947040
+514          514   87.067989  448.15    ...       0.0     0.0  73.109019
+565          565   75.505659  448.15    ...       0.0     0.0  84.376381
+567          567   77.188385  448.15    ...       0.0     0.0  89.261011
+576          576   65.722386  448.15    ...       0.0     0.0  13.416825
+581          581   80.819660  448.15    ...       0.0     0.0  75.675041
+587          587   74.706314  448.15    ...       0.0     0.0  87.410165
+608          608   82.723935  448.15    ...       0.0     0.0  67.388842
+...          ...         ...     ...    ...       ...     ...        ...
+1036        1036   59.493392  448.15    ...       0.0     0.0   3.906600
+1067        1067   68.538913  448.15    ...       0.0     0.0  60.552293
+1075        1075   70.601983  448.15    ...       0.0     0.0  80.334910
+1095        1095   68.230543  448.15    ...       0.0     0.0  41.019295
+1118        1118   69.858357  448.15    ...       0.0     0.0  42.717770
+1232        1232   66.671388  448.15    ...       0.0     0.0  19.127360
+1266        1266   78.994334  448.15    ...       0.0     0.0  88.198380
+1313        1313   74.295154  448.15    ...       0.0     0.0  81.306103
+1424        1424   81.614285  448.15    ...       0.0     0.0  66.561040
+1448        1448  107.340077  448.15    ...       0.0     0.0  15.205211
+1514        1514   64.440510  448.15    ...       0.0     0.0  19.552412
+1543        1543   72.679296  448.15    ...       0.0     0.0  78.942027
+1563        1563   65.797356  448.15    ...       0.0     0.0  17.282516
+1564        1564  109.164306  448.15    ...       0.0     0.0  20.402517
+1607        1607   63.909348  448.15    ...       0.0     0.0   6.375787
+1674        1674   98.861968  448.15    ...       0.0     0.0  26.369547
+1676        1676   94.339207  448.15    ...       0.0     0.0  46.390869
+1722        1722   89.567121  448.15    ...       0.0     0.0  43.439836
+1753        1753   97.703780  448.15    ...       0.0     0.0  24.989583
+1767        1767   71.108664  448.15    ...       0.0     0.0  59.331480
+1794        1794   47.230878  448.15    ...       0.0     0.0   3.400419
+1801        1801   95.035411  448.15    ...       0.0     0.0  51.856397
+1821        1821  102.896601  448.15    ...       0.0     0.0  33.791668
+1873        1873   71.618949  448.15    ...       0.0     0.0  62.593532
+1883        1883  101.196884  448.15    ...       0.0     0.0  34.216721
+1899        1899   48.732048  448.15    ...       0.0     0.0   1.330731
+1900        1900   96.750603  448.15    ...       0.0     0.0  37.293130
+1927        1927   85.155807  448.15    ...       0.0     0.0  73.109019
+1930        1930   91.415653  448.15    ...       0.0     0.0  42.768560
+1935        1935   62.642311  448.15    ...       0.0     0.0   5.213154
+
+[76 rows x 44 columns], 39.185948406236896, 1.1496889332284665, 1.2903936974650623, 0.0873730122085739, 76]]
+Execution Time is 14.581900306542714 min
+
+65 65
+1920 1920
+65 65 65
+1920 1920 1920
+40
+Starting Execution of CV
+Validation Score: 41.72% (+/- 3.27%)
+Training Score: 1.33% (+/- 0.08%)
+[[      Unnamed: 0   TotalT     Temp    ...      vine  willow      Yield
+2              2  615.375  373.525    ...       0.0     0.0  75.356322
+32            32  495.290  373.440    ...       0.0     0.0  68.781609
+71            71  315.200  373.350    ...       0.0     0.0  59.172414
+114          114  315.375  373.525    ...       0.0     0.0  66.758621
+118          118  495.400  373.550    ...       0.0     0.0  78.390805
+137          137  675.290  373.440    ...       0.0     0.0  72.321839
+152          152  675.375  373.525    ...       0.0     0.0  75.862069
+156          156  615.400  373.550    ...       0.0     0.0  82.942529
+166          166  315.580  373.730    ...       0.0     0.0  86.988506
+185          185  615.200  373.350    ...       0.0     0.0  68.781609
+216          216  555.290  373.440    ...       0.0     0.0  70.298851
+219          219  195.375  373.525    ...       0.0     0.0  58.666667
+283          283  135.200  373.350    ...       0.0     0.0  27.158621
+307          307  555.400  373.550    ...       0.0     0.0  81.425287
+335          335  615.580  373.730    ...       0.0     0.0  94.574713
+339          339  495.200  373.350    ...       0.0     0.0  65.241379
+375          375  255.375  373.525    ...       0.0     0.0  65.241379
+385          385  195.580  373.730    ...       0.0     0.0  78.896552
+386          386  435.400  373.550    ...       0.0     0.0  78.390805
+411          411  375.200  373.350    ...       0.0     0.0  61.195402
+450          450  675.200  373.350    ...       0.0     0.0  70.298851
+460          460  495.580  373.730    ...       0.0     0.0  91.540230
+499          499  555.375  373.525    ...       0.0     0.0  73.839080
+537          537   75.290  373.440    ...       0.0     0.0   0.000000
+603          603   75.400  373.550    ...       0.0     0.0   0.000000
+651          651  315.400  373.550    ...       0.0     0.0  74.344828
+663          663  315.290  373.440    ...       0.0     0.0  62.712644
+665          665  255.580  373.730    ...       0.0     0.0  84.459770
+742          742  105.580  373.730    ...       0.0     0.0  59.172414
+755          755  105.200  373.350    ...       0.0     0.0  10.721839
+...          ...      ...      ...    ...       ...     ...        ...
+987          987  735.290  373.440    ...       0.0     0.0  72.321839
+1042        1042   75.580  373.730    ...       0.0     0.0   0.000000
+1070        1070  135.580  373.730    ...       0.0     0.0  68.275862
+1136        1136  135.400  373.550    ...       0.0     0.0  53.609195
+1214        1214  495.375  373.525    ...       0.0     0.0  72.321839
+1241        1241  435.290  373.440    ...       0.0     0.0  65.241379
+1260        1260  615.290  373.440    ...       0.0     0.0  70.804598
+1327        1327  255.200  373.350    ...       0.0     0.0  54.620690
+1338        1338  195.290  373.440    ...       0.0     0.0  49.158621
+1349        1349  435.200  373.350    ...       0.0     0.0  61.195402
+1367        1367  135.375  373.525    ...       0.0     0.0  40.510345
+1371        1371  105.290  373.440    ...       0.0     0.0  16.588506
+1373        1373   75.375  373.525    ...       0.0     0.0   0.000000
+1387        1387  675.400  373.550    ...       0.0     0.0  84.459770
+1417        1417  135.290  373.440    ...       0.0     0.0  36.363218
+1461        1461  195.200  373.350    ...       0.0     0.0  45.618391
+1482        1482  435.375  373.525    ...       0.0     0.0  70.804598
+1496        1496  435.580  373.730    ...       0.0     0.0  91.034483
+1521        1521  105.400  373.550    ...       0.0     0.0  33.429885
+1554        1554  255.400  373.550    ...       0.0     0.0  68.275862
+1585        1585  255.290  373.440    ...       0.0     0.0  57.655172
+1588        1588  735.375  373.525    ...       0.0     0.0  76.873563
+1613        1613  735.580  373.730    ...       0.0     0.0  95.080460
+1626        1626  375.400  373.550    ...       0.0     0.0  74.344828
+1628        1628  735.200  373.350    ...       0.0     0.0  72.321839
+1649        1649  555.200  373.350    ...       0.0     0.0  67.264368
+1691        1691  105.375  373.525    ...       0.0     0.0  27.158621
+1814        1814   75.200  373.350    ...       0.0     0.0   0.000000
+1889        1889  195.400  373.550    ...       0.0     0.0  64.229885
+1897        1897  375.375  373.525    ...       0.0     0.0  70.298851
+
+[65 rows x 44 columns], 41.723121456186654, 3.2660157986685, 1.3349686122256748, 0.07578862759878037, 65]]
+Execution Time is 29.410815143585204 min
+
+36 36
+1949 1949
+36 36 36
+1949 1949 1949
+40
+Starting Execution of CV
+Validation Score: 28.86% (+/- 7.57%)
+Training Score: 1.47% (+/- 0.09%)
+[[      Unnamed: 0      TotalT    Temp    ...      vine  willow      Yield
+3              3   20.000000  513.15    ...       0.0     0.0   0.293897
+104          104   19.985452  493.15    ...       0.0     0.0  18.038583
+125          125    5.892857  513.15    ...       0.0     0.0   9.102029
+138          138   60.038502  453.15    ...       0.0     0.0  25.830338
+299          299   30.116928  453.15    ...       0.0     0.0   9.534598
+319          319   19.490946  473.15    ...       0.0     0.0  32.525598
+551          551    7.901786  513.15    ...       0.0     0.0   4.214421
+586          586   14.910714  513.15    ...       0.0     0.0   0.695232
+614          614   30.054133  473.15    ...       0.0     0.0  36.550681
+696          696    0.530731  473.15    ...       0.0     0.0   2.731746
+752          752   45.165288  453.15    ...       0.0     0.0  17.115168
+821          821   10.000000  513.15    ...       0.0     0.0   1.825930
+851          851    1.954318  493.15    ...       0.0     0.0  26.576325
+857          857   89.932067  473.15    ...       0.0     0.0  14.529974
+868          868    9.903500  473.15    ...       0.0     0.0  19.844324
+878          878  180.084711  453.15    ...       0.0     0.0  35.409547
+949          949    5.075956  493.15    ...       0.0     0.0  32.198741
+963          963   30.000000  513.15    ...       0.0     0.0   0.219526
+1021        1021  120.318652  473.15    ...       0.0     0.0   4.756546
+1045        1045   60.234525  493.15    ...       0.0     0.0   0.234267
+1086        1086    0.000000  513.15    ...       0.0     0.0  29.491784
+1139        1139    0.684220  453.15    ...       0.0     0.0   0.615414
+1165        1165   59.894333  473.15    ...       0.0     0.0  26.570836
+1342        1342  119.762000  453.15    ...       0.0     0.0  43.196759
+1439        1439    1.875000  513.15    ...       0.0     0.0  24.083184
+1463        1463   30.069164  493.15    ...       0.0     0.0   8.459653
+1471        1471   10.789063  453.15    ...       0.0     0.0   1.098568
+1472        1472   20.371357  453.15    ...       0.0     0.0   4.134439
+1481        1481   10.267915  493.15    ...       0.0     0.0  29.387533
+1525        1525  180.426918  473.15    ...       0.0     0.0   1.389170
+1680        1680    0.000000  493.15    ...       0.0     0.0   7.314346
+1692        1692   15.021775  493.15    ...       0.0     0.0  24.910424
+1734        1734   90.154147  453.15    ...       0.0     0.0  35.412174
+1745        1745    4.017857  513.15    ...       0.0     0.0  17.009480
+1847        1847   44.663398  473.15    ...       0.0     0.0  36.661876
+1859        1859   45.072921  493.15    ...       0.0     0.0   2.004287
+
+[36 rows x 44 columns], 28.856301711028145, 7.572264555312451, 1.471503062094, 0.09007947265327318, 36]]
+Execution Time is 45.423771564165754 min
+
+31 31
+1954 1954
+31 31 31
+1954 1954 1954
+40
+Starting Execution of CV
+Validation Score: 34.18% (+/- 3.17%)
+Training Score: 1.38% (+/- 0.07%)
+[[      Unnamed: 0      TotalT    Temp    ...      vine  willow      Yield
+4              4    2.533333  443.15    ...       0.0     0.0  68.393782
+53            53    8.033333  443.15    ...       0.0     0.0  60.751269
+193          193    1.533333  463.15    ...       0.0     0.0  61.644670
+232          232    1.533333  463.15    ...       0.0     0.0  66.113990
+270          270    0.663333  463.15    ...       0.0     0.0  63.469027
+274          274   20.033333  443.15    ...       0.0     0.0  60.642487
+351          351    2.033333  443.15    ...       0.0     0.0  50.477157
+388          388    3.033333  463.15    ...       0.0     0.0  70.673575
+403          403    1.003333  463.15    ...       0.0     0.0  70.867257
+590          590   12.033333  443.15    ...       0.0     0.0  62.984772
+637          637    2.533333  443.15    ...       0.0     0.0  62.922280
+688          688   10.033333  443.15    ...       0.0     0.0  66.113990
+797          797   10.033333  443.15    ...       0.0     0.0  62.466321
+872          872    1.253333  443.15    ...       0.0     0.0  51.067358
+1145        1145  180.333333  413.15    ...       0.0     0.0  61.197970
+1189        1189    0.663333  463.15    ...       0.0     0.0  64.771574
+1226        1226    0.663333  463.15    ...       0.0     0.0  67.481865
+1239        1239   40.333333  413.15    ...       0.0     0.0  53.604061
+1262        1262    1.003333  463.15    ...       0.0     0.0  65.218274
+1269        1269  110.333333  413.15    ...       0.0     0.0  61.197970
+1360        1360    4.033333  443.15    ...       0.0     0.0  57.624365
+1446        1446    0.663333  463.15    ...       0.0     0.0  64.290155
+1462        1462    1.003333  463.15    ...       0.0     0.0  73.409326
+1495        1495    2.033333  463.15    ...       0.0     0.0  69.685279
+1505        1505    5.033333  443.15    ...       0.0     0.0  63.834197
+1627        1627    2.033333  463.15    ...       0.0     0.0  71.585492
+1771        1771    1.533333  463.15    ...       0.0     0.0  66.973451
+1903        1903    1.253333  443.15    ...       0.0     0.0  61.554404
+1908        1908    1.003333  463.15    ...       0.0     0.0  68.791878
+1943        1943    5.033333  443.15    ...       0.0     0.0  69.761658
+1970        1970    1.003333  463.15    ...       0.0     0.0  70.217617
+
+[31 rows x 44 columns], 34.176154177222394, 3.1709424843671385, 1.3842555970642234, 0.06886312062072815, 31]]
+Execution Time is 62.16249135335286 min
+
+400 400
+1585 1585
+400 400 400
+1585 1585 1585
+40
+Starting Execution of CV
+Validation Score: 43.49% (+/- 2.22%)
+Training Score: 1.77% (+/- 0.19%)
+[[      Unnamed: 0      TotalT    Temp    ...      vine  willow      Yield
+8              8   41.192676  373.65    ...       0.0     0.0  83.164832
+15            15   85.740534  408.15    ...       0.0     0.0  68.187250
+18            18  103.316178  408.15    ...       0.0     0.0  71.769413
+22            22   40.690476  398.15    ...       0.0     0.0  80.281942
+25            25  271.903747  373.65    ...       0.0     0.0  86.001403
+26            26   60.567960  408.15    ...       0.0     0.0  73.427127
+27            27  427.864874  373.65    ...       0.0     0.0  83.454256
+30            30  165.713084  398.15    ...       0.0     0.0  78.944676
+37            37   29.717322  398.15    ...       0.0     0.0  80.655760
+39            39   13.261905  398.15    ...       0.0     0.0  81.959696
+41            41   88.601614  408.15    ...       0.0     0.0  73.457136
+45            45   54.410184  398.15    ...       0.0     0.0  81.035544
+46            46  115.400096  408.15    ...       0.0     0.0  60.650346
+56            56   58.401531  408.15    ...       0.0     0.0  77.909649
+58            58   51.268828  408.15    ...       0.0     0.0  79.837361
+65            65    9.437500  373.65    ...       0.0     0.0  82.028581
+78            78   41.286895  398.15    ...       0.0     0.0  81.903848
+80            80  178.907479  398.15    ...       0.0     0.0  74.213986
+82            82  145.542813  398.15    ...       0.0     0.0  73.477760
+83            83  181.174674  373.65    ...       0.0     0.0  82.408854
+88            88  328.307453  373.65    ...       0.0     0.0  84.493475
+95            95   28.966302  398.15    ...       0.0     0.0  81.504974
+97            97  362.393536  373.65    ...       0.0     0.0  88.015202
+107          107  124.604358  398.15    ...       0.0     0.0  79.782390
+112          112   81.772312  388.15    ...       0.0     0.0  82.726228
+117          117  289.987829  373.65    ...       0.0     0.0  83.845600
+119          119   86.255738  408.15    ...       0.0     0.0  78.005785
+132          132   11.250000  388.15    ...       0.0     0.0  82.539637
+141          141   55.439052  408.15    ...       0.0     0.0  73.870318
+142          142  285.514452  373.65    ...       0.0     0.0  86.332408
+...          ...         ...     ...    ...       ...     ...        ...
+1872        1872  216.459743  388.15    ...       0.0     0.0  73.466899
+1875        1875   49.589503  408.15    ...       0.0     0.0  74.852251
+1876        1876  449.412296  373.65    ...       0.0     0.0  83.282244
+1879        1879    9.437500  373.65    ...       0.0     0.0  82.477810
+1881        1881  134.601456  388.15    ...       0.0     0.0  79.921619
+1885        1885   56.017641  398.15    ...       0.0     0.0  78.845702
+1886        1886   47.819284  373.65    ...       0.0     0.0  83.079616
+1890        1890   23.387414  408.15    ...       0.0     0.0  82.288570
+1894        1894  134.705634  398.15    ...       0.0     0.0  75.239245
+1909        1909   18.704082  398.15    ...       0.0     0.0  82.163998
+1910        1910  116.306262  398.15    ...       0.0     0.0  79.551324
+1911        1911  110.535610  373.65    ...       0.0     0.0  82.853551
+1917        1917  389.721790  373.65    ...       0.0     0.0  83.229678
+1921        1921   90.445601  373.65    ...       0.0     0.0  82.952028
+1924        1924   44.108967  373.65    ...       0.0     0.0  82.782413
+1929        1929  140.749323  388.15    ...       0.0     0.0  78.540056
+1933        1933  109.865355  408.15    ...       0.0     0.0  62.011911
+1940        1940  115.717843  408.15    ...       0.0     0.0  72.668406
+1945        1945    9.437500  373.65    ...       0.0     0.0  82.263254
+1946        1946   39.992852  408.15    ...       0.0     0.0  77.703735
+1955        1955   26.369752  388.15    ...       0.0     0.0  82.624039
+1957        1957  128.533408  408.15    ...       0.0     0.0  65.109139
+1960        1960   28.290346  408.15    ...       0.0     0.0  79.797095
+1966        1966   16.566213  373.65    ...       0.0     0.0  83.059321
+1968        1968  147.901361  398.15    ...       0.0     0.0  70.541631
+1972        1972   76.381035  388.15    ...       0.0     0.0  82.563092
+1979        1979  217.154746  388.15    ...       0.0     0.0  73.240221
+1980        1980   39.723560  408.15    ...       0.0     0.0  77.137928
+1983        1983   81.357042  408.15    ...       0.0     0.0  78.473824
+1984        1984  155.066782  373.65    ...       0.0     0.0  90.557750
+
+[400 rows x 44 columns], 43.493791707827754, 2.216027503222095, 1.7726072185482658, 0.1899286753633572, 400]]
+Execution Time is 76.10448693037033 min
+
+43 43
+1942 1942
+43 43 43
+1942 1942 1942
+40
+Starting Execution of CV
+Validation Score: 15.24% (+/- 1.48%)
+Training Score: 1.52% (+/- 0.31%)
+[[      Unnamed: 0      TotalT    Temp    ...      vine  willow      Yield
+9              9  119.729353  428.15    ...       0.0     0.0  28.719761
+134          134   79.817263  438.15    ...       0.0     0.0  26.945992
+158          158   39.784331  438.15    ...       0.0     0.0   9.123853
+196          196  179.900283  418.15    ...       0.0     0.0  21.835202
+256          256  201.799486  433.15    ...       0.0     0.0  26.030809
+284          284  246.529563  433.15    ...       0.0     0.0  35.467375
+314          314   40.260777  418.15    ...       0.0     0.0   1.010226
+334          334  291.645244  433.15    ...       0.0     0.0  23.170055
+463          463  156.683805  433.15    ...       0.0     0.0   8.533502
+523          523  180.258194  428.15    ...       0.0     0.0  21.894769
+689          689  160.189840  418.15    ...       0.0     0.0  21.186908
+754          754  261.568123  433.15    ...       0.0     0.0  29.840339
+793          793  100.090400  428.15    ...       0.0     0.0  24.790405
+823          823  186.375321  433.15    ...       0.0     0.0  15.140806
+1101        1101  180.052949  438.15    ...       0.0     0.0  22.849313
+1102        1102   79.689503  418.15    ...       0.0     0.0   4.872154
+1128        1128  200.221849  438.15    ...       0.0     0.0  20.097136
+1134        1134  200.172959  428.15    ...       0.0     0.0  17.054433
+1178        1178  231.298201  433.15    ...       0.0     0.0  28.844835
+1195        1195  220.013006  418.15    ...       0.0     0.0  25.279516
+1203        1203   59.731383  428.15    ...       0.0     0.0  14.067505
+1207        1207  220.131080  428.15    ...       0.0     0.0  18.955475
+1211        1211  199.835343  418.15    ...       0.0     0.0  31.849963
+1229        1229  240.153311  438.15    ...       0.0     0.0  25.331128
+1234        1234   39.784331  428.15    ...       0.0     0.0   6.916469
+1341        1341  119.928141  438.15    ...       0.0     0.0  32.299302
+1344        1344   80.143349  428.15    ...       0.0     0.0  20.860772
+1391        1391   59.975832  418.15    ...       0.0     0.0   1.956723
+1410        1410  139.891335  438.15    ...       0.0     0.0  29.726010
+1519        1519  240.066601  428.15    ...       0.0     0.0  26.106788
+1523        1523  276.413882  433.15    ...       0.0     0.0  39.150334
+1536        1536  119.818831  418.15    ...       0.0     0.0  13.148849
+1582        1582  139.424115  428.15    ...       0.0     0.0  31.336896
+1605        1605  171.529563  433.15    ...       0.0     0.0  13.496802
+1624        1624  219.963194  438.15    ...       0.0     0.0  25.398835
+1635        1635  239.976662  418.15    ...       0.0     0.0  24.973267
+1643        1643  216.645244  433.15    ...       0.0     0.0  29.492522
+1681        1681  159.800105  438.15    ...       0.0     0.0  27.451012
+1682        1682   59.905264  438.15    ...       0.0     0.0  21.703860
+1701        1701   99.403175  418.15    ...       0.0     0.0   8.622717
+1713        1713  139.769111  418.15    ...       0.0     0.0  16.064186
+1915        1915  159.848073  428.15    ...       0.0     0.0  29.002239
+1936        1936   99.754167  438.15    ...       0.0     0.0  33.679414
+
+[43 rows x 44 columns], 15.243185923920104, 1.4830189185649612, 1.5209139993081502, 0.313262034261358, 43]]
+Execution Time is 93.31349479754766 min
+
+30 30
+1955 1955
+30 30 30
+1955 1955 1955
+40
+Starting Execution of CV
+Validation Score: 17.80% (+/- 2.02%)
+Training Score: 1.59% (+/- 0.23%)
+[[      Unnamed: 0  TotalT    Temp   LSR  ...    salix  vine  willow  Yield
+10            10    10.0  398.15  12.0  ...      0.0   0.0     0.0  23.40
+133          133   120.5  423.15   6.0  ...      0.0   0.0     0.0  11.10
+233          233   115.5  373.15   6.0  ...      0.0   0.0     0.0  12.51
+331          331   115.5  373.15  16.0  ...      0.0   0.0     0.0  43.60
+336          336   226.0  398.15  12.0  ...      0.0   0.0     0.0  15.30
+353          353   331.5  373.15   6.0  ...      0.0   0.0     0.0  14.19
+421          421   331.5  373.15   6.0  ...      0.0   0.0     0.0  21.75
+502          502   336.5  423.15   6.0  ...      0.0   0.0     0.0  13.35
+527          527   336.5  423.15  16.0  ...      0.0   0.0     0.0   0.00
+528          528   226.0  398.15  12.0  ...      0.0   0.0     0.0  50.70
+611          611   336.5  423.15   6.0  ...      0.0   0.0     0.0   4.86
+680          680   226.0  398.15  12.0  ...      0.0   0.0     0.0  48.96
+686          686   331.5  373.15  16.0  ...      0.0   0.0     0.0  65.68
+829          829   226.0  398.15   4.0  ...      0.0   0.0     0.0  12.32
+838          838   120.5  423.15  16.0  ...      0.0   0.0     0.0  48.16
+867          867   226.0  398.15  20.0  ...      0.0   0.0     0.0  73.30
+920          920   231.0  448.15  12.0  ...      0.0   0.0     0.0   3.36
+1192        1192   331.5  373.15  16.0  ...      0.0   0.0     0.0  31.04
+1261        1261   115.5  373.15   6.0  ...      0.0   0.0     0.0   3.51
+1322        1322   226.0  398.15  12.0  ...      0.0   0.0     0.0  47.82
+1336        1336   115.5  373.15  16.0  ...      0.0   0.0     0.0  10.16
+1353        1353   120.5  423.15   6.0  ...      0.0   0.0     0.0  23.13
+1449        1449   226.0  398.15  12.0  ...      0.0   0.0     0.0  49.92
+1518        1518   221.0  348.15  12.0  ...      0.0   0.0     0.0   2.70
+1590        1590   226.0  398.15  12.0  ...      0.0   0.0     0.0  50.10
+1637        1637   226.0  398.15  12.0  ...      0.0   0.0     0.0  48.30
+1686        1686   226.0  398.15  12.0  ...      0.0   0.0     0.0  42.54
+1727        1727   442.0  398.15  12.0  ...      0.0   0.0     0.0  35.46
+1937        1937   120.5  423.15  16.0  ...      0.0   0.0     0.0  56.80
+1973        1973   333.5  393.15  16.0  ...      0.0   0.0     0.0  22.88
+
+[30 rows x 44 columns], 17.803707972749073, 2.0241004007682526, 1.5850382056749739, 0.23328668143048936, 30]]
+Execution Time is 112.03609196345012 min
+
+33 33
+1952 1952
+33 33 33
+1952 1952 1952
+40
+Starting Execution of CV
+Validation Score: 29.96% (+/- 6.67%)
+Training Score: 1.69% (+/- 0.36%)
+[[      Unnamed: 0      TotalT    Temp    ...      vine  willow      Yield
+11            11   79.945759  418.15    ...       0.0     0.0   5.426294
+31            31  239.977279  418.15    ...       0.0     0.0  29.199524
+75            75  179.753735  418.15    ...       0.0     0.0  24.455713
+94            94  219.735986  438.15    ...       0.0     0.0  34.595947
+108          108  120.178177  428.15    ...       0.0     0.0  34.188245
+128          128  239.661319  438.15    ...       0.0     0.0  36.184144
+200          200   39.987989  438.15    ...       0.0     0.0  26.941741
+260          260  220.032055  418.15    ...       0.0     0.0  28.161337
+362          362  199.990437  428.15    ...       0.0     0.0  36.892500
+395          395  219.890524  428.15    ...       0.0     0.0  38.136601
+474          474   60.287424  438.15    ...       0.0     0.0  38.590547
+578          578  100.263554  418.15    ...       0.0     0.0   9.585736
+616          616   79.935814  428.15    ...       0.0     0.0  22.939531
+654          654   99.860381  428.15    ...       0.0     0.0  29.765116
+668          668  160.071684  428.15    ...       0.0     0.0  36.687565
+713          713  139.831922  418.15    ...       0.0     0.0  17.759812
+723          723   40.017060  418.15    ...       0.0     0.0   1.099218
+733          733  239.830392  428.15    ...       0.0     0.0  38.281329
+852          852  139.914546  438.15    ...       0.0     0.0  33.182894
+1213        1213  100.149564  438.15    ...       0.0     0.0  39.812578
+1248        1248  179.999312  428.15    ...       0.0     0.0  38.922820
+1283        1283   40.372036  428.15    ...       0.0     0.0   7.704062
+1318        1318   59.982175  418.15    ...       0.0     0.0   2.291153
+1434        1434   59.973759  428.15    ...       0.0     0.0  15.662128
+1503        1503  199.732620  438.15    ...       0.0     0.0  35.550941
+1513        1513  140.127225  428.15    ...       0.0     0.0  37.887684
+1570        1570  159.913322  438.15    ...       0.0     0.0  33.466918
+1612        1612   79.874611  438.15    ...       0.0     0.0  41.220466
+1662        1662  119.648008  438.15    ...       0.0     0.0  37.657475
+1724        1724  119.868337  418.15    ...       0.0     0.0  14.536722
+1830        1830  199.710434  418.15    ...       0.0     0.0  29.607882
+1851        1851  179.807288  438.15    ...       0.0     0.0  33.962583
+1956        1956  159.794741  418.15    ...       0.0     0.0  23.230013
+
+[33 rows x 44 columns], 29.960541577731732, 6.6707206356459645, 1.6880821422386354, 0.36368632872758094, 33]]
+Execution Time is 129.55256416797639 min
+
+32 32
+1953 1953
+32 32 32
+1953 1953 1953
+40
+Starting Execution of CV
+Validation Score: 23.56% (+/- 3.59%)
+Training Score: 1.49% (+/- 0.17%)
+[[      Unnamed: 0  TotalT    Temp    ...      vine  willow      Yield
+16            16    60.0  398.15    ...       0.0     0.0  42.162902
+115          115    40.0  403.15    ...       0.0     0.0  33.971253
+120          120    60.0  398.15    ...       0.0     0.0  43.367556
+129          129     0.0  403.15    ...       0.0     0.0   0.000000
+280          280    80.0  403.15    ...       0.0     0.0  35.175907
+291          291    60.0  398.15    ...       0.0     0.0  39.030801
+356          356    90.0  403.15    ...       0.0     0.0  34.934976
+511          511    60.0  398.15    ...       0.0     0.0  36.139630
+538          538    60.0  378.15    ...       0.0     0.0  13.973990
+641          641    60.0  398.15    ...       0.0     0.0  43.367556
+716          716    20.0  403.15    ...       0.0     0.0  27.225188
+777          777    60.0  398.15    ...       0.0     0.0  43.367556
+783          783    60.0  398.15    ...       0.0     0.0  39.512663
+795          795    60.0  388.15    ...       0.0     0.0  21.683778
+951          951    60.0  403.15    ...       0.0     0.0  36.139630
+1019        1019    50.0  403.15    ...       0.0     0.0  34.934976
+1185        1185   110.0  403.15    ...       0.0     0.0  33.971253
+1217        1217    10.0  403.15    ...       0.0     0.0  19.756331
+1254        1254    60.0  398.15    ...       0.0     0.0  36.139630
+1316        1316    60.0  398.15    ...       0.0     0.0  37.946612
+1335        1335   100.0  403.15    ...       0.0     0.0  34.212183
+1347        1347    60.0  398.15    ...       0.0     0.0  30.116359
+1364        1364    30.0  403.15    ...       0.0     0.0  31.321013
+1377        1377    60.0  383.15    ...       0.0     0.0  14.455852
+1402        1402    60.0  398.15    ...       0.0     0.0  38.548939
+1593        1593    60.0  398.15    ...       0.0     0.0  43.367556
+1668        1668   120.0  403.15    ...       0.0     0.0  33.730322
+1688        1688    60.0  398.15    ...       0.0     0.0  38.548939
+1705        1705    60.0  398.15    ...       0.0     0.0  43.668720
+1868        1868    70.0  403.15    ...       0.0     0.0  35.416838
+1912        1912    60.0  403.15    ...       0.0     0.0  35.657769
+1982        1982    60.0  393.15    ...       0.0     0.0  29.393566
+
+[32 rows x 44 columns], 23.563415801346043, 3.5909311195101634, 1.4860796652239845, 0.16827145332972185, 32]]
+Execution Time is 147.7136096874873 min
+
+31 31
+1954 1954
+31 31 31
+1954 1954 1954
+40
+Starting Execution of CV
+Validation Score: 38.50% (+/- 2.15%)
+Training Score: 1.41% (+/- 0.10%)
+[[      Unnamed: 0      TotalT    Temp    ...      vine  willow      Yield
+20            20   58.718692  433.15    ...       0.0     0.0  66.219717
+35            35   59.895714  448.15    ...       0.0     0.0  68.459924
+167          167  119.929861  448.15    ...       0.0     0.0  45.058549
+172          172  360.332561  433.15    ...       0.0     0.0  54.066324
+240          240   14.692994  448.15    ...       0.0     0.0  12.064063
+244          244  119.717933  448.15    ...       0.0     0.0  73.401830
+342          342  239.335877  433.15    ...       0.0     0.0  40.775393
+370          370   23.745150  448.15    ...       0.0     0.0  12.209413
+418          418   90.092498  448.15    ...       0.0     0.0  53.488858
+655          655   59.729930  448.15    ...       0.0     0.0  30.814233
+660          660  119.722616  433.15    ...       0.0     0.0  77.647050
+722          722    6.606679  448.15    ...       0.0     0.0   0.872101
+773          773    0.123163  448.15    ...       0.0     0.0   0.581401
+888          888   29.546973  433.15    ...       0.0     0.0  38.001896
+977          977    0.000000  433.15    ...       0.0     0.0   0.000000
+993          993   41.865905  448.15    ...       0.0     0.0  26.744429
+1087        1087  239.583051  433.15    ...       0.0     0.0  69.198212
+1222        1222   29.995631  433.15    ...       0.0     0.0   8.405293
+1242        1242    6.612384  448.15    ...       0.0     0.0   5.814006
+1330        1330   14.683765  448.15    ...       0.0     0.0   4.069804
+1475        1475   14.789965  433.15    ...       0.0     0.0   6.303617
+1477        1477   44.794584  433.15    ...       0.0     0.0  20.764241
+1512        1512    0.000000  433.15    ...       0.0     0.0   3.212733
+1557        1557   90.304473  433.15    ...       0.0     0.0  43.314052
+1742        1742    0.000000  448.15    ...       0.0     0.0   1.453502
+1757        1757   59.204051  433.15    ...       0.0     0.0  27.586146
+1815        1815  149.462835  433.15    ...       0.0     0.0  64.528197
+1829        1829   14.428942  433.15    ...       0.0     0.0   1.706019
+1835        1835  119.870171  433.15    ...       0.0     0.0  56.930493
+1891        1891  179.777544  433.15    ...       0.0     0.0  49.020490
+1954        1954   30.263064  448.15    ...       0.0     0.0  42.296896
+
+[31 rows x 44 columns], 38.49756942598635, 2.1516809768884326, 1.4059973686136444, 0.09833490358760212, 31]]
+Execution Time is 166.61674993832906 min
+
+67 67
+1918 1918
+67 67 67
+1918 1918 1918
+40
+Starting Execution of CV
+Validation Score: 43.76% (+/- 4.57%)
+Training Score: 1.54% (+/- 0.20%)
+[[      Unnamed: 0   TotalT    Temp    ...      vine  willow      Yield
+24            24   44.625  463.15    ...       0.0     0.0  37.490120
+62            62   64.250  448.15    ...       0.0     0.0  31.213494
+136          136    0.000  418.15    ...       0.0     0.0   0.000000
+140          140   15.000  418.15    ...       0.0     0.0   0.330795
+188          188   45.000  418.15    ...       0.0     0.0   1.238361
+195          195   46.875  433.15    ...       0.0     0.0   3.638747
+205          205  196.800  418.15    ...       0.0     0.0  10.347952
+235          235   31.750  448.15    ...       0.0     0.0   5.460241
+239          239   43.750  448.15    ...       0.0     0.0  15.309880
+302          302  315.000  418.15    ...       0.0     0.0  24.427952
+363          363  165.000  418.15    ...       0.0     0.0   7.252048
+380          380   24.625  463.15    ...       0.0     0.0   7.718554
+436          436   20.625  463.15    ...       0.0     0.0   1.819373
+441          441   43.750  448.15    ...       0.0     0.0  14.313253
+459          459  138.075  433.15    ...       0.0     0.0  31.001446
+471          471  135.000  418.15    ...       0.0     0.0   4.707470
+505          505   21.250  448.15    ...       0.0     0.0   1.017831
+513          513   32.625  463.15    ...       0.0     0.0  21.544096
+517          517   16.875  433.15    ...       0.0     0.0   0.106024
+518          518   78.750  448.15    ...       0.0     0.0  39.122892
+549          549   53.750  448.15    ...       0.0     0.0  22.954217
+569          569   18.750  448.15    ...       0.0     0.0   0.535422
+606          606    0.000  433.15    ...       0.0     0.0   0.000000
+662          662   18.750  448.15    ...       0.0     0.0   0.483470
+745          745  196.875  433.15    ...       0.0     0.0  42.409639
+791          791   21.250  448.15    ...       0.0     0.0   0.970120
+807          807    0.000  448.15    ...       0.0     0.0   0.000000
+869          869   23.750  448.15    ...       0.0     0.0   1.607325
+897          897   78.750  448.15    ...       0.0     0.0  37.702169
+928          928  465.000  418.15    ...       0.0     0.0  39.016867
+...          ...      ...     ...    ...       ...     ...        ...
+1201        1201   63.750  448.15    ...       0.0     0.0  30.587952
+1270        1270   26.250  448.15    ...       0.0     0.0   3.142554
+1272        1272   40.625  463.15    ...       0.0     0.0  35.072771
+1277        1277   63.750  448.15    ...       0.0     0.0  32.125301
+1350        1350   36.625  463.15    ...       0.0     0.0  30.619759
+1378        1378  255.000  418.15    ...       0.0     0.0  15.140241
+1390        1390   31.875  433.15    ...       0.0     0.0   1.492819
+1397        1397   75.000  418.15    ...       0.0     0.0   1.976289
+1401        1401   23.920  448.15    ...       0.0     0.0   1.797108
+1421        1421   21.250  448.15    ...       0.0     0.0   1.217157
+1426        1426   29.625  463.15    ...       0.0     0.0  17.048675
+1474        1474   61.875  433.15    ...       0.0     0.0   6.446265
+1480        1480   78.750  448.15    ...       0.0     0.0  40.236145
+1486        1486   18.750  448.15    ...       0.0     0.0   0.610699
+1490        1490  375.000  418.15    ...       0.0     0.0  29.644337
+1516        1516   53.750  448.15    ...       0.0     0.0  23.367711
+1535        1535   36.950  448.15    ...       0.0     0.0   9.701205
+1542        1542  106.875  433.15    ...       0.0     0.0  21.374458
+1640        1640   26.625  463.15    ...       0.0     0.0  11.408193
+1657        1657  105.000  418.15    ...       0.0     0.0   3.380048
+1708        1708   23.830  448.15    ...       0.0     0.0   1.834217
+1725        1725   31.750  448.15    ...       0.0     0.0   6.075181
+1799        1799   24.375  433.15    ...       0.0     0.0   0.831229
+1813        1813   76.875  433.15    ...       0.0     0.0  11.153735
+1818        1818    0.000  463.15    ...       0.0     0.0   0.000000
+1824        1824   36.950  448.15    ...       0.0     0.0   9.287711
+1856        1856   31.750  448.15    ...       0.0     0.0   5.894940
+1860        1860   22.625  463.15    ...       0.0     0.0   4.105253
+1867        1867   36.950  448.15    ...       0.0     0.0   9.287711
+1951        1951   21.625  463.15    ...       0.0     0.0   2.837205
+
+[67 rows x 44 columns], 43.75964527612412, 4.570523672562157, 1.5436402356407792, 0.19931716400494043, 67]]
+Execution Time is 185.49698268969854 min
+
+85 85
+1900 1900
+85 85 85
+1900 1900 1900
+40
+Starting Execution of CV
+Validation Score: 29.96% (+/- 1.36%)
+Training Score: 1.40% (+/- 0.07%)
+[[      Unnamed: 0  TotalT    Temp    ...      vine  willow      Yield
+33            33   155.0  403.15    ...       0.0     0.0  69.287356
+60            60   210.0  388.15    ...       0.0     0.0  61.195402
+61            61   155.0  403.15    ...       0.0     0.0  64.735632
+64            64   125.0  403.15    ...       0.0     0.0  65.241379
+190          190    90.0  388.15    ...       0.0     0.0  61.195402
+221          221    50.0  403.15    ...       0.0     0.0  55.632184
+227          227    50.0  403.15    ...       0.0     0.0  60.689655
+253          253    95.0  403.15    ...       0.0     0.0  72.827586
+272          272   125.0  403.15    ...       0.0     0.0  72.827586
+295          295   150.0  388.15    ...       0.0     0.0  62.206897
+315          315   390.0  388.15    ...       0.0     0.0  61.701149
+328          328   215.0  403.15    ...       0.0     0.0  56.137931
+348          348   270.0  388.15    ...       0.0     0.0  61.701149
+354          354   215.0  403.15    ...       0.0     0.0  69.287356
+359          359   330.0  388.15    ...       0.0     0.0  62.712644
+448          448   210.0  388.15    ...       0.0     0.0  66.252874
+476          476    95.0  403.15    ...       0.0     0.0  72.321839
+479          479    60.0  388.15    ...       0.0     0.0  60.689655
+485          485   210.0  388.15    ...       0.0     0.0  63.218391
+486          486   330.0  388.15    ...       0.0     0.0  62.206897
+510          510   275.0  403.15    ...       0.0     0.0  45.314943
+516          516   125.0  403.15    ...       0.0     0.0  68.781609
+520          520   120.0  388.15    ...       0.0     0.0  60.689655
+539          539    60.0  388.15    ...       0.0     0.0  40.459770
+541          541    65.0  403.15    ...       0.0     0.0  65.241379
+545          545   150.0  388.15    ...       0.0     0.0  63.724138
+563          563    65.0  403.15    ...       0.0     0.0  69.793103
+613          613   120.0  388.15    ...       0.0     0.0  65.241379
+628          628   215.0  403.15    ...       0.0     0.0  60.689655
+652          652   335.0  403.15    ...       0.0     0.0  55.632184
+...          ...     ...     ...    ...       ...     ...        ...
+1324        1324   210.0  388.15    ...       0.0     0.0  66.758621
+1414        1414   270.0  388.15    ...       0.0     0.0  63.218391
+1422        1422   215.0  403.15    ...       0.0     0.0  67.264368
+1437        1437    45.0  388.15    ...       0.0     0.0  49.411494
+1507        1507    50.0  403.15    ...       0.0     0.0  64.735632
+1560        1560   215.0  403.15    ...       0.0     0.0  50.574713
+1574        1574   120.0  388.15    ...       0.0     0.0  65.241379
+1636        1636   330.0  388.15    ...       0.0     0.0  63.218391
+1642        1642   275.0  403.15    ...       0.0     0.0  66.758621
+1648        1648   335.0  403.15    ...       0.0     0.0  64.735632
+1669        1669   150.0  388.15    ...       0.0     0.0  57.655172
+1726        1726   270.0  388.15    ...       0.0     0.0  64.229885
+1759        1759    45.0  388.15    ...       0.0     0.0  25.337931
+1764        1764    65.0  403.15    ...       0.0     0.0  66.252874
+1789        1789    95.0  403.15    ...       0.0     0.0  68.275862
+1791        1791   150.0  388.15    ...       0.0     0.0  63.218391
+1827        1827   275.0  403.15    ...       0.0     0.0  58.666667
+1840        1840   125.0  403.15    ...       0.0     0.0  69.287356
+1845        1845   150.0  388.15    ...       0.0     0.0  64.735632
+1848        1848   120.0  388.15    ...       0.0     0.0  54.620690
+1850        1850   275.0  403.15    ...       0.0     0.0  69.793103
+1853        1853    95.0  403.15    ...       0.0     0.0  70.804598
+1854        1854    90.0  388.15    ...       0.0     0.0  50.574713
+1862        1862    50.0  403.15    ...       0.0     0.0  68.275862
+1880        1880   155.0  403.15    ...       0.0     0.0  60.689655
+1882        1882    60.0  388.15    ...       0.0     0.0  47.540230
+1922        1922   275.0  403.15    ...       0.0     0.0  48.602299
+1941        1941   155.0  403.15    ...       0.0     0.0  63.724138
+1948        1948    90.0  388.15    ...       0.0     0.0  57.149425
+1971        1971   330.0  388.15    ...       0.0     0.0  63.724138
+
+[85 rows x 44 columns], 29.957278823091485, 1.3620594739717538, 1.4030897042622221, 0.06824877908368282, 85]]
+Execution Time is 204.71862445672352 min
+
+51 51
+1934 1934
+51 51 51
+1934 1934 1934
+40
+Starting Execution of CV
+Validation Score: 31.90% (+/- 2.76%)
+Training Score: 1.46% (+/- 0.15%)
+[[      Unnamed: 0     TotalT    Temp    ...      vine  willow      Yield
+34            34  29.804882  433.15    ...       0.0     0.0  83.537291
+50            50  26.546472  413.15    ...       0.0     0.0  22.571005
+93            93  40.046434  453.15    ...       0.0     0.0  75.236593
+177          177  15.023077  433.15    ...       0.0     0.0  73.458149
+189          189  59.946154  433.15    ...       0.0     0.0  51.146980
+198          198   4.909542  433.15    ...       0.0     0.0   7.061264
+254          254   4.935016  433.15    ...       0.0     0.0  30.238423
+259          259  30.051897  473.15    ...       0.0     0.0  38.643533
+297          297  65.018512  413.15    ...       0.0     0.0  30.042637
+345          345  22.694032  433.15    ...       0.0     0.0  30.444434
+360          360  53.108135  413.15    ...       0.0     0.0  31.218034
+420          420  20.036722  473.15    ...       0.0     0.0  69.400631
+443          443  16.095335  473.15    ...       0.0     0.0  71.416861
+481          481  20.007692  433.15    ...       0.0     0.0  50.223787
+490          490  33.262739  413.15    ...       0.0     0.0  25.694990
+561          561   6.199995  473.15    ...       0.0     0.0  47.440834
+582          582  42.501969  433.15    ...       0.0     0.0  20.025789
+588          588  10.000910  453.15    ...       0.0     0.0   7.728707
+591          591  40.067071  473.15    ...       0.0     0.0  22.239748
+593          593   4.938088  473.15    ...       0.0     0.0  18.927445
+618          618  24.780603  433.15    ...       0.0     0.0  79.718667
+681          681   4.992308  433.15    ...       0.0     0.0  62.187165
+746          746  10.038462  473.15    ...       0.0     0.0  25.769723
+799          799  34.772942  433.15    ...       0.0     0.0  84.035606
+968          968  10.078921  433.15    ...       0.0     0.0  34.276302
+1028        1028  10.021548  473.15    ...       0.0     0.0  79.495268
+1062        1062  20.016085  453.15    ...       0.0     0.0  54.258675
+1088        1088  15.067393  433.15    ...       0.0     0.0  32.267043
+1089        1089   9.889977  433.15    ...       0.0     0.0  35.586062
+1186        1186  19.817493  433.15    ...       0.0     0.0  76.430945
+1197        1197  35.038847  453.15    ...       0.0     0.0  75.078864
+1310        1310  14.841772  433.15    ...       0.0     0.0  45.249570
+1346        1346  16.683927  413.15    ...       0.0     0.0  18.618339
+1358        1358  37.584063  433.15    ...       0.0     0.0  21.943427
+1372        1372  32.523004  433.15    ...       0.0     0.0  23.677550
+1374        1374  15.023077  473.15    ...       0.0     0.0  37.073968
+1411        1411  39.902942  433.15    ...       0.0     0.0  63.280473
+1430        1430  14.953263  473.15    ...       0.0     0.0  89.432177
+1450        1450  59.872180  433.15    ...       0.0     0.0  45.614643
+1533        1533  49.909863  453.15    ...       0.0     0.0  74.921136
+1565        1565  62.529999  433.15    ...       0.0     0.0  12.172674
+1587        1587  41.900005  413.15    ...       0.0     0.0  28.271701
+1620        1620  27.677841  433.15    ...       0.0     0.0  25.870052
+1736        1736  29.955387  453.15    ...       0.0     0.0  73.817035
+1743        1743  29.976923  433.15    ...       0.0     0.0  84.169376
+1774        1774   5.053846  473.15    ...       0.0     0.0  18.947588
+1780        1780  24.930769  433.15    ...       0.0     0.0  78.797740
+1809        1809  40.007692  433.15    ...       0.0     0.0  61.429060
+1842        1842  34.961538  433.15    ...       0.0     0.0  71.349326
+1926        1926   9.976923  433.15    ...       0.0     0.0  76.259771
+1964        1964  11.158626  473.15    ...       0.0     0.0  53.252304
+
+[51 rows x 44 columns], 31.898110793020358, 2.7569842489460634, 1.464598513262481, 0.15243708619189006, 51]]
+Execution Time is 224.93462916612626 min
+
+48 48
+1937 1937
+48 48 48
+1937 1937 1937
+40
+Starting Execution of CV
+Validation Score: 31.38% (+/- 2.53%)
+Training Score: 1.43% (+/- 0.14%)
+[[      Unnamed: 0      TotalT    Temp    ...      vine  willow      Yield
+38            38   80.230441  433.15    ...       0.0     0.0  29.111059
+86            86   79.412095  425.15    ...       0.0     0.0  12.349052
+109          109   64.876349  448.15    ...       0.0     0.0  49.430286
+116          116   65.554182  433.15    ...       0.0     0.0  20.881659
+124          124  170.446268  433.15    ...       0.0     0.0  48.118720
+224          224   20.275405  425.15    ...       0.0     0.0   0.000000
+357          357   26.890737  448.15    ...       0.0     0.0   6.146856
+366          366   22.619155  440.15    ...       0.0     0.0   0.323013
+367          367   39.453687  440.15    ...       0.0     0.0   8.548044
+406          406  198.980441  425.15    ...       0.0     0.0  47.694055
+424          424   29.912320  448.15    ...       0.0     0.0   7.598229
+440          440  171.540018  440.15    ...       0.0     0.0  51.276614
+446          446   35.338354  433.15    ...       0.0     0.0   3.574404
+503          503  112.358363  448.15    ...       0.0     0.0  52.613521
+595          595  109.627923  425.15    ...       0.0     0.0  16.660356
+601          601  111.540018  440.15    ...       0.0     0.0  52.491189
+645          645   83.005845  448.15    ...       0.0     0.0  52.187109
+700          700  138.980441  425.15    ...       0.0     0.0  39.070574
+726          726  140.662095  433.15    ...       0.0     0.0  56.802493
+748          748  199.798786  433.15    ...       0.0     0.0  71.257682
+761          761   67.712455  433.15    ...       0.0     0.0  28.407654
+782          782   51.108363  440.15    ...       0.0     0.0  21.763318
+819          819   59.555980  425.15    ...       0.0     0.0   3.765765
+827          827  110.014613  433.15    ...       0.0     0.0  43.625666
+892          892  141.093750  433.15    ...       0.0     0.0  75.815217
+953          953  170.446268  433.15    ...       0.0     0.0  64.636938
+973          973   34.906700  433.15    ...       0.0     0.0   1.631958
+1004        1004  110.446268  433.15    ...       0.0     0.0  38.887950
+1023        1023   80.662095  433.15    ...       0.0     0.0  27.895611
+1025        1025   47.178507  448.15    ...       0.0     0.0  36.713075
+1133        1133   21.525405  433.15    ...       0.0     0.0   0.080098
+1138        1138   23.437500  448.15    ...       0.0     0.0   0.445344
+1171        1171   38.113759  448.15    ...       0.0     0.0  23.006728
+1204        1204   66.647932  440.15    ...       0.0     0.0  34.484898
+1205        1205   81.324191  440.15    ...       0.0     0.0  46.236565
+1236        1236  141.324191  440.15    ...       0.0     0.0  56.803367
+1275        1275   21.093750  433.15    ...       0.0     0.0   0.000000
+1299        1299  201.324191  440.15    ...       0.0     0.0  51.580695
+1492        1492   50.014613  433.15    ...       0.0     0.0   8.767367
+1493        1493  140.230441  433.15    ...       0.0     0.0  47.208225
+1545        1545   51.093750  433.15    ...       0.0     0.0  33.491848
+1549        1549   38.836556  425.15    ...       0.0     0.0   1.378557
+1632        1632   81.093750  433.15    ...       0.0     0.0  60.937500
+1756        1756   21.093750  433.15    ...       0.0     0.0   0.202429
+1807        1807  200.662095  433.15    ...       0.0     0.0  42.470509
+1822        1822   30.388939  440.15    ...       0.0     0.0   1.886232
+1893        1893   50.877923  433.15    ...       0.0     0.0  19.939708
+1950        1950  142.574191  448.15    ...       0.0     0.0  34.090816
+
+[48 rows x 44 columns], 31.37850023670357, 2.5309119005496763, 1.4259871621636846, 0.14333287849920007, 48]]
+Execution Time is 245.37018072605133 min
+
+47 47
+1938 1938
+47 47 47
+1938 1938 1938
+40
+Starting Execution of CV
+Validation Score: 31.43% (+/- 1.93%)
+Training Score: 1.63% (+/- 0.42%)
+[[      Unnamed: 0      TotalT    Temp    ...      vine  willow      Yield
+40            40  364.000000  425.15    ...       0.0     0.0  53.847137
+74            74   34.000000  440.15    ...       0.0     0.0  24.176317
+217          217   94.224813  433.15    ...       0.0     0.0  41.890565
+230          230   64.329670  440.15    ...       0.0     0.0  51.303845
+242          242    4.000000  440.15    ...       0.0     0.0   0.000000
+245          245   94.000000  440.15    ...       0.0     0.0  57.383339
+261          261   48.962531  433.15    ...       0.0     0.0  31.077782
+507          507   11.195767  448.15    ...       0.0     0.0   9.698629
+577          577   19.137386  433.15    ...       0.0     0.0   3.364408
+636          636    4.000000  425.15    ...       0.0     0.0   0.000000
+720          720   44.298507  425.15    ...       0.0     0.0   4.593387
+739          739  124.223881  425.15    ...       0.0     0.0  44.472434
+762          762   46.116402  448.15    ...       0.0     0.0  54.147427
+925          925  274.671642  425.15    ...       0.0     0.0  54.135507
+962          962   64.105820  448.15    ...       0.0     0.0  56.973543
+970          970   48.731183  433.15    ...       0.0     0.0  23.808946
+1149        1149  124.049958  433.15    ...       0.0     0.0  51.386076
+1215        1215   19.026455  448.15    ...       0.0     0.0  26.223648
+1263        1263  184.000000  433.15    ...       0.0     0.0  43.679681
+1295        1295  124.000000  448.15    ...       0.0     0.0  35.985994
+1333        1333   34.107527  433.15    ...       0.0     0.0  10.351999
+1340        1340   94.158730  448.15    ...       0.0     0.0  56.303790
+1412        1412   93.892473  433.15    ...       0.0     0.0  48.802974
+1428        1428  184.000000  425.15    ...       0.0     0.0  52.458193
+1438        1438   22.461538  440.15    ...       0.0     0.0   9.632751
+1468        1468  154.329670  440.15    ...       0.0     0.0  54.089788
+1469        1469  184.000000  440.15    ...       0.0     0.0  53.959934
+1520        1520    7.597884  448.15    ...       0.0     0.0   7.464843
+1568        1568   24.149254  425.15    ...       0.0     0.0   2.123450
+1598        1598   19.053763  433.15    ...       0.0     0.0   2.415846
+1630        1630    4.000000  433.15    ...       0.0     0.0   0.000000
+1689        1689  154.174854  433.15    ...       0.0     0.0  52.586565
+1717        1717  153.677419  433.15    ...       0.0     0.0  71.359911
+1778        1778  244.000000  433.15    ...       0.0     0.0  64.280091
+1779        1779   94.000000  425.15    ...       0.0     0.0  19.262028
+1781        1781    4.000000  448.15    ...       0.0     0.0   0.000000
+1790        1790   12.901099  440.15    ...       0.0     0.0   2.325554
+1796        1796   63.800167  433.15    ...       0.0     0.0  31.281111
+1806        1806   49.494505  440.15    ...       0.0     0.0  38.613639
+1810        1810  124.430108  433.15    ...       0.0     0.0  63.155783
+1834        1834   63.784946  433.15    ...       0.0     0.0  31.177014
+1861        1861   33.825146  433.15    ...       0.0     0.0  21.338729
+1896        1896   28.338624  448.15    ...       0.0     0.0  41.283233
+1901        1901  124.000000  440.15    ...       0.0     0.0  61.574058
+1902        1902    4.000000  433.15    ...       0.0     0.0   0.000000
+1916        1916   63.776119  425.15    ...       0.0     0.0  14.706386
+1978        1978  184.215054  433.15    ...       0.0     0.0  77.734825
+
+[47 rows x 44 columns], 31.425235519617797, 1.9295793814388136, 1.6300782974706334, 0.42398061480016436, 47]]
+Execution Time is 266.5174291372299 min
+
+36 36
+1949 1949
+36 36 36
+1949 1949 1949
+40
+Starting Execution of CV
+Validation Score: 21.13% (+/- 5.56%)
+Training Score: 1.59% (+/- 0.27%)
+[[      Unnamed: 0      TotalT    Temp    ...      vine  willow      Yield
+42            42   10.598635  513.15    ...       0.0     0.0  21.457013
+48            48   25.295799  493.15    ...       0.0     0.0  22.206890
+70            70   67.406911  493.15    ...       0.0     0.0   0.994248
+250          250   22.454553  513.15    ...       0.0     0.0   1.121562
+292          292   36.987064  453.15    ...       0.0     0.0  91.242056
+306          306    7.387658  513.15    ...       0.0     0.0  64.924548
+325          325   50.343229  453.15    ...       0.0     0.0  86.480281
+369          369    6.507612  453.15    ...       0.0     0.0  10.578419
+387          387   14.735857  513.15    ...       0.0     0.0   4.895559
+391          391    9.629133  493.15    ...       0.0     0.0  85.410747
+425          425  132.240413  473.15    ...       0.0     0.0   4.871767
+453          453   17.629133  493.15    ...       0.0     0.0  39.244751
+464          464   16.650093  513.15    ...       0.0     0.0   2.153774
+596          596   98.793314  473.15    ...       0.0     0.0  16.240774
+632          632   71.233640  453.15    ...       0.0     0.0  79.230699
+863          863    8.684399  513.15    ...       0.0     0.0  39.851990
+1014        1014   10.740244  493.15    ...       0.0     0.0  80.363233
+1044        1044   12.142375  513.15    ...       0.0     0.0  11.128283
+1078        1078   38.879939  513.15    ...       0.0     0.0   0.512277
+1289        1289    8.690925  473.15    ...       0.0     0.0  81.840823
+1304        1304   15.069256  453.15    ...       0.0     0.0  58.149586
+1331        1331   27.120959  473.15    ...       0.0     0.0  76.733470
+1415        1415   53.400823  473.15    ...       0.0     0.0  46.526008
+1537        1537    6.851355  493.15    ...       0.0     0.0  93.674787
+1553        1553  193.493914  453.15    ...       0.0     0.0  46.230305
+1567        1567   98.973366  453.15    ...       0.0     0.0  72.378614
+1633        1633   21.851355  493.15    ...       0.0     0.0  31.271366
+1646        1646   71.489560  473.15    ...       0.0     0.0  31.225462
+1664        1664   25.685694  453.15    ...       0.0     0.0  78.825027
+1699        1699   36.851355  493.15    ...       0.0     0.0   9.978700
+1728        1728  198.110720  473.15    ...       0.0     0.0   1.480706
+1741        1741   51.740244  493.15    ...       0.0     0.0   2.039030
+1874        1874   36.335976  473.15    ...       0.0     0.0  60.632655
+1938        1938  126.028160  453.15    ...       0.0     0.0  69.838623
+1969        1969   29.432255  513.15    ...       0.0     0.0   0.825429
+1977        1977   18.247239  473.15    ...       0.0     0.0  85.483286
+
+[36 rows x 44 columns], 21.125165214778768, 5.557157600114962, 1.5868042476118844, 0.27379816716596533, 36]]
+Execution Time is 287.9442739804586 min
+
+29 29
+1956 1956
+29 29 29
+1956 1956 1956
+40
+Starting Execution of CV
+Validation Score: 45.66% (+/- 5.28%)
+Training Score: 1.38% (+/- 0.09%)
+[[      Unnamed: 0  TotalT    Temp    ...      vine  willow      Yield
+59            59   224.0  403.15    ...       0.0     0.0   4.526882
+84            84    86.0  423.15    ...       0.0     0.0  31.462366
+106          106    75.0  413.15    ...       0.0     0.0   5.322581
+139          139    70.0  443.15    ...       0.0     0.0  98.608602
+175          175    13.0  433.15    ...       0.0     0.0   1.806452
+236          236    25.0  413.15    ...       0.0     0.0   1.623656
+419          419    10.0  443.15    ...       0.0     0.0   3.764516
+489          489    20.0  443.15    ...       0.0     0.0  26.724731
+555          555    18.0  433.15    ...       0.0     0.0   3.666667
+571          571   165.0  413.15    ...       0.0     0.0  32.505376
+650          650     6.0  423.15    ...       0.0     0.0   0.752688
+670          670   126.0  423.15    ...       0.0     0.0  53.086022
+741          741     8.0  433.15    ...       0.0     0.0   2.752688
+860          860    16.0  423.15    ...       0.0     0.0   0.430108
+1124        1124    46.0  423.15    ...       0.0     0.0   8.655914
+1152        1152    28.0  433.15    ...       0.0     0.0  17.268817
+1183        1183   115.0  413.15    ...       0.0     0.0  10.182796
+1193        1193    84.0  403.15    ...       0.0     0.0   1.150538
+1228        1228    45.0  413.15    ...       0.0     0.0   2.161290
+1257        1257     5.0  413.15    ...       0.0     0.0   2.709677
+1292        1292    25.0  443.15    ...       0.0     0.0  47.127957
+1339        1339   144.0  403.15    ...       0.0     0.0   3.129032
+1361        1361    88.0  433.15    ...       0.0     0.0  95.709677
+1487        1487     4.0  403.15    ...       0.0     0.0   0.946237
+1606        1606    44.0  403.15    ...       0.0     0.0   0.946237
+1700        1700    24.0  403.15    ...       0.0     0.0   0.817204
+1744        1744    30.0  443.15    ...       0.0     0.0  79.121505
+1761        1761    48.0  433.15    ...       0.0     0.0  67.892473
+1962        1962    15.0  443.15    ...       0.0     0.0   7.847312
+
+[29 rows x 44 columns], 45.661909228365076, 5.279604084656079, 1.375289259385202, 0.08621835174638194, 29]]
+Execution Time is 309.9539371053378 min
+
+43 43
+1942 1942
+43 43 43
+1942 1942 1942
+40
+Starting Execution of CV
+Validation Score: 24.59% (+/- 3.12%)
+Training Score: 1.45% (+/- 0.16%)
+[[      Unnamed: 0  TotalT    Temp  LSR    ...      salix  vine  willow      Yield
+101          101    95.0  393.15  5.0    ...        0.0   0.0     0.0  52.563758
+123          123   135.0  413.15  5.0    ...        0.0   0.0     0.0  15.355705
+191          191    90.0  443.15  5.0    ...        0.0   0.0     0.0  67.919463
+202          202   143.0  423.15  5.0    ...        0.0   0.0     0.0  47.248322
+252          252    85.0  443.15  5.0    ...        0.0   0.0     0.0  67.919463
+273          273    99.0  433.15  5.0    ...        0.0   0.0     0.0  77.369128
+311          311    74.0  413.15  5.0    ...        0.0   0.0     0.0   2.362416
+466          466   133.0  413.15  5.0    ...        0.0   0.0     0.0   4.134228
+467          467    59.0  423.15  5.0    ...        0.0   0.0     0.0   2.953020
+475          475   100.0  473.15  5.0    ...        0.0   0.0     0.0  31.302013
+532          532    99.0  413.15  5.0    ...        0.0   0.0     0.0   9.449664
+559          559    67.0  473.15  5.0    ...        0.0   0.0     0.0  50.791946
+570          570    66.0  393.15  5.0    ...        0.0   0.0     0.0  13.583893
+615          615    65.0  413.15  5.0    ...        0.0   0.0     0.0  77.369128
+679          679    87.0  413.15  5.0    ...        0.0   0.0     0.0  12.402685
+718          718    80.0  413.15  5.0    ...        0.0   0.0     0.0  74.416107
+743          743    86.0  443.15  5.0    ...        0.0   0.0     0.0  36.026846
+803          803    70.0  413.15  5.0    ...        0.0   0.0     0.0  63.194631
+884          884   134.0  393.15  5.0    ...        0.0   0.0     0.0  10.630872
+905          905    99.0  423.15  5.0    ...        0.0   0.0     0.0  19.489933
+967          967    85.0  413.15  5.0    ...        0.0   0.0     0.0   0.590604
+975          975   127.0  393.15  5.0    ...        0.0   0.0     0.0   1.181208
+991          991    86.0  413.15  5.0    ...        0.0   0.0     0.0  30.120805
+1012        1012   127.0  393.15  5.0    ...        0.0   0.0     0.0  23.033557
+1034        1034    98.0  393.15  5.0    ...        0.0   0.0     0.0   0.590604
+1172        1172    50.0  473.15  5.0    ...        0.0   0.0     0.0  69.691275
+1230        1230    48.0  443.15  5.0    ...        0.0   0.0     0.0  34.255034
+1285        1285    60.0  413.15  5.0    ...        0.0   0.0     0.0  51.973154
+1288        1288    75.0  413.15  5.0    ...        0.0   0.0     0.0  70.281879
+1352        1352   102.0  393.15  5.0    ...        0.0   0.0     0.0  34.255034
+1375        1375   130.0  443.15  5.0    ...        0.0   0.0     0.0  64.375839
+1409        1409    91.0  393.15  5.0    ...        0.0   0.0     0.0   2.953020
+1451        1451   100.0  413.15  5.0    ...        0.0   0.0     0.0  72.053691
+1484        1484   133.0  443.15  5.0    ...        0.0   0.0     0.0  34.845638
+1494        1494    81.0  393.15  5.0    ...        0.0   0.0     0.0   0.590604
+1539        1539    85.0  393.15  5.0    ...        0.0   0.0     0.0   9.449664
+1546        1546    37.0  443.15  5.0    ...        0.0   0.0     0.0   3.543624
+1559        1559   101.0  413.15  5.0    ...        0.0   0.0     0.0  78.550336
+1609        1609    66.0  393.15  5.0    ...        0.0   0.0     0.0  34.255034
+1659        1659    85.0  413.15  5.0    ...        0.0   0.0     0.0   1.771812
+1837        1837    30.0  423.15  5.0    ...        0.0   0.0     0.0   9.449664
+1849        1849   130.0  413.15  5.0    ...        0.0   0.0     0.0  79.731544
+1959        1959    97.0  393.15  5.0    ...        0.0   0.0     0.0  31.302013
+
+[43 rows x 44 columns], 24.587826524002363, 3.11704025297225, 1.4531132575277144, 0.16228940922610513, 43]]
+Execution Time is 332.15206184387205 min
+
+56 56
+1929 1929
+56 56 56
+1929 1929 1929
+40
+Starting Execution of CV
+Validation Score: 20.76% (+/- 1.00%)
+Training Score: 1.38% (+/- 0.10%)
+[[      Unnamed: 0  TotalT    Temp    ...      vine  willow      Yield
+148          148    14.0  458.15    ...       0.0     0.0  78.390848
+199          199    19.0  448.15    ...       0.0     0.0  78.205226
+211          211    17.0  468.15    ...       0.0     0.0  85.159652
+229          229    17.0  468.15    ...       0.0     0.0  51.972999
+231          231    17.0  458.15    ...       0.0     0.0  84.221711
+246          246    17.0  448.15    ...       0.0     0.0  79.683549
+322          322    14.0  448.15    ...       0.0     0.0  33.583683
+338          338    19.0  458.15    ...       0.0     0.0  69.920055
+341          341    19.0  468.15    ...       0.0     0.0  49.386806
+368          368    19.0  458.15    ...       0.0     0.0  82.426039
+405          405    14.0  458.15    ...       0.0     0.0  71.440702
+414          414    14.0  468.15    ...       0.0     0.0  53.370796
+434          434    17.0  458.15    ...       0.0     0.0  85.350347
+452          452    17.0  448.15    ...       0.0     0.0  59.256030
+552          552    17.0  468.15    ...       0.0     0.0  59.978547
+558          558    17.0  448.15    ...       0.0     0.0  55.618398
+605          605    19.0  448.15    ...       0.0     0.0  78.429843
+610          610    14.0  458.15    ...       0.0     0.0  73.279015
+692          692    19.0  458.15    ...       0.0     0.0  59.733164
+703          703    14.0  458.15    ...       0.0     0.0  86.756228
+847          847    17.0  468.15    ...       0.0     0.0  34.492616
+854          854    17.0  468.15    ...       0.0     0.0  42.125017
+893          893    19.0  448.15    ...       0.0     0.0  72.375155
+933          933    17.0  458.15    ...       0.0     0.0  67.064067
+941          941    19.0  448.15    ...       0.0     0.0  77.658345
+1113        1113    17.0  458.15    ...       0.0     0.0  61.797839
+1150        1150    17.0  448.15    ...       0.0     0.0  80.775726
+1154        1154    19.0  468.15    ...       0.0     0.0  32.866239
+1164        1164    19.0  468.15    ...       0.0     0.0  24.319516
+1240        1240    17.0  458.15    ...       0.0     0.0  81.894534
+1276        1276    14.0  458.15    ...       0.0     0.0  80.395762
+1287        1287    17.0  448.15    ...       0.0     0.0  82.419857
+1312        1312    14.0  468.15    ...       0.0     0.0  57.011281
+1355        1355    17.0  468.15    ...       0.0     0.0  52.158622
+1369        1369    17.0  458.15    ...       0.0     0.0  86.405907
+1389        1389    19.0  448.15    ...       0.0     0.0  76.610869
+1394        1394    14.0  458.15    ...       0.0     0.0  84.023883
+1432        1432    14.0  458.15    ...       0.0     0.0  79.999789
+1485        1485    17.0  458.15    ...       0.0     0.0  86.399567
+1499        1499    14.0  458.15    ...       0.0     0.0  75.088161
+1527        1527    14.0  448.15    ...       0.0     0.0  31.583525
+1547        1547    14.0  448.15    ...       0.0     0.0  30.317297
+1596        1596    19.0  448.15    ...       0.0     0.0  83.701302
+1651        1651    17.0  468.15    ...       0.0     0.0  82.067951
+1653        1653    19.0  448.15    ...       0.0     0.0  84.384825
+1673        1673    19.0  448.15    ...       0.0     0.0  76.430160
+1695        1695    17.0  448.15    ...       0.0     0.0  78.229003
+1775        1775    14.0  458.15    ...       0.0     0.0  75.810203
+1776        1776    19.0  468.15    ...       0.0     0.0  45.208951
+1786        1786    19.0  458.15    ...       0.0     0.0  80.423661
+1795        1795    14.0  448.15    ...       0.0     0.0  24.680933
+1811        1811    17.0  458.15    ...       0.0     0.0  80.771921
+1843        1843    14.0  468.15    ...       0.0     0.0  65.005733
+1871        1871    19.0  458.15    ...       0.0     0.0  66.096642
+1949        1949    17.0  458.15    ...       0.0     0.0  80.215212
+1952        1952    17.0  458.15    ...       0.0     0.0  86.259438
+
+[56 rows x 44 columns], 20.762513423305045, 1.0008594000861075, 1.3827857585663739, 0.10139929756924712, 56]]
+Execution Time is 354.60514545440674 min
+
+40 40
+1945 1945
+40 40 40
+1945 1945 1945
+40
+Starting Execution of CV
+Validation Score: 49.06% (+/- 4.80%)
+Training Score: 1.33% (+/- 0.02%)
+[[      Unnamed: 0  TotalT    Temp  LSR    ...      salix  vine  willow      Yield
+225          225    80.0  423.15  9.0    ...        0.0   0.0     0.0  71.418264
+262          262    80.0  433.15  9.0    ...        0.0   0.0     0.0  78.073770
+278          278    30.0  403.15  9.0    ...        0.0   0.0     0.0   3.073770
+358          358    25.0  413.15  9.0    ...        0.0   0.0     0.0   3.093145
+389          389    80.0  403.15  9.0    ...        0.0   0.0     0.0  23.839292
+416          416    20.0  433.15  9.0    ...        0.0   0.0     0.0   9.221311
+427          427   100.0  423.15  9.0    ...        0.0   0.0     0.0  73.893154
+469          469    60.0  413.15  9.0    ...        0.0   0.0     0.0  34.698973
+500          500    90.0  413.15  9.0    ...        0.0   0.0     0.0  48.411885
+546          546    20.0  423.15  9.0    ...        0.0   0.0     0.0   2.474423
+666          666    90.0  403.15  9.0    ...        0.0   0.0     0.0  25.683301
+684          684    70.0  413.15  9.0    ...        0.0   0.0     0.0  37.148609
+697          697    25.0  403.15  9.0    ...        0.0   0.0     0.0   3.073770
+724          724    40.0  413.15  9.0    ...        0.0   0.0     0.0  13.435119
+731          731    50.0  433.15  9.0    ...        0.0   0.0     0.0  73.770492
+750          750    30.0  413.15  9.0    ...        0.0   0.0     0.0   5.833202
+770          770    70.0  433.15  9.0    ...        0.0   0.0     0.0  78.688525
+776          776    40.0  423.15  9.0    ...        0.0   0.0     0.0  33.436273
+794          794    30.0  433.15  9.0    ...        0.0   0.0     0.0  57.786885
+812          812    90.0  433.15  9.0    ...        0.0   0.0     0.0  79.303279
+850          850    50.0  403.15  9.0    ...        0.0   0.0     0.0  10.126379
+929          929    60.0  433.15  9.0    ...        0.0   0.0     0.0  75.614754
+952          952   100.0  413.15  9.0    ...        0.0   0.0     0.0  58.437716
+995          995    25.0  423.15  9.0    ...        0.0   0.0     0.0   5.532787
+998          998    20.0  403.15  9.0    ...        0.0   0.0     0.0   2.459016
+1116        1116    90.0  423.15  9.0    ...        0.0   0.0     0.0  71.746565
+1278        1278    80.0  413.15  9.0    ...        0.0   0.0     0.0  43.234351
+1326        1326    70.0  403.15  9.0    ...        0.0   0.0     0.0  11.692594
+1337        1337    50.0  413.15  9.0    ...        0.0   0.0     0.0  20.733052
+1384        1384    40.0  433.15  9.0    ...        0.0   0.0     0.0  67.622951
+1404        1404    60.0  423.15  9.0    ...        0.0   0.0     0.0  62.275854
+1406        1406    50.0  423.15  9.0    ...        0.0   0.0     0.0  61.341457
+1440        1440   100.0  433.15  9.0    ...        0.0   0.0     0.0  72.540984
+1532        1532    60.0  403.15  9.0    ...        0.0   0.0     0.0  11.061245
+1555        1555    70.0  423.15  9.0    ...        0.0   0.0     0.0  65.635102
+1816        1816    20.0  413.15  9.0    ...        0.0   0.0     0.0   2.474423
+1925        1925    40.0  403.15  9.0    ...        0.0   0.0     0.0   5.532787
+1931        1931    30.0  423.15  9.0    ...        0.0   0.0     0.0  20.985592
+1932        1932   100.0  403.15  9.0    ...        0.0   0.0     0.0  48.740187
+1974        1974    25.0  433.15  9.0    ...        0.0   0.0     0.0  33.811475
+
+[40 rows x 44 columns], 49.060589213574566, 4.80347267872712, 1.3274952453640185, 0.020568129395091634, 40]]
+Execution Time is 377.67676564057666 min
+
+27 27
+1958 1958
+27 27 27
+1958 1958 1958
+40
+Starting Execution of CV
+Validation Score: 27.92% (+/- 2.53%)
+Training Score: 1.39% (+/- 0.10%)
+[[      Unnamed: 0  TotalT    Temp  LSR    ...      salix  vine  willow      Yield
+251          251   118.0  433.15  4.0    ...        0.0   0.0     0.0  23.818347
+266          266    30.0  443.15  4.0    ...        0.0   0.0     0.0  47.285014
+422          422    60.0  433.15  4.0    ...        0.0   0.0     0.0  37.485922
+438          438    60.0  443.15  4.0    ...        0.0   0.0     0.0  24.170027
+456          456    30.0  453.15  4.0    ...        0.0   0.0     0.0  28.374205
+506          506    90.0  443.15  4.0    ...        0.0   0.0     0.0  40.954768
+522          522   118.0  433.15  4.0    ...        0.0   0.0     0.0  46.054133
+554          554    60.0  443.15  4.0    ...        0.0   0.0     0.0  42.089737
+751          751    30.0  443.15  4.0    ...        0.0   0.0     0.0  25.049228
+759          759    60.0  453.15  4.0    ...        0.0   0.0     0.0  21.052861
+769          769    30.0  443.15  4.0    ...        0.0   0.0     0.0  35.455767
+788          788    60.0  453.15  4.0    ...        0.0   0.0     0.0  34.065032
+801          801    60.0  443.15  4.0    ...        0.0   0.0     0.0  24.457766
+804          804    30.0  453.15  4.0    ...        0.0   0.0     0.0  28.166394
+846          846    60.0  443.15  4.0    ...        0.0   0.0     0.0  30.388374
+986          986    60.0  433.15  4.0    ...        0.0   0.0     0.0  17.392189
+1126        1126    60.0  433.15  4.0    ...        0.0   0.0     0.0  38.285195
+1131        1131    30.0  453.15  4.0    ...        0.0   0.0     0.0  43.896094
+1259        1259    90.0  443.15  4.0    ...        0.0   0.0     0.0  27.878656
+1302        1302    60.0  443.15  4.0    ...        0.0   0.0     0.0  29.860854
+1332        1332    60.0  453.15  4.0    ...        0.0   0.0     0.0  17.136421
+1403        1403    90.0  443.15  4.0    ...        0.0   0.0     0.0  20.972934
+1408        1408    60.0  443.15  4.0    ...        0.0   0.0     0.0  29.653043
+1650        1650    60.0  443.15  4.0    ...        0.0   0.0     0.0  42.537330
+1729        1729    60.0  443.15  4.0    ...        0.0   0.0     0.0  25.896458
+1772        1772    60.0  443.15  4.0    ...        0.0   0.0     0.0  41.929882
+1905        1905   118.0  433.15  4.0    ...        0.0   0.0     0.0  37.645777
+
+[27 rows x 44 columns], 27.92041551081551, 2.5307910590521434, 1.394533029041542, 0.10329323475232113, 27]]
+Execution Time is 402.2876910130183 min
+
