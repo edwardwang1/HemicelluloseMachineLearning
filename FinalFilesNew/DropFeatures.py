@@ -63,7 +63,7 @@ def validate(X,Y):
   
 # Prepping Data
 # data_start = data_start.sample(frac=.85).reset_index(drop=True)
-df = pd.read_csv("PreparedData.csv")
+df = pd.read_csv("PreparedDataAll.csv")
 
 
 woods = ['acacia', 'aspen', 'basswood', 'beech', 'birch', 'carob', 'eucalyptus', 'maple', 'meranti', 'mixed', 'oak', 'olive', 'paulownia', 'pine', 'poplar', 'salix', 'vine', 'willow' ]
@@ -108,7 +108,7 @@ for labels in labels_to_drop_all:
     print("Execution Time is", duration /60, "min\n")
 
 
-error_Frame.to_csv("DroppingFeaturesMonomer.csv")
+error_Frame.to_csv("DroppingFeatures.csv")
 
 
 no_factors_frame = X[X.columns[~X.columns.isin(factors)]].copy()
@@ -131,7 +131,7 @@ for labels in labels_to_drop_front:
     duration = end1 - start
     print("Execution Time is", duration /60, "min\n")
 
-error_Frame2.to_csv("DroppingFeaturesMonomer.csv")
+error_Frame2.to_csv("DroppingFeaturesNoFactor.csv")
 
     
 
