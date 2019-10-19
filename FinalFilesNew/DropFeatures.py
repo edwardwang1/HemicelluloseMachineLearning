@@ -69,8 +69,8 @@ df = pd.read_csv("PreparedDataAll.csv")
 woods = ['acacia', 'aspen', 'basswood', 'beech', 'birch', 'carob', 'eucalyptus', 'maple', 'meranti', 'mixed', 'oak', 'olive', 'paulownia', 'pine', 'poplar', 'salix', 'vine', 'willow' ]
 acids = ['acetic', 'fenton', 'formic', 'malic', 'none', 'oxalic', 'phosphoric', 'sulfuric']
 factors = ['Ro', 'logRo', 'P', 'logP', 'H', 'logH']
-labels_to_drop_front = [['TotalT', 'IsoT'],['Temp'], ['LSR'], ['CA'], ['Size'], ['F_X'], ['Acetyl'],]
-labels_to_drop_back = [['Ro', 'logRo'],  ['P', 'logP'], ['H', 'logH'], woods, acids, factors  ]
+labels_to_drop_front = [['TotalT', 'IsoT'],['Temp'], ['LSR'], ['CA'], ['Size'], ['F_X'],]
+labels_to_drop_back = [['Ro', 'logRo'],  ['P', 'logP'], ['H', 'logH'], ['Acetyl'], woods, acids, factors]
 labels_to_drop_all = labels_to_drop_front + labels_to_drop_back
 labels_to_drop_front_flat = [item for sublist in labels_to_drop_front for item in sublist]
 labels_to_scale = labels_to_drop_front_flat + factors
@@ -97,7 +97,7 @@ for labels in labels_to_drop_all:
     X = X_all[X_all.columns[~X_all.columns.isin(labels)]]
     #z = df.columns.isin(labels)
     #assert len(labels) == z.tolist().count(True)
-    print(X.columns)    
+    print(X.columns)
     testMeanE, testStdE, trainMeanE, trainStdE = validate(X, Y)
     row = [[labels, testMeanE, testStdE, trainMeanE, trainStdE]]
     print(row)
