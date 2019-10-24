@@ -91,31 +91,36 @@ finalCols = labels_to_scale + acids + woods
 
 X_all = pd.concat([X_scale, df[df.columns[df.columns.isin(acids)]],df[df.columns[df.columns.isin(woods)]]], ignore_index=True,axis=1)
 X_all.columns = finalCols
+##
+##for labels in labels_to_drop_all:
+##    print(labels)
+##    X = X_all[X_all.columns[~X_all.columns.isin(labels)]]
+##    #z = df.columns.isin(labels)
+##    #assert len(labels) == z.tolist().count(True)
+##    print(X.columns)
+##    testMeanE, testStdE, trainMeanE, trainStdE = validate(X, Y)
+##    row = [[labels, testMeanE, testStdE, trainMeanE, trainStdE]]
+##    print(row)
+##    tempDf = pd.DataFrame(row, columns=cols)
+##    error_Frame = pd.concat([error_Frame, tempDf], ignore_index=True)
+##    end1 = time.time()
+##    duration = end1 - start
+##    print("Execution Time is", duration /60, "min\n")
 
-for labels in labels_to_drop_all:
-    print(labels)
-    X = X_all[X_all.columns[~X_all.columns.isin(labels)]]
-    #z = df.columns.isin(labels)
-    #assert len(labels) == z.tolist().count(True)
-    print(X.columns)
-    testMeanE, testStdE, trainMeanE, trainStdE = validate(X, Y)
-    row = [[labels, testMeanE, testStdE, trainMeanE, trainStdE]]
-    print(row)
-    tempDf = pd.DataFrame(row, columns=cols)
-    error_Frame = pd.concat([error_Frame, tempDf], ignore_index=True)
-    end1 = time.time()
-    duration = end1 - start
-    print("Execution Time is", duration /60, "min\n")
+##
+##error_Frame.to_csv("DroppingFeatures.csv")
+##
 
-
-error_Frame.to_csv("DroppingFeatures.csv")
-
-
-no_factors_frame = X[X.columns[~X.columns.isin(factors)]].copy()
+no_factors_frame = X_all[X_all.columns[~X_all.columns.isin(factors)]].copy()
 
 error_Frame2 = pd.DataFrame(columns = cols)
 
-for labels in labels_to_drop_front:
+labels_to_drop_second = labels_to_drop_front.copy()
+labels_to_drop_second.append(woods)
+labels_to_drop_second.append(acids)
+
+
+for labels in labels_to_drop_second:
     print(labels)
     X_new = no_factors_frame[no_factors_frame.columns[~no_factors_frame.columns.isin(labels)]]
 
