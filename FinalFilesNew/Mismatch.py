@@ -61,7 +61,7 @@ def validate(X_test, Y_test, X_train, Y_train):
   
 # Prepping Data
 # data_start = data_start.sample(frac=.85).reset_index(drop=True)
-df = pd.read_csv("PreparedDataAll.csv")
+df = pd.read_csv("PreparedDataMonomerWithSource.csv")
 
 
 woods = ['acacia', 'aspen', 'basswood', 'beech', 'birch', 'carob', 'eucalyptus', 'maple', 'meranti', 'mixed', 'oak', 'olive', 'paulownia', 'pine', 'poplar', 'salix', 'vine', 'willow' ]
