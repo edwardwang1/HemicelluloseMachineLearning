@@ -66,7 +66,7 @@ def validate(X,Y):
 df = pd.read_csv("PreparedDataMonomer.csv")
 
 
-woods = ['acacia', 'aspen', 'beech', 'birch', 'eucalyptus', 'maple', 'mixed', 'oak', 'paulownia', 'poplar', 'salix', 'vine']
+woods = ['acacia', 'aspen', 'beech', 'birch', 'eucalyptus', 'maple', 'mixed', 'oak', 'paulownia', 'poplar', 'vine', 'willow']
 acids = ['acetic', 'fenton', 'formic', 'none', 'oxalic', 'sulfuric']
 factors = ['Ro', 'logRo', 'P', 'logP', 'H', 'logH']
 labels_to_drop_front = [['TotalT', 'IsoT'],['Temp'], ['LSR'], ['CA'], ['Size'], ['F_X'],]

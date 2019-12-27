@@ -66,7 +66,7 @@ def validate(X,Y):
 df = pd.read_csv("PreparedDataAll.csv")
 
 
-woods = ['acacia', 'aspen', 'basswood', 'beech', 'birch', 'carob', 'eucalyptus', 'maple', 'meranti', 'mixed', 'oak', 'olive', 'paulownia', 'pine', 'poplar', 'salix', 'vine', 'willow' ]
+woods = ['acacia', 'aspen', 'basswood', 'beech', 'birch', 'carob', 'eucalyptus', 'maple', 'meranti', 'mixed', 'oak', 'olive', 'paulownia', 'poplar', 'vine', 'willow' ]
 acids = ['acetic', 'fenton', 'formic', 'malic', 'none', 'oxalic', 'phosphoric', 'sulfuric']
 factors = ['Ro', 'logRo', 'P', 'logP', 'H', 'logH']
 labels_to_drop_front = [['TotalT', 'IsoT'],['Temp'], ['LSR'], ['CA'], ['Size'], ['F_X'],]
