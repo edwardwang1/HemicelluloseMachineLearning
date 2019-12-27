@@ -70,7 +70,7 @@ woods = ['acacia', 'aspen', 'basswood', 'beech', 'birch', 'carob', 'eucalyptus',
 acids = ['acetic', 'fenton', 'formic', 'malic', 'none', 'oxalic', 'phosphoric', 'sulfuric']
 factors = ['Ro', 'logRo', 'P', 'logP', 'H', 'logH']
 labels_to_drop_front = [['TotalT', 'IsoT'],['Temp'], ['LSR'], ['CA'], ['Size'], ['F_X'],]
-labels_to_drop_back = [['Ro', 'logRo'],  ['P', 'logP'], ['H', 'logH'], ['Acetyl'], woods, acids, factors]
+labels_to_drop_back = [['Ro', 'logRo'],  ['P', 'logP'], ['H', 'logH'], woods, acids, factors]
 labels_to_drop_all = labels_to_drop_front + labels_to_drop_back
 labels_to_drop_front_flat = [item for sublist in labels_to_drop_front for item in sublist]
 labels_to_scale = labels_to_drop_front_flat + factors
@@ -110,32 +110,32 @@ for labels in labels_to_drop_all:
 
 error_Frame.to_csv("DroppingFeatures.csv")
 
-##
-##no_factors_frame = X_all[X_all.columns[~X_all.columns.isin(factors)]].copy()
-##
-##error_Frame2 = pd.DataFrame(columns = cols)
-##
-##labels_to_drop_second = labels_to_drop_front.copy()
-##labels_to_drop_second.append(woods)
-##labels_to_drop_second.append(acids)
-##
-##
-##for labels in labels_to_drop_second:
-##    print(labels)
-##    X_new = no_factors_frame[no_factors_frame.columns[~no_factors_frame.columns.isin(labels)]]
-##
-##    #z = df.columns.isin(labels)
-##    #assert len(labels) == z.tolist().count(True)
-##    print(X_new.columns)
-##    testMeanE, testStdE, trainMeanE, trainStdE = validate(X_new, Y)
-##    row = [[labels, testMeanE, testStdE, trainMeanE, trainStdE]]
-##    print(row)
-##    tempDf = pd.DataFrame(row, columns=cols)
-##    error_Frame2 = pd.concat([error_Frame2, tempDf], ignore_index=True)
-##    end1 = time.time()
-##    duration = end1 - start
-##    print("Execution Time is", duration /60, "min\n")
-##
+
+no_factors_frame = X_all[X_all.columns[~X_all.columns.isin(factors)]].copy()
+
+error_Frame2 = pd.DataFrame(columns = cols)
+
+labels_to_drop_second = labels_to_drop_front.copy()
+labels_to_drop_second.append(woods)
+labels_to_drop_second.append(acids)
+
+
+for labels in labels_to_drop_second:
+    print(labels)
+    X_new = no_factors_frame[no_factors_frame.columns[~no_factors_frame.columns.isin(labels)]]
+
+    #z = df.columns.isin(labels)
+    #assert len(labels) == z.tolist().count(True)
+    print(X_new.columns)
+    testMeanE, testStdE, trainMeanE, trainStdE = validate(X_new, Y)
+    row = [[labels, testMeanE, testStdE, trainMeanE, trainStdE]]
+    print(row)
+    tempDf = pd.DataFrame(row, columns=cols)
+    error_Frame2 = pd.concat([error_Frame2, tempDf], ignore_index=True)
+    end1 = time.time()
+    duration = end1 - start
+    print("Execution Time is", duration /60, "min\n")
+
 error_Frame2.to_csv("DroppingFeaturesNoFactor.csv")
 
     
